@@ -13,7 +13,7 @@ function createDeBachatForm() {
   const form = FormApp.create(formName);
   
   form.setTitle(formName)
-      .setDescription("Help us validate the De-Bachat ROSCA MVP! Your feedback helps us build the future of decentralized savings.");
+      .setDescription("Help us validate the De-Bachat ROSCA MVP! Your feedback helps us build the future of decentralized savings.\n\nLIVE APP LINK: https://de-bachat-stellar.vercel.app/");
 
   // Question 1: Name
   form.addTextItem()
