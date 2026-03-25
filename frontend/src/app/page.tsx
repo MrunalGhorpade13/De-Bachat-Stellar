@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useFreighter } from "../components/FreighterProvider";
+import { useWallet, WalletType } from "../components/WalletProvider";
 import { GroupDashboard } from "../components/GroupDashboard";
 import { JoinGroupModal } from "../components/JoinGroupModal";
 import { CreateGroupForm } from "../components/CreateGroupForm";
@@ -10,8 +10,9 @@ import { WalletLogger } from "../components/WalletLogger";
 type View = "home" | "join" | "create" | "dashboard";
 
 export default function Home() {
-  const { address, connect, isFreighterInstalled } = useFreighter();
+  const { address, walletType, connect, isFreighterInstalled } = useWallet();
   const [view, setView] = useState<View>("home");
+  const [showWalletSelector, setShowWalletSelector] = useState(false);
   const [activeContractId, setActiveContractId] = useState(
     process.env.NEXT_PUBLIC_CONTRACT_ID || ""
   );
@@ -32,6 +33,11 @@ export default function Home() {
     setActiveContractId(contractId);
     if (address) addWallet(address);
     setView("dashboard");
+  };
+
+  const handleConnect = (type: WalletType) => {
+    connect(type);
+    setShowWalletSelector(false);
   };
 
   return (
@@ -75,15 +81,15 @@ export default function Home() {
           {address ? (
             <div className="wallet-badge">
               <span className="wallet-dot" />
+              <span className="capitalize text-[10px] mr-1 opacity-60">[{walletType}]</span>
               {address.slice(0, 5)}…{address.slice(-4)}
             </div>
           ) : (
             <button
-              onClick={connect}
-              disabled={!isFreighterInstalled}
+              onClick={() => setShowWalletSelector(true)}
               className="connect-btn"
             >
-              {isFreighterInstalled ? "Connect Freighter" : "Install Freighter"}
+              Connect Wallet
             </button>
           )}
         </nav>
@@ -111,13 +117,10 @@ export default function Home() {
               ))}
             </div>
             <button
-              onClick={connect}
-              disabled={!isFreighterInstalled}
+              onClick={() => setShowWalletSelector(true)}
               className="connect-btn connect-btn--hero"
             >
-              {isFreighterInstalled
-                ? "Connect Freighter to Start"
-                : "Install Freighter Extension"}
+              Connect Wallet to Start
             </button>
           </section>
         )}
@@ -197,6 +200,44 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      {/* ── Wallet Selector Modal ───────────────────────── */}
+      {showWalletSelector && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 w-full max-w-sm shadow-2xl animate-in zoom-in-95 duration-200">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold">Connect Wallet</h2>
+              <button onClick={() => setShowWalletSelector(false)} className="text-zinc-500 hover:text-white transition-colors">✕</button>
+            </div>
+            <div className="grid gap-3">
+              <button 
+                onClick={() => handleConnect("freighter")}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-800/50 border border-zinc-700 hover:border-emerald-500/50 hover:bg-zinc-800 transition-all text-left"
+              >
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-xl">⚓</div>
+                  <div>
+                    <div className="font-semibold text-zinc-100">Freighter</div>
+                    <div className="text-xs text-zinc-400">{isFreighterInstalled ? "Detected" : "Install extension"}</div>
+                  </div>
+              </button>
+
+              <button 
+                onClick={() => handleConnect("albedo")}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-800/50 border border-zinc-700 hover:border-emerald-500/50 hover:bg-zinc-800 transition-all text-left"
+              >
+                  <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-xl">✨</div>
+                  <div>
+                    <div className="font-semibold text-zinc-100">Albedo</div>
+                    <div className="text-xs text-zinc-400">Browser Extension / Web</div>
+                  </div>
+              </button>
+            </div>
+            <p className="mt-6 text-center text-xs text-zinc-500">
+              New to Stellar? <a href="https://stellar.org" target="_blank" className="text-emerald-400 hover:underline">Learn more</a>
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* ── Footer ────────────────────────────────────── */}
       <footer className="de-bachat-footer">

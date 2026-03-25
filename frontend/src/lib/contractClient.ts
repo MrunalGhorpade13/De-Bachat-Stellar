@@ -284,7 +284,17 @@ export async function submitTransaction(signedXdr: string): Promise<string> {
   throw new Error(`Transaction failed or timed out: ${getResult.status}`);
 }
 
-export async function signTransaction(xdrTx: string, opts: any) {
+export async function signTransaction(xdrTx: string, walletType: "freighter" | "albedo", opts?: any) {
+  if (walletType === "albedo") {
+    const albedo = (await import("@albedo-link/intent")).default;
+    const result = await albedo.tx({
+      xdr: xdrTx,
+      network: "testnet",
+    });
+    return { signedTxXdr: result.signed_envelope_xdr };
+  }
+
+  // Default to Freighter
   const { signTransaction: freighterSign } = await import("@stellar/freighter-api");
   return freighterSign(xdrTx, opts);
 }

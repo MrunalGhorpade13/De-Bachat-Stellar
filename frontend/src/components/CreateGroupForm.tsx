@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { signTransaction } from "../lib/contractClient";
+import { useWallet } from "../components/WalletProvider";
 import {
   Contract,
   Networks,
@@ -24,6 +25,7 @@ interface Props {
 }
 
 export function CreateGroupForm({ address, onCreated }: Props) {
+  const { walletType } = useWallet();
   const [name, setName] = useState("");
   const [maxMembers, setMaxMembers] = useState("5");
   const [contributionXlm, setContributionXlm] = useState("10");
@@ -31,14 +33,14 @@ export function CreateGroupForm({ address, onCreated }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  // NOTE: Creating a new group contract requires deploying via stellar-cli.
-  // This form assumes the user has an already-deployed contract ID (which they
-  // get from `stellar contract deploy`) and calls `initialize` on it.
+  // ... (rest of the component)
+
   const handleInitialize = async () => {
     if (!contractId.trim() || !name.trim()) return;
     setStatus("loading");
     setErrorMsg("");
     try {
+      if (!walletType) throw new Error("Wallet not connected");
       const server = new StellarRpc.Server(RPC_URL, { allowHttp: false });
       const account = await server.getAccount(address);
       const contract = new Contract(contractId.trim());
@@ -71,7 +73,8 @@ export function CreateGroupForm({ address, onCreated }: Props) {
       ).build();
       const xdrTx = prepared.toXDR();
 
-      const { signedTxXdr } = await signTransaction(xdrTx, { networkPassphrase: NETWORK });
+      const { signTransaction, submitTransaction } = await import("../lib/contractClient");
+      const { signedTxXdr } = await signTransaction(xdrTx, walletType, { networkPassphrase: NETWORK });
 
       const finalTx = TransactionBuilder.fromXDR(signedTxXdr, NETWORK);
       const sendResult = await server.sendTransaction(finalTx);

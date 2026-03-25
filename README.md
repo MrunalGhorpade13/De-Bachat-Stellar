@@ -43,17 +43,18 @@ We have validated this MVP with **5+ real testnet users**. Their feedback has be
 
 - **User Feedback Analysis**: [Link to Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
 - **Verified User Wallets**:
-  1. `GD...` (Participant #1)
-  2. `GC...` (Participant #2)
-  3. `GB...` (Participant #3)
-  4. `GA...` (Participant #4)
-  5. `GD...` (Participant #5)
+- **Verified User Wallets**:
+  1. `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` (Mrunal G.)
+  2. `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` (Ayush G.)
+  3. `GDR3...KAIK` (Durvesh D. - *Full address pending*)
+  4. `[Awaiting Validation]`
+  5. `[Awaiting Validation]`
 
 ## 🔄 Evolutionary Improvements (Phase 1 Iteration)
 
-Based on user feedback, we implemented the following improvement:
-- **Improvement**: [Describe the change here, e.g., 'Added Cycle History UI']
-- **Commit Link**: [Link to Git Commit](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/...)
+Based on user feedback (Ayush Gaikwad: "more options for wallet"), we implemented the following improvement:
+- **Improvement**: **Multi-Wallet Architecture**. Refactored the authentication layer to support both **Freighter** and **Albedo** wallets. This allows users without the Freighter extension to interact with the dApp via the Albedo web interface.
+- **Commit Link**: [Evolutionary Improvement: Multi-Wallet Support](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/main)
 
 ## 🏁 Quick Start
 

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { buildContributeTx, submitTransaction } from "../lib/contractClient";
-import { signTransaction } from "../lib/contractClient";
+import { buildContributeTx, submitTransaction, signTransaction } from "../lib/contractClient";
+import { useWallet } from "../components/WalletProvider";
 
 interface Props {
   contractId: string;
@@ -12,6 +12,7 @@ interface Props {
 }
 
 export function ContributeButton({ contractId, address, disabled, onSuccess }: Props) {
+  const { walletType } = useWallet();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -19,8 +20,9 @@ export function ContributeButton({ contractId, address, disabled, onSuccess }: P
     setStatus("loading");
     setErrorMsg("");
     try {
+      if (!walletType) throw new Error("Wallet not connected");
       const xdrTx = await buildContributeTx(contractId, address);
-      const { signedTxXdr } = await signTransaction(xdrTx, {
+      const { signedTxXdr } = await signTransaction(xdrTx, walletType, {
         networkPassphrase: process.env.NEXT_PUBLIC_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015",
       });
       await submitTransaction(signedTxXdr);

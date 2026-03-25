@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { buildJoinGroupTx, submitTransaction } from "../lib/contractClient";
-import { signTransaction } from "../lib/contractClient";
+import { buildJoinGroupTx, submitTransaction, signTransaction } from "../lib/contractClient";
+import { useWallet } from "../components/WalletProvider";
 
 interface Props {
   address: string;
@@ -10,6 +10,7 @@ interface Props {
 }
 
 export function JoinGroupModal({ address, onSuccess }: Props) {
+  const { walletType } = useWallet();
   const [contractId, setContractId] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -19,8 +20,10 @@ export function JoinGroupModal({ address, onSuccess }: Props) {
     setStatus("loading");
     setErrorMsg("");
     try {
+      if (!walletType) throw new Error("Wallet not connected");
       const xdrTx = await buildJoinGroupTx(contractId.trim(), address);
-      const { signedTxXdr } = await signTransaction(xdrTx, {
+      const { signTransaction, submitTransaction } = await import("../lib/contractClient");
+      const { signedTxXdr } = await signTransaction(xdrTx, walletType, {
         networkPassphrase: process.env.NEXT_PUBLIC_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015",
       });
       await submitTransaction(signedTxXdr);

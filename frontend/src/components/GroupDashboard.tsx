@@ -1,9 +1,9 @@
 "use client";
 
+import { useWallet } from "../components/WalletProvider";
 import { useGroupState } from "../hooks/useGroupState";
 import { ContributeButton } from "./ContributeButton";
 import { buildDisburseTx, submitTransaction } from "../lib/contractClient";
-import { signTransaction } from "@stellar/freighter-api";
 import { useState } from "react";
 
 interface Props {
@@ -20,6 +20,7 @@ function stroopsToXlm(stroops: bigint): string {
 }
 
 export function GroupDashboard({ contractId, address }: Props) {
+  const { walletType } = useWallet();
   const { config, poolState, participants, hasContributed, loading, error, refresh } =
     useGroupState(contractId, address);
   const [disburseStatus, setDisburseStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
@@ -29,9 +30,10 @@ export function GroupDashboard({ contractId, address }: Props) {
     setDisburseStatus("loading");
     setDisburseError("");
     try {
+      if (!walletType) throw new Error("Wallet not connected");
       const xdrTx = await buildDisburseTx(contractId, address);
       const { signTransaction, submitTransaction } = await import("../lib/contractClient");
-      const { signedTxXdr } = await signTransaction(xdrTx, {
+      const { signedTxXdr } = await signTransaction(xdrTx, walletType, {
         networkPassphrase: process.env.NEXT_PUBLIC_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015",
       });
       await submitTransaction(signedTxXdr);
@@ -48,9 +50,10 @@ export function GroupDashboard({ contractId, address }: Props) {
     setDisburseStatus("loading");
     setDisburseError("");
     try {
+      if (!walletType) throw new Error("Wallet not connected");
       const { buildCloseEnrollmentTx, signTransaction, submitTransaction } = await import("../lib/contractClient");
       const xdrTx = await buildCloseEnrollmentTx(contractId, address);
-      const { signedTxXdr } = await signTransaction(xdrTx, {
+      const { signedTxXdr } = await signTransaction(xdrTx, walletType, {
         networkPassphrase: process.env.NEXT_PUBLIC_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015",
       });
       await submitTransaction(signedTxXdr);
@@ -203,7 +206,7 @@ export function GroupDashboard({ contractId, address }: Props) {
           <p className="text-zinc-600 text-sm">No members yet.</p>
         ) : (
           <ul className="space-y-2">
-            {participants.map((p, i) => (
+            {participants.map((p: string, i: number) => (
               <li key={p} className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-mono ${p === address ? "bg-emerald-950/40 border border-emerald-900" : "bg-zinc-950/50"}`}>
                 <span className="text-zinc-400">#{i + 1}</span>
                 <span className={`break-all ${p === address ? "text-emerald-300" : "text-zinc-300"}`}>
