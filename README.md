@@ -2,12 +2,42 @@
 
 De-Bachat is a premium Web3 application built on the **Stellar Soroban Testnet**. It enables users to form trusted savings groups (ROSCAs) where participants contribute a fixed amount each cycle, and the total pool is disbursed to one member in rotation.
 
-## 🚀 project Structure
+## 🚀 Project Structure
 
-- **`/contracts`**: Soroban smart contract implemented in Rust. Includes logic for enrollment, contribution tracking, and automated payout disbursement.
-- **`/frontend`**: A premium Next.js dashboard with Freighter wallet integration, real-time pool state syncing, and organizer controls.
-- **`FINAL_CHECKLIST.md`**: Summary of the project milestones and completion state.
-- **`TEST_SCENARIO.md`**: Detailed guide for simulating a full 5-wallet savings cycle.
+```
+de-bachat/
+├── contracts/                    # Soroban Smart Contract (Rust)
+│   └── src/
+│       └── lib.rs                # ROSCA logic: initialize, join, contribute, disburse
+├── frontend/                     # Next.js Frontend
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── page.tsx          # Main page with wallet selector & navigation
+│   │   │   ├── layout.tsx        # Root layout with WalletProvider
+│   │   │   └── globals.css       # Global styles
+│   │   ├── components/
+│   │   │   ├── WalletProvider.tsx    # Multi-wallet context (Freighter + Albedo)
+│   │   │   ├── GroupDashboard.tsx    # Pool state, stats, participants view
+│   │   │   ├── CreateGroupForm.tsx   # Initialize a new ROSCA group
+│   │   │   ├── JoinGroupModal.tsx    # Join an existing group by contract ID
+│   │   │   ├── ContributeButton.tsx  # Submit a contribution transaction
+│   │   │   └── WalletLogger.tsx      # Logs & exports interacting wallets
+│   │   ├── hooks/
+│   │   │   └── useGroupState.ts  # Fetches live pool state from Testnet
+│   │   └── lib/
+│   │       └── contractClient.ts # Stellar SDK: build, sign & submit transactions
+│   └── .env.local                # NEXT_PUBLIC_CONTRACT_ID, RPC_URL
+├── .github/
+│   └── workflows/
+│       └── deploy.yml            # Automated CI/CD → Vercel on push to main
+├── ARCHITECTURE.md               # System design & data flow documentation
+├── FINAL_CHECKLIST.md            # Project milestone tracker
+├── TEST_SCENARIO.md              # Full 5-wallet ROSCA simulation guide
+├── user_feedback.md              # 5 verified users + feedback log
+├── automate_google_form.gs       # Google Apps Script to create onboarding form
+└── README.md                     # This file
+```
+
 
 ## 🏗️ Architecture
 
