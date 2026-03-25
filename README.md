@@ -35,7 +35,7 @@ graph TD
 ## 🔗 Live Links & Submission
 
 - **Live Demo Link**: [https://de-bachat-stellar.vercel.app/](https://de-bachat-stellar.vercel.app/)
-- **Demo Video Link**: [Recording in progress...]
+- **Demo Video Link**: [▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1odzj3ce9iw4KztzjGWZBQEOoo6vZ00eC/view?usp=sharing)
 
 ## 👥 User Validation (Level 5)
 
