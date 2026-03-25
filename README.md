@@ -44,11 +44,11 @@ We have validated this MVP with **5+ real testnet users**. Their feedback has be
 - **User Feedback Analysis**: [Link to Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
 - **Verified User Wallets**:
 - **Verified User Wallets**:
-  1. `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` (Mrunal G.)
-  2. `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` (Ayush G.)
-  3. `GDR3...KAIK` (Durvesh D. - *Full address pending*)
-  4. `[Awaiting Validation]`
-  5. `[Awaiting Validation]`
+  1. `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` (Mrunal Ghorpade)
+  2. `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` (Ayush Gaikwad)
+  3. `GDR3...KAIK` (Durvesh Dongare)
+  4. `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` (Madhura Ghorpade)
+  5. `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` (Rani Ghorpade)
 
 ## 🔄 Evolutionary Improvements (Phase 1 Iteration)
 
