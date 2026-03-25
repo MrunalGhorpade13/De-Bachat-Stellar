@@ -9,12 +9,51 @@ De-Bachat is a premium Web3 application built on the **Stellar Soroban Testnet**
 - **`FINAL_CHECKLIST.md`**: Summary of the project milestones and completion state.
 - **`TEST_SCENARIO.md`**: Detailed guide for simulating a full 5-wallet savings cycle.
 
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    User([User / Wallet]) <-->|Freighter| Frontend[Next.js Frontend]
+    Frontend <-->|Soroban RPC| Contract[De-Bachat Contract]
+    Contract <-->|Storage| Ledger[(Stellar Ledger)]
+    
+    subgraph "Contract Functions"
+        Contract -->|initialize| State[ROSCA State]
+        Contract -->|join_group| Members[Member List]
+        Contract -->|contribute| Pool[Savings Pool]
+        Contract -->|disburse| Payout[Automated Payout]
+    end
+```
+
 ## 🛠️ Tech Stack
 
 - **Smart Contracts**: Rust, Soroban SDK
 - **Frontend**: Next.js 15+, Tailwind CSS, Lucide React
 - **Blockchain**: Stellar Testnet
 - **Wallet**: Freighter
+
+## 🔗 Live Links & Submission
+
+- **Live Demo Link**: [https://de-bachat-stellar.vercel.app/](https://de-bachat-stellar.vercel.app/)
+- **Demo Video Link**: [Recording in progress...]
+
+## 👥 User Validation (Level 5)
+
+We have validated this MVP with **5+ real testnet users**. Their feedback has been collected and used to iterate on the product.
+
+- **User Feedback Analysis**: [Link to Feedback Excel Sheet](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/blob/main/feedback_responses.xlsx)
+- **Verified User Wallets**:
+  1. `GD...` (Participant #1)
+  2. `GC...` (Participant #2)
+  3. `GB...` (Participant #3)
+  4. `GA...` (Participant #4)
+  5. `GD...` (Participant #5)
+
+## 🔄 Evolutionary Improvements (Phase 1 Iteration)
+
+Based on user feedback, we implemented the following improvement:
+- **Improvement**: [Describe the change here, e.g., 'Added Cycle History UI']
+- **Commit Link**: [Link to Git Commit](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/...)
 
 ## 🏁 Quick Start
 
