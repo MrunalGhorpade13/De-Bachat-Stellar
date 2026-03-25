@@ -41,7 +41,7 @@ graph TD
 
 We have validated this MVP with **5+ real testnet users**. Their feedback has been collected and used to iterate on the product.
 
-- **User Feedback Analysis**: [Link to Feedback Excel Sheet](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/blob/main/feedback_responses.xlsx)
+- **User Feedback Analysis**: [Link to Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
 - **Verified User Wallets**:
   1. `GD...` (Participant #1)
   2. `GC...` (Participant #2)
