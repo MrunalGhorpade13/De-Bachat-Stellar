@@ -105,4 +105,4 @@ Based on user feedback (Ayush Gaikwad: "more options for wallet"), we implemente
 - **Network**: Testnet
 
 ---
-Built with ❤️ for the Stellar community.
+Built with ❤️ by **Mrunal Ghorpade** for the Stellar community.
