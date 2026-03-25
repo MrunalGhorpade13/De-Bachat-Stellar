@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# De-Bachat — Decentralized ROSCA on Stellar Soroban
 
-## Getting Started
+> **De-Bachat** is a pure, non-custodial decentralized Rotating Savings & Credit Association (ROSCA / Bachat Gat) dApp built on the Stellar Soroban Testnet. All group logic lives on-chain — no backend, no database, no middlemen.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎬 Demo Video
+
+> 🔗 *[Demo video link — to be added after recording]*
+
+---
+
+## 🏗️ Architecture
+
+See [ARCHITECTURE.md](../ARCHITECTURE.md) for the full data-flow diagram and design decisions.
+
+```
+User → Freighter Wallet → De-Bachat Frontend (Next.js)
+                               ↕  stellar-sdk / soroban-rpc
+                         DeBachat Contract (Soroban / Rust)
+                               ↕  SAC token transfer
+                         Stellar Testnet Ledger
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Contract Functions
+| Function | Description |
+|---|---|
+| `initialize` | Set up group: name, token, contribution amount, max members |
+| `join_group` | Any wallet joins the open group |
+| `close_enrollment` | Organizer locks the member list |
+| `contribute` | Member contributes their share (real token transfer) |
+| `disburse` | Pays out entire pool to the designated cycle recipient |
+| `get_config` / `get_pool_state` / `get_participants` | Read-only queries |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
+- [Node.js 20+](https://nodejs.org/)
+- [Freighter Wallet](https://www.freighter.app/) browser extension
+- [Stellar CLI](https://developers.stellar.org/docs/tools/developer-tools/cli/install-cli) (for contract deployment)
 
-To learn more about Next.js, take a look at the following resources:
+### Install & Run Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deploy the Soroban Contract
+```bash
+# Build
+cargo build --release --target wasm32-unknown-unknown
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Deploy to Testnet
+stellar contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/de_bachat.wasm \
+  --source <YOUR_ACCOUNT_ALIAS> \
+  --network testnet
 
-## Deploy on Vercel
+# Copy the returned Contract ID into frontend/.env.local
+echo 'NEXT_PUBLIC_CONTRACT_ID="C..."' >> frontend/.env.local
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Environment Variables (`frontend/.env.local`)
+```env
+NEXT_PUBLIC_NETWORK_PASSPHRASE="Test SDF Network ; September 2015"
+NEXT_PUBLIC_RPC_URL="https://soroban-testnet.stellar.org:443"
+NEXT_PUBLIC_CONTRACT_ID="<your-deployed-contract-id>"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧪 Smart Contract Tests
+```bash
+# From project root
+cargo test
+```
+Tests cover: initialization, member joining, full-cycle payout, double-contribution guard, early-disburse guard.
+
+---
+
+## 📋 Testnet Wallets (Validation)
+
+The app automatically logs all interacting wallet addresses. Use the **Dashboard → Interacting Wallets** panel to export them.
+
+| # | Role | Address |
+|---|---|---|
+| 1 | Organizer | *logged at runtime* |
+| 2–6 | Members | *logged at runtime* |
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Phase 1 — Project scaffold (Next.js + Soroban Rust workspace)
+- [x] Phase 2 — Smart contract (ROSCA logic + unit tests)
+- [x] Phase 3 — Wallet integration (Freighter + stellar-sdk)
+- [x] Phase 4 — Full dashboard UI with contribute/disburse flows
+- [ ] Phase 5 — Testnet deployment + Vercel deploy + demo video
+
+---
+
+## 📄 License
+MIT
+

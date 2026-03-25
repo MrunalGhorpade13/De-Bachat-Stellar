@@ -485,7 +485,7 @@ mod test {
 
         // m0 should have received 300 XLM back on top of their remaining 900
         let balance = token_client.balance(&m0);
-        assert_eq!(balance, 1000_0000000_i128); // paid 100, received 300, started with 1000
+        assert_eq!(balance, 1200_0000000_i128); // paid 100, received 300, started with 1000
 
         // Next cycle — recipient index should have advanced to 1 (m1)
         let next = client.next_recipient();

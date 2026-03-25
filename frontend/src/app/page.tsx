@@ -1,65 +1,209 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { useFreighter } from "../components/FreighterProvider";
+import { GroupDashboard } from "../components/GroupDashboard";
+import { JoinGroupModal } from "../components/JoinGroupModal";
+import { CreateGroupForm } from "../components/CreateGroupForm";
+import { WalletLogger } from "../components/WalletLogger";
+
+type View = "home" | "join" | "create" | "dashboard";
 
 export default function Home() {
+  const { address, connect, isFreighterInstalled } = useFreighter();
+  const [view, setView] = useState<View>("home");
+  const [activeContractId, setActiveContractId] = useState(
+    process.env.NEXT_PUBLIC_CONTRACT_ID || ""
+  );
+  // Track all wallets that interact so they can be exported for validation
+  const [walletLog, setWalletLog] = useState<string[]>([]);
+
+  const addWallet = (addr: string) => {
+    setWalletLog((prev) => (prev.includes(addr) ? prev : [...prev, addr]));
+  };
+
+  const handleJoined = (contractId: string) => {
+    setActiveContractId(contractId);
+    if (address) addWallet(address);
+    setView("dashboard");
+  };
+
+  const handleCreated = (contractId: string) => {
+    setActiveContractId(contractId);
+    if (address) addWallet(address);
+    setView("dashboard");
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="de-bachat-root">
+      {/* ── Header ────────────────────────────────────── */}
+      <header className="de-bachat-header">
+        <button
+          onClick={() => setView("home")}
+          className="brand-logo"
+        >
+          <span className="brand-icon">💰</span>
+          De-Bachat
+        </button>
+
+        <nav className="header-nav">
+          {address && (
+            <>
+              <button
+                onClick={() => setView("create")}
+                className={`nav-pill ${view === "create" ? "nav-pill--active" : ""}`}
+              >
+                + Create
+              </button>
+              <button
+                onClick={() => setView("join")}
+                className={`nav-pill ${view === "join" ? "nav-pill--active" : ""}`}
+              >
+                Join
+              </button>
+              {activeContractId && (
+                <button
+                  onClick={() => setView("dashboard")}
+                  className={`nav-pill ${view === "dashboard" ? "nav-pill--active" : ""}`}
+                >
+                  Dashboard
+                </button>
+              )}
+            </>
+          )}
+
+          {address ? (
+            <div className="wallet-badge">
+              <span className="wallet-dot" />
+              {address.slice(0, 5)}…{address.slice(-4)}
+            </div>
+          ) : (
+            <button
+              onClick={connect}
+              disabled={!isFreighterInstalled}
+              className="connect-btn"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              {isFreighterInstalled ? "Connect Freighter" : "Install Freighter"}
+            </button>
+          )}
+        </nav>
+      </header>
+
+      {/* ── Content ───────────────────────────────────── */}
+      <div className="de-bachat-content">
+        {!address && (
+          <section className="hero-section">
+            <div className="hero-orb">💰</div>
+            <h1 className="hero-title">Decentralized Rotating Savings</h1>
+            <p className="hero-subtitle">
+              De-Bachat brings the trusted ROSCA model on-chain. No middlemen.
+              No banks. Just your community — secured by Stellar Soroban.
+            </p>
+            <div className="hero-features">
+              {[
+                { icon: "🔐", text: "Non-custodial" },
+                { icon: "⚡", text: "Stellar Testnet" },
+                { icon: "🌍", text: "Trust-minimised" },
+              ].map((f) => (
+                <div key={f.text} className="feature-chip">
+                  <span>{f.icon}</span> {f.text}
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={connect}
+              disabled={!isFreighterInstalled}
+              className="connect-btn connect-btn--hero"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              {isFreighterInstalled
+                ? "Connect Freighter to Start"
+                : "Install Freighter Extension"}
+            </button>
+          </section>
+        )}
+
+        {address && view === "home" && (
+          <section className="home-cards">
+            <button
+              onClick={() => setView("create")}
+              className="home-card home-card--create"
+            >
+              <span className="home-card-icon">✦</span>
+              <span className="home-card-title">Create New Group</span>
+              <span className="home-card-sub">
+                Deploy & initialize your own ROSCA contract
+              </span>
+            </button>
+            <button
+              onClick={() => setView("join")}
+              className="home-card home-card--join"
+            >
+              <span className="home-card-icon">⬡</span>
+              <span className="home-card-title">Join Existing Group</span>
+              <span className="home-card-sub">
+                Enter a contract ID to join an active savings pool
+              </span>
+            </button>
+            {activeContractId && (
+              <button
+                onClick={() => setView("dashboard")}
+                className="home-card home-card--dashboard"
+              >
+                <span className="home-card-icon">◈</span>
+                <span className="home-card-title">My Dashboard</span>
+                <span className="home-card-sub">
+                  View pool state, contribute & track payouts
+                </span>
+              </button>
+            )}
+          </section>
+        )}
+
+        {address && view === "create" && (
+          <div className="view-container">
+            <CreateGroupForm address={address} onCreated={handleCreated} />
+          </div>
+        )}
+
+        {address && view === "join" && (
+          <div className="view-container">
+            <JoinGroupModal address={address} onSuccess={handleJoined} />
+          </div>
+        )}
+
+        {address && view === "dashboard" && activeContractId && (
+          <div className="view-container">
+            <GroupDashboard
+              contractId={activeContractId}
+              address={address}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <WalletLogger addresses={walletLog} />
+          </div>
+        )}
+
+        {address && view === "dashboard" && !activeContractId && (
+          <div className="view-container empty-state">
+            <p className="text-zinc-500">
+              No group selected.{" "}
+              <button onClick={() => setView("join")} className="text-emerald-400 underline">
+                Join a group
+              </button>{" "}
+              or{" "}
+              <button onClick={() => setView("create")} className="text-emerald-400 underline">
+                create one
+              </button>
+              .
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* ── Footer ────────────────────────────────────── */}
+      <footer className="de-bachat-footer">
+        <span className="text-zinc-600 text-xs">
+          De-Bachat · Built on Stellar Soroban Testnet
+        </span>
+      </footer>
+    </main>
   );
 }
