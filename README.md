@@ -1,108 +1,421 @@
-# De-Bachat: Decentralized Rotating Savings & Credit Association (ROSCA)
+# De-Bachat – Decentralised Rotating Savings & Credit Association (ROSCA) dApp
 
-De-Bachat is a premium Web3 application built on the **Stellar Soroban Testnet**. It enables users to form trusted savings groups (ROSCAs) where participants contribute a fixed amount each cycle, and the total pool is disbursed to one member in rotation.
+A trustless, community-driven savings platform built on the **Stellar Soroban Testnet** — combining on-chain ROSCA mechanics with a premium Next.js frontend and multi-wallet support.
 
-## 🚀 Project Structure
+---
 
-```
-de-bachat/
-├── contracts/                    # Soroban Smart Contract (Rust)
-│   └── src/
-│       └── lib.rs                # ROSCA logic: initialize, join, contribute, disburse
-├── frontend/                     # Next.js Frontend
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── page.tsx          # Main page with wallet selector & navigation
-│   │   │   ├── layout.tsx        # Root layout with WalletProvider
-│   │   │   └── globals.css       # Global styles
-│   │   ├── components/
-│   │   │   ├── WalletProvider.tsx    # Multi-wallet context (Freighter + Albedo)
-│   │   │   ├── GroupDashboard.tsx    # Pool state, stats, participants view
-│   │   │   ├── CreateGroupForm.tsx   # Initialize a new ROSCA group
-│   │   │   ├── JoinGroupModal.tsx    # Join an existing group by contract ID
-│   │   │   ├── ContributeButton.tsx  # Submit a contribution transaction
-│   │   │   └── WalletLogger.tsx      # Logs & exports interacting wallets
-│   │   ├── hooks/
-│   │   │   └── useGroupState.ts  # Fetches live pool state from Testnet
-│   │   └── lib/
-│   │       └── contractClient.ts # Stellar SDK: build, sign & submit transactions
-│   └── .env.local                # NEXT_PUBLIC_CONTRACT_ID, RPC_URL
-├── .github/
-│   └── workflows/
-│       └── deploy.yml            # Automated CI/CD → Vercel on push to main
-├── ARCHITECTURE.md               # System design & data flow documentation
-├── FINAL_CHECKLIST.md            # Project milestone tracker
-├── TEST_SCENARIO.md              # Full 5-wallet ROSCA simulation guide
-├── user_feedback.md              # 5 verified users + feedback log
-├── automate_google_form.gs       # Google Apps Script to create onboarding form
-└── README.md                     # This file
-```
+## 🔗 Live Demo
 
+**[https://de-bachat-stellar.vercel.app/](https://de-bachat-stellar.vercel.app/)**
+
+---
+
+## 🎬 Demo Video
+
+Full MVP walkthrough — wallet connect, create group, join group, contribute XLM, close enrollment, automated payout:
+
+> [▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1odzj3ce9iw4KztzjGWZBQEOoo6vZ00eC/view?usp=sharing)
+
+The video demonstrates: landing page → wallet connection (Freighter / Albedo) → create ROSCA group → participant onboarding → contribution submission → enrollment closure → automated payout disbursement → live pool dashboard.
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Live Demo](#-live-demo)
+- [Demo Video](#-demo-video)
+- [Smart Contract](#-smart-contract)
+- [Verified Wallet Addresses](#-verified-wallet-addresses)
+- [User Feedback](#-user-feedback)
+- [Technology Stack](#%EF%B8%8F-technology-stack)
+- [Architecture](#%EF%B8%8F-architecture)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [Evolutionary Improvements](#-evolutionary-improvements)
+- [CI/CD Status](#-cicd-status)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🧾 Overview
+
+**De-Bachat** is a decentralised Rotating Savings and Credit Association (ROSCA) dApp that digitises the traditional **"chit fund"** savings model used across South Asia. Participants form a group, each member contributes a fixed amount every cycle, and the entire pool is disbursed to one member per cycle in rotation — until every participant has received their payout.
+
+Unlike centralised chit-fund platforms, De-Bachat is a **pure dApp** with no backend server or database. All group state — membership, pool balance, cycle counter, payout order — lives entirely on-chain via Soroban smart contracts on the Stellar Testnet. This guarantees:
+
+- **Trustlessness** — No single party controls the funds
+- **Transparency** — Any user can verify the full state on Stellar Expert
+- **Automation** — Payouts are triggered programmatically by contract logic, not by a human
+
+---
+
+## ✨ Features
+
+### 1. Create a ROSCA Group
+The group organiser sets:
+- **Group Name** — Identifies the savings circle
+- **Contribution Amount** — Fixed XLM amount each member pays per cycle
+- **Cycle Duration** — Fixed period (e.g., monthly)
+- **Max Participants** — Caps the group size
+
+The contract is initialised on-chain and the group dashboard link can be shared with participants.
+
+### 2. Participant Onboarding
+- Members navigate to the group using its **Contract ID**
+- Connect their wallet (Freighter or Albedo) and click **Join Group**
+- Their wallet address is appended to the on-chain roster; slots are capped at the organiser's limit
+
+### 3. Contribution Engine
+- Per-cycle contribution tracking is handled by the smart contract
+- Each participant submits XLM directly to the contract's pool balance
+- Contract marks each member "**paid**" for the cycle, preventing double contributions
+- Read-only dashboard shows live pool balance and who has/hasn't contributed
+
+### 4. Enrollment Closure & Automated Payout
+- The organiser closes enrollment once all members have joined
+- Once all cycle contributions are received, the contract automatically disburses the full pool to the next eligible recipient
+- The payout order is determined by the participant roster preserved on-chain
+- Cycle counter increments, and the process repeats for the next member
+
+### 5. Multi-Wallet Support
+Connect via **Freighter** (browser extension) or **Albedo** (web-based, no extension needed):
+- Real-time XLM balance display
+- Wallet address shown on dashboard with "You" indicator
+- Exported wallet log for verification
+
+### 6. Live Group Dashboard
+- **Real-time Pool Balance** — Queried directly from Soroban RPC
+- **Participant Roster** — Live member list with contribution status
+- **Cycle Tracker** — Current cycle number and recipient queue
+- **Organiser Controls** — Close Enrollment button (visible only to group creator)
+
+### 7. On-Chain State Verification
+- Every frontend load queries the contract's read-only functions
+- No centralised database; all state is derived from Stellar Ledger
+- Viewable on [Stellar Expert Testnet Explorer](https://stellar.expert/explorer/testnet)
+
+---
+
+## 📸 Screenshots
+
+### Home / Landing Page
+> Premium dark-themed landing with animated gradients and ROSCA introduction
+
+![Home Page](docs/screenshots/01_home.png)
+
+---
+
+### Home — Hero Section (Scrolled)
+> Tag-line badges: Non-custodial · Stellar Testnet · Trust-minimised
+
+![Home Scroll](docs/screenshots/02_home_scroll.png)
+
+---
+
+### Wallet Connection — Multi-Wallet Selector
+> Supports Freighter (detected) and Albedo (browser extension / web)
+
+![Wallet Connect](docs/screenshots/03_wallet_connect.png)
+
+---
+
+### Mobile Responsive View
+> Fully responsive across all screen sizes (390×844)
+
+![Mobile View](docs/screenshots/04_mobile.png)
+
+---
+
+## ⛓ Smart Contract
+
+| Field | Value |
+|-------|-------|
+| **Network** | Stellar Testnet |
+| **Contract ID** | `CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B` |
+| **Language** | Rust (Soroban SDK) |
+| **Explorer** | [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B) |
+
+### Contract Details
+
+This project uses **native XLM** on Stellar Testnet. No custom token has been deployed. ROSCA group state — pool balance, roster, cycle counter, payout mapping — is tracked entirely via Soroban smart contract persistent storage.
+
+**Core Contract Functions:**
+
+| Function | Description |
+|----------|-------------|
+| `initialize_group` | Creates a new ROSCA group with organiser config |
+| `join_group` | Adds a participant wallet to the on-chain roster |
+| `contribute` | Transfers XLM from member to contract pool; marks member as paid |
+| `close_enrollment` | Locks the group; called by organiser only |
+| `disburse_payout` | Transfers pooled funds to the next eligible recipient |
+
+---
+
+## 👛 Verified Wallet Addresses
+
+The following wallet addresses have participated in the De-Bachat ROSCA cycle and are verifiable on the Stellar Testnet Explorer.
+
+| # | Name | Wallet Address | Explorer Link | Role |
+|---|------|----------------|---------------|------|
+| 1 | Mrunal Ghorpade | `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` | [View](https://stellar.expert/explorer/testnet/account/GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX) | Organiser |
+| 2 | Ayush Gaikwad | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` | [View](https://stellar.expert/explorer/testnet/account/GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG) | Participant |
+| 3 | Durvesh Dongare | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` | [View](https://stellar.expert/explorer/testnet/account/GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ) | Participant |
+| 4 | Madhura Ghorpade | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` | [View](https://stellar.expert/explorer/testnet/account/GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS) | Participant |
+| 5 | Rani Ghorpade | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | [View](https://stellar.expert/explorer/testnet/account/GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH) | Participant |
+
+All addresses are on Stellar Testnet. Verify transactions at [stellar.expert/explorer/testnet](https://stellar.expert/explorer/testnet).
+
+---
+
+## 💬 User Feedback
+
+Feedback was collected from real users who tested the De-Bachat MVP during the Level 5 validation phase.
+
+### Feedback Summary
+
+| User | Rating | Issue Raised | Feedback |
+|------|--------|--------------|----------|
+| Mrunal Ghorpade | ⭐⭐⭐⭐⭐ | — | No suggestions — excellent dashboard and application workflow |
+| Ayush Gaikwad | ⭐⭐⭐⭐⭐ | Wallet Options | More options for wallet (Albedo/xBull) |
+| Durvesh Dongare | ⭐⭐⭐⭐⭐ | — | Everything is good |
+| Madhura Ghorpade | ⭐⭐⭐⭐⭐ | — | Application is easy going and user-friendly |
+| Rani Ghorpade | ⭐⭐⭐⭐⭐ | — | Everything is smooth and compatible |
+
+> [📊 View Full Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+| Technology | Purpose |
+|------------|---------|
+| Next.js 16 (App Router) | SPA/SSR framework |
+| TypeScript | Type-safe development |
+| Tailwind CSS v4 | UI styling & dark theme |
+| `@stellar/stellar-sdk` | Transaction building & Soroban RPC |
+| `@stellar/freighter-api` | Freighter wallet integration |
+| `@albedo-link/intent` | Albedo wallet integration |
+| React 19 | Component rendering |
+
+### Blockchain
+
+| Technology | Purpose |
+|------------|---------|
+| Stellar Testnet | Blockchain network |
+| Soroban (Rust) | Smart contract platform |
+| Stellar SDK | Account & transaction management |
+| Horizon API | On-chain data queries |
+| Freighter | Browser extension wallet |
+| Albedo | Web-based wallet (no extension) |
+
+### Infrastructure
+
+| Technology | Purpose |
+|------------|---------|
+| Vercel | Frontend hosting + CDN |
+| GitHub Actions | CI/CD pipeline |
+| Stellar Testnet | Decentralised ledger (no DB needed) |
+
+---
 
 ## 🏗️ Architecture
 
+```
+┌─────────────────────────────────────────────────────────────┐
+│              Next.js Frontend (Vercel)                      │
+│  Landing | Create Group | Dashboard | Join | Contribute     │
+└────────────────────────┬────────────────────────────────────┘
+                         │ Soroban RPC (HTTPS)
+                         ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Stellar Testnet + Soroban                      │
+│         De-Bachat Smart Contract (Rust)                     │
+│                                                             │
+│   initialize_group  │  join_group  │  contribute            │
+│   close_enrollment  │  disburse_payout                      │
+│                              │                              │
+│                    Stellar Ledger Storage                   │
+│         (group config, roster, pool, cycle state)           │
+└─────────────────────────────────────────────────────────────┘
+```
+
+> **Pure dApp Design**: There is no backend server or centralised database. The Soroban smart contract is the single source of truth. All reads and writes go directly to the Stellar Ledger, ensuring complete trustlessness and transparency.
+
+For the full technical architecture document, see [ARCHITECTURE.md](./ARCHITECTURE.md).
+
+### Data Flow
+
 ```mermaid
 graph TD
-    User([User / Wallet]) <-->|Freighter| Frontend[Next.js Frontend]
+    User([User / Wallet]) <-->|Freighter or Albedo| Frontend[Next.js Frontend]
     Frontend <-->|Soroban RPC| Contract[De-Bachat Contract]
     Contract <-->|Storage| Ledger[(Stellar Ledger)]
-    
+
     subgraph "Contract Functions"
-        Contract -->|initialize| State[ROSCA State]
-        Contract -->|join_group| Members[Member List]
+        Contract -->|initialize_group| State[ROSCA State]
+        Contract -->|join_group| Members[Member Roster]
         Contract -->|contribute| Pool[Savings Pool]
-        Contract -->|disburse| Payout[Automated Payout]
+        Contract -->|disburse_payout| Payout[Automated Payout]
     end
 ```
 
-## 🛠️ Tech Stack
+---
 
-- **Smart Contracts**: Rust, Soroban SDK
-- **Frontend**: Next.js 15+, Tailwind CSS, Lucide React
-- **Blockchain**: Stellar Testnet
-- **Wallet**: Freighter + Albedo (Multi-Wallet)
+## 📁 Project Structure
 
-## 🔗 Live Links & Submission
-
-- **Live Demo Link**: [https://de-bachat-stellar.vercel.app/](https://de-bachat-stellar.vercel.app/)
-- **Demo Video Link**: [▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1odzj3ce9iw4KztzjGWZBQEOoo6vZ00eC/view?usp=sharing)
-
-## 👥 User Validation (Level 5)
-
-We have validated this MVP with **5+ real testnet users**. Their feedback has been collected and used to iterate on the product.
-
-- **User Feedback Analysis**: [Link to Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
-- **Verified User Wallets**:
-  1. `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` (Mrunal Ghorpade)
-  2. `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` (Ayush Gaikwad)
-  3. `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` (Durvesh Dongare)
-  4. `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` (Madhura Ghorpade)
-  5. `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` (Rani Ghorpade)
-
-## 🔄 Evolutionary Improvements (Phase 1 Iteration)
-
-Based on user feedback (Ayush Gaikwad: "more options for wallet"), we implemented the following improvement:
-- **Improvement**: **Multi-Wallet Architecture**. Refactored the authentication layer to support both **Freighter** and **Albedo** wallets. This allows users without the Freighter extension to interact with the dApp via the Albedo web interface.
-- **Commit Link**: [Evolutionary Improvement: Multi-Wallet Support](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf)
-
-## 🏁 Quick Start
-
-1. **Install Dependencies**:
-   ```bash
-   cd frontend
-   npm install
-   ```
-2. **Run Locally**:
-   ```bash
-   npm run dev
-   ```
-3. **Environment**:
-   Ensure `frontend/.env.local` contains the correct `NEXT_PUBLIC_CONTRACT_ID`.
-
-## 📜 Contract Details (Testnet)
-
-- **Contract ID**: `CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B`
-- **Network**: Testnet
+```
+de-bachat/
+│
+├── contracts/                          # Soroban Smart Contract (Rust)
+│   ├── src/
+│   │   └── lib.rs                      # ROSCA logic: initialize, join, contribute, disburse
+│   ├── Cargo.lock
+│   └── Cargo.toml                      # Contract dependencies (Soroban SDK)
+│
+├── frontend/                           # Next.js Application
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── page.tsx                # Main page with wallet selector & navigation
+│   │   │   ├── layout.tsx              # Root layout with WalletProvider
+│   │   │   └── globals.css             # Global styles & Tailwind base
+│   │   ├── components/
+│   │   │   ├── WalletProvider.tsx      # Multi-wallet context (Freighter + Albedo)
+│   │   │   ├── GroupDashboard.tsx      # Pool state, stats, participants view
+│   │   │   ├── CreateGroupForm.tsx     # Initialize a new ROSCA group
+│   │   │   ├── JoinGroupModal.tsx      # Join an existing group by Contract ID
+│   │   │   ├── ContributeButton.tsx    # Submit a contribution transaction
+│   │   │   └── WalletLogger.tsx        # Logs & exports interacting wallets
+│   │   ├── hooks/
+│   │   │   └── useGroupState.ts        # Fetches live pool state from Testnet
+│   │   └── lib/
+│   │       └── contractClient.ts       # Stellar SDK: build, sign & submit transactions
+│   ├── public/                         # Static assets
+│   ├── .env.local                      # NEXT_PUBLIC_CONTRACT_ID, RPC_URL
+│   ├── next.config.ts                  # Next.js configuration
+│   ├── tailwind.config.js              # Tailwind CSS configuration
+│   ├── vercel.json                     # Vercel deployment config
+│   ├── tsconfig.json                   # TypeScript configuration
+│   └── package.json                    # NPM dependencies
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml                  # Automated CI/CD → Vercel on push to main
+│
+├── docs/
+│   └── ARCHITECTURE.md                 # Full system architecture & data flow
+│
+├── FINAL_CHECKLIST.md                  # Project milestone tracker
+├── TEST_SCENARIO.md                    # Full 5-wallet ROSCA simulation guide
+├── user_feedback.md                    # 5 verified users + feedback log
+├── user_onboarding_guide.md            # Step-by-step user onboarding guide
+├── .gitignore
+└── README.md                           # This file
+```
 
 ---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** 18+
+- **Rust** 1.70+ with `wasm32-unknown-unknown` target
+- **Stellar CLI** (`stellar` command) for contract deployment
+- A Stellar Testnet account funded via [Friendbot](https://friendbot.stellar.org)
+- **Freighter** browser extension or an **Albedo** account
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The app will be available at `http://localhost:3000`.
+
+### Smart Contract Setup
+
+```bash
+# Install Soroban/Stellar CLI
+cargo install --locked stellar-cli --features opt
+
+# Build the contract
+cd contracts
+cargo build --target wasm32-unknown-unknown --release
+
+# Deploy to Testnet
+stellar contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/de_bachat.wasm \
+  --source <YOUR_SECRET_KEY> \
+  --network testnet
+```
+
+Copy the returned **Contract ID** into `frontend/.env.local`.
+
+---
+
+## 🔐 Environment Variables
+
+Create a `frontend/.env.local` file with the following values:
+
+```env
+# Stellar Testnet Contract ID
+NEXT_PUBLIC_CONTRACT_ID=CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B
+
+# Stellar Testnet Soroban RPC
+NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org
+
+# Stellar Network Passphrase
+NEXT_PUBLIC_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
+```
+
+---
+
+## 🔄 Evolutionary Improvements
+
+Based on user feedback from **Ayush Gaikwad** — *"More options for wallet (Albedo/xBull)"* — the following improvement was implemented as part of the Level 5 iteration:
+
+**Multi-Wallet Architecture**
+
+The `FreighterProvider` was refactored into a generic `WalletProvider` context that supports both **Freighter** (browser extension) and **Albedo** (web-based, no extension required). This allows users who do not have the Freighter browser extension installed to interact with the dApp via Albedo's intent-based signing flow.
+
+- **Commit**: [Evolutionary Improvement: Multi-Wallet Support](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf)
+
+---
+
+## ⚙️ CI/CD Status
+
+| Pipeline | Status |
+|----------|--------|
+| Frontend Build (Vercel) | [![Deploy](https://img.shields.io/badge/Vercel-Deployed-brightgreen)](https://de-bachat-stellar.vercel.app/) |
+| GitHub Actions Workflow | `.github/workflows/deploy.yml` |
+
+Pushes to `main` automatically trigger a production deployment on **Vercel**.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "feat: add your feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
 Built by **Mrunal Ghorpade** for the Stellar community.
