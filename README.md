@@ -14,7 +14,7 @@ A trustless, community-driven savings platform built on the **Stellar Soroban Te
 
 Full MVP walkthrough — wallet connect, create group, join group, contribute XLM, close enrollment, automated payout:
 
-> [▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1odzj3ce9iw4KztzjGWZBQEOoo6vZ00eC/view?usp=sharing)
+> [▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1FXNovrfNOnoiRfa0WCsm_O6AmPclMsM1/view?usp=sharing)
 
 The video demonstrates: landing page → wallet connection (Freighter / Albedo) → create ROSCA group → participant onboarding → contribution submission → enrollment closure → automated payout disbursement → live pool dashboard.
 
