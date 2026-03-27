@@ -167,6 +167,7 @@ The following wallet addresses have participated in the De-Bachat ROSCA cycle an
 | 3 | Durvesh Dongare | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` | [View](https://stellar.expert/explorer/testnet/account/GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ) | Participant |
 | 4 | Madhura Ghorpade | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` | [View](https://stellar.expert/explorer/testnet/account/GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS) | Participant |
 | 5 | Rani Ghorpade | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | [View](https://stellar.expert/explorer/testnet/account/GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH) | Participant |
+| 6 | Omkar nanaware | `GBAFATOIWCWJ4VFQ3KQEMSVNW6N7WTZKSNHQ2ROFOUCFO6H57CFQKHXO` | [View](https://stellar.expert/explorer/testnet/account/GBAFATOIWCWJ4VFQ3KQEMSVNW6N7WTZKSNHQ2ROFOUCFO6H57CFQKHXO) | Participant |
 
 All addresses are on Stellar Testnet. Verify transactions at [stellar.expert/explorer/testnet](https://stellar.expert/explorer/testnet).
 
@@ -185,6 +186,7 @@ Feedback was collected from real users who tested the De-Bachat MVP during the L
 | Durvesh Dongare | ⭐⭐⭐⭐⭐ | — | Everything is good |
 | Madhura Ghorpade | ⭐⭐⭐⭐⭐ | — | Application is easy going and user-friendly |
 | Rani Ghorpade | ⭐⭐⭐⭐⭐ | — | Everything is smooth and compatible |
+| Omkar nanaware | ⭐⭐⭐⭐⭐ | — | Everything looks good no need to modification |
 
 > [📊 View Full Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
 
