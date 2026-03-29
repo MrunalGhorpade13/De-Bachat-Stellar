@@ -276,23 +276,26 @@ Feedback was collected from real users who tested the De-Bachat MVP during the L
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              Next.js Frontend (Vercel)                      │
-│  Landing | Create Group | Dashboard | Join | Contribute     │
-└────────────────────────┬────────────────────────────────────┘
-                         │ Soroban RPC (HTTPS)
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Stellar Testnet + Soroban                      │
-│         De-Bachat Smart Contract (Rust)                     │
-│                                                             │
-│   initialize_group  │  join_group  │  contribute            │
-│   close_enrollment  │  disburse_payout                      │
-│                              │                              │
-│                    Stellar Ledger Storage                   │
-│         (group config, roster, pool, cycle state)           │
-└─────────────────────────────────────────────────────────────┘
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                    Next.js Frontend (Vercel)                    │
+│                                                                 │
+│  ┌─────────────────┐ ┌─────────────────┐ ┌───────────────────┐  │
+│  │ Wallet Context  │ │ React UI Hooks  │ │ Tx Builder        │  │
+│  │ (Albedo +       │ │ (useGroupState) │ │ (contractClient)  │  │
+│  │  Freighter)     │ └─────────────────┘ └───────────────────┘  │
+│  └─────────────────┘          │                     │           │
+└───────────┬───────────────────┴─────────────────────┴───────────┘
+            │ Signature                 │ Soroban RPC 
+            ▼ Request                   ▼ (HTTPS)
+┌───────────────────────┐  ┌──────────────────────────────────────┐
+│  User Extension/Web   │  │       Stellar Testnet / Soroban      │
+│  [ Freighter ]        │  │                                      │
+│  [ Albedo    ]        │  │       De-Bachat Smart Contract       │
+└───────────┬───────────┘  │  [ initialize ] [ join ] [ fund ]    │
+            │ Signed XDR   │                                      │
+            └──────────────┼──────► Ledger Persistent Storage     │
+                           └──────────────────────────────────────┘
 ```
 
 > **Pure dApp Design**: There is no backend server or centralised database. The Soroban smart contract is the single source of truth. All reads and writes go directly to the Stellar Ledger, ensuring complete trustlessness and transparency.
@@ -303,15 +306,26 @@ For the full technical architecture document, see [ARCHITECTURE.md](./ARCHITECTU
 
 ```mermaid
 graph TD
-    User([User / Wallet]) <-->|Freighter or Albedo| Frontend[Next.js Frontend]
-    Frontend <-->|Soroban RPC| Contract[De-Bachat Contract]
-    Contract <-->|Storage| Ledger[(Stellar Ledger)]
+    %% User Layer
+    User([User Device]) <-->|Signs Tx| WalletMulti[Wallet Provider Context]
+    
+    subgraph "Client: Next.js App Router"
+        WalletMulti <-->|Extension| Freighter[Freighter Wallet]
+        WalletMulti <-->|Web Intent| Albedo[Albedo Wallet]
+        
+        UI[React Components] <-->|useGroupState| WalletMulti
+        UI <-->|contractClient| SorobanAPI[Soroban RPC Layer]
+    end
 
-    subgraph "Contract Functions"
-        Contract -->|initialize_group| State[ROSCA State]
-        Contract -->|join_group| Members[Member Roster]
-        Contract -->|contribute| Pool[Savings Pool]
-        Contract -->|disburse_payout| Payout[Automated Payout]
+    %% Network & Contract Layer
+    SorobanAPI <-->|HTTPS| Contract[De-Bachat Smart Contract]
+    
+    subgraph "Network: Stellar Testnet"
+        Contract -->|initialize_group| AdminState[Group Config State]
+        Contract -->|join_group| MemberState[Roster Map Storage]
+        Contract -->|contribute| BalanceState[Pool Balance Storage]
+        Contract -->|disburse_payout| Trigger[Automated Payout]
+        Contract <-->|Persistent Storage| Ledger[(Stellar Ledger)]
     end
 ```
 
