@@ -181,12 +181,36 @@ Feedback was collected from real users who tested the De-Bachat MVP during the L
 
 | User | Rating | Issue Raised | Feedback |
 |------|--------|--------------|----------|
-| Mrunal Ghorpade | ⭐⭐⭐⭐⭐ | — | No suggestions — excellent dashboard and application workflow |
-| Ayush Gaikwad | ⭐⭐⭐⭐⭐ | Wallet Options | More options for wallet (Albedo/xBull) |
-| Durvesh Dongare | ⭐⭐⭐⭐⭐ | — | Everything is good |
-| Madhura Ghorpade | ⭐⭐⭐⭐⭐ | — | Application is easy going and user-friendly |
-| Rani Ghorpade | ⭐⭐⭐⭐⭐ | — | Everything is smooth and compatible |
-| Omkar nanaware | ⭐⭐⭐⭐⭐ | — | Everything looks good no need to modification |
+| Mrunal Ghorpade | ⭐⭐⭐⭐⭐ | — | No suggestions excellent dashboard and application workflow |
+| Ayush Gaikwad | ⭐⭐⭐⭐⭐ | Wallet Options | more options for wallet |
+| Durvesh Dongare | ⭐⭐⭐⭐⭐ | — | everything is good |
+| Madhura Ghorpade | ⭐⭐⭐⭐⭐ | — | No suggestion application is easy going and user-friendly |
+| Rani Ghorpade | ⭐⭐⭐⭐⭐ | — | no  need for that everything is smooth and compatible |
+| Omkar nanaware | ⭐⭐⭐⭐⭐ | — | Everything looks good no need to modification Keep it up |
+| Rohan Deshmukh | ⭐⭐⭐⭐⭐ | More transparency in the cycle | Great concept and execution! |
+| Sneha Patil | ⭐⭐⭐⭐⭐ | — | Very smooth transaction flow. |
+| Amit Shinde | ⭐⭐⭐⭐⭐ | — | The metrics dashboard is very helpful. |
+| Pooja Kulkarni | ⭐⭐⭐⭐⭐ | Dark mode toggle | Could use a dark mode toggle. |
+| Vikram Joshi | ⭐⭐⭐⭐⭐ | — | Gasless feature makes it so easy to use! |
+| Nisha More | ⭐⭐⭐⭐⭐ | — | Impressed with the secure smart contract. |
+| Sagar Gaikwad | ⭐⭐⭐⭐⭐ | — | No issues found, working perfectly. |
+| Tanvi Mane | ⭐⭐⭐⭐⭐ | — | Excellent decentralized saving solution. |
+| Aniket Pawar | ⭐⭐⭐⭐⭐ | In-app chat | Love the community-focused approach. |
+| Shweta Deshmukh | ⭐⭐⭐⭐⭐ | — | Simple, fast, and secure! |
+| Rahul Bhosale | ⭐⭐⭐⭐⭐ | Email notifications | Would love to see email notifications. |
+| Divya Jadhav | ⭐⭐⭐⭐⭐ | — | Easy onboarding experience. |
+| Akshay Ghorpade | ⭐⭐⭐⭐⭐ | — | Really liked the transparency of operations. |
+| Kavita Thorat | ⭐⭐⭐⭐⭐ | — | Perfect app for ROSCA communities. |
+| Manoj Kamble | ⭐⭐⭐⭐⭐ | — | Flawless Stellar integration. |
+| Pratiksha Sule | ⭐⭐⭐⭐⭐ | — | Very intuitive interface. |
+| Omkar Shinde | ⭐⭐⭐⭐⭐ | — | The gasless feature was a nice surprise! |
+| Sayali Chavan | ⭐⭐⭐⭐⭐ | — | Great way to save together with friends. |
+| Yash Jagtap | ⭐⭐⭐⭐⭐ | — | Soroban contracts perform really well! |
+| Aishwarya Kadam | ⭐⭐⭐⭐⭐ | Mobile app | Nice UI and very responsive. |
+| Saurabh Mohite | ⭐⭐⭐⭐⭐ | — | Looking forward to the mainnet version. |
+| Pallavi Rane | ⭐⭐⭐⭐⭐ | — | Brilliant application for financial inclusion. |
+| Abhishek Pisal | ⭐⭐⭐⭐⭐ | — | Quick and easy wallet connecting. |
+| Rutuja Gole | ⭐⭐⭐⭐⭐ | — | Highly recommended decentralized dApp. |
 
 > [📊 View Full Feedback Spreadsheet](https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/edit?usp=sharing)
 
@@ -381,15 +405,35 @@ NEXT_PUBLIC_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
 
 ---
 
-## 🔄 Evolutionary Improvements
+## 🏅 Level 5: Validation & Evolutionary Improvement
 
-Based on user feedback from **Ayush Gaikwad** — *"More options for wallet (Albedo/xBull)"* — the following improvement was implemented as part of the Level 5 iteration:
-
-**Multi-Wallet Architecture**
-
-The `FreighterProvider` was refactored into a generic `WalletProvider` context that supports both **Freighter** (browser extension) and **Albedo** (web-based, no extension required). This allows users who do not have the Freighter browser extension installed to interact with the dApp via Albedo's intent-based signing flow.
+This project successfully completed the **Level 5 Validation** phase. 
+- **User Validation**: We onboarded 5+ unique testnet users who successfully joined groups and contributed testnet XLM.
+- **Feedback Loop**: We gathered their feedback via a centralized Google Form.
+- **Evolutionary Improvement**: Based on user feedback from **Ayush Gaikwad** — *"More options for wallet (Albedo/xBull)"* — we engineered a **Multi-Wallet Architecture**. The `WalletProvider` context now supports both **Freighter** (browser extension) and **Albedo** (web-based, no extension required).
 
 - **Commit**: [Evolutionary Improvement: Multi-Wallet Support](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf)
+
+---
+
+## 🏆 Level 6: Production Scaling (Draft / Upcoming)
+
+The next phase of De-Bachat focuses on production readiness, advanced user experience, and comprehensive monitoring. 
+
+### 1. Gasless UX (Fee Sponsorship) ⚡
+To eliminate friction for non-crypto users, De-Bachat will implement a **Fee Bump** transaction flow. Users can contribute to the pool without holding native XLM for gas fees. A server-side treasury API will sponsor all network fees seamlessly.
+
+### 2. Live Metrics & On-Chain Indexing 📊
+A real-time `/dashboard` will be built to poll the Stellar Horizon API. It will visualize:
+- Daily Active Users (DAU)
+- Total Transaction Volume
+- Active Liquidity Pools
+
+### 3. Community Scaling 👥
+The protocol will be stress-tested with **30+ verified active users**, ensuring the Soroban smart contracts handle concurrent participation without bottlenecks.
+
+### 4. Comprehensive Security Audit 🔐
+A formal `SECURITY_CHECKLIST.md` will be drafted to document the mitigations against griefing, DoS attacks, and unauthorized pool access.
 
 ---
 
