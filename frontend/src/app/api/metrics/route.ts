@@ -6,10 +6,14 @@ export const revalidate = 60; // Cache metrics for 60 seconds
 export async function GET() {
   try {
     const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL || "https://soroban-testnet.stellar.org:443";
-    const CONTRACT_ID = process.env.NEXT_PUBLIC_CONTRACT_ID;
+    
+    // Support both prefixed and non-prefixed env vars for better Vercel/Node compatibility
+    const CONTRACT_ID = process.env.NEXT_PUBLIC_CONTRACT_ID || 
+                        process.env.CONTRACT_ID || 
+                        "CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B"; // Production Fallback
 
     if (!CONTRACT_ID) {
-      throw new Error("CONTRACT_ID not configured");
+      throw new Error("CONTRACT_ID not configured and fallback failed");
     }
 
     const server = new StellarRpc.Server(RPC_URL, { allowHttp: false });
