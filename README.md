@@ -27,20 +27,47 @@ Full MVP walkthrough — wallet connect, create group, join group, contribute XL
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
+- [Overview](#-overview)
+- [Core Features](#-core-features)
+- [Tech Stack Breakdown](#-tech-stack-breakdown)
 - [Advanced Features (Black Belt)](#-advanced-features-black-belt)
 - [Data Indexing Approach](#-data-indexing-approach)
 - [Security & Monitoring](#-security--monitoring)
 - [Verified Wallet Addresses](#-verified-wallet-addresses)
-- [User Feedback](#-user-feedback)
+- [Technical Workflow](#%EF%B8%8F-technical-workflow)
+- [Smart Contract Interface](#-smart-contract-interface)
 - [Architecture](#%EF%B8%8F-architecture)
-- [Getting Started](#-getting-started)
+- [User Feedback](#-user-feedback)
+- [Community Contribution](#-community-contribution)
+- [Getting Started (Local Setup)](#-getting-started-local-setup)
 
 ---
 
 ## 🧾 Overview
 
-**De-Bachat** is a decentralised Rotating Savings and Credit Association (ROSCA) dApp. Level 6 upgrades focus on **production scaling**, **gasless user experience**, and **real-time data transparency**.
+**De-Bachat** is a decentralised Rotating Savings and Credit Association (ROSCA) dApp. Level 6 upgrades focus on **production scaling**, **gasless user experience**, and **real-time data transparency**. It enables communities to save together without relying on centralized banks or volatile middlemen.
+
+---
+
+## 💎 Core Features
+
+- **Trustless Group Savings**: Create or join decentralized ROSCA pools.
+- **Gasless Transactions**: Next-gen UX powered by Stellar Fee Bumps.
+- **Real-Time Data Indexing**: A live dashboard tracking DAU and network volume via Horizon API.
+- **Multi-Wallet Support**: Seamlessly connect with Freighter (Extension) or Albedo (Web/Mobile).
+- **Automated Payouts**: Smart contracts guarantee disbursement to the rightful participant per cycle.
+- **Production Monitoring**: Deployed with Vercel Analytics for continuous uptime and health checks.
+
+---
+
+## 🛠️ Tech Stack Breakdown
+
+- **Frontend Environment**: Next.js 16 (App Router), React 19, TypeScript
+- **Styling**: Tailwind CSS v4, Custom CSS Animations
+- **Smart Contracts**: Stellar Soroban (Rust)
+- **Blockchain Interface**: `@stellar/stellar-sdk` v14.6
+- **Index/Proxy**: Soroban RPC edge routes (`/api/metrics`)
+- **Hosting & Analytics**: Vercel Serverless & Web Analytics
 
 ---
 
@@ -83,6 +110,18 @@ To satisfy the "Data Indexing" requirement, we built a custom indexing engine th
 | 34 | Yash Annadate | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | Participant |
 
 > [📊 View Full Feedback & Validation Log](user_feedback.md)
+
+---
+
+## 📜 Smart Contract Interface
+
+The on-chain State Machine is powered by a robust Soroban Rust contract with the following public interface:
+
+- `initialize_group(organizer, amount, duration, max_participants)`: Initializes the ROSCA pool parameters.
+- `join_group(participant)`: Appends an authorized user to the roster.
+- `contribute(participant)`: Accepts XLM/Token transfers into the contract's secure balance.
+- `disburse()`: Validates the cycle end triggers and transfers the accumulated pool to the correct recipient.
+- `get_pool_config()` & `get_current_state()`: Read-only RPC data accessors for the frontend.
 
 ---
 
@@ -134,6 +173,36 @@ graph TD
 As part of the Level 6 Community requirement, I shared De-Bachat's progress with the Stellar ecosystem.
 - **Submission Kit**: [View Community Post Guide](docs/COMMUNITY_POST_GUIDE.md)
 - **Contribution Link**: [View LinkedIn Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8?utm_source=share&utm_medium=member_android&rcm=ACoAAFHT1NABmbvzaoc9_8moYyakhlVK3Xs2tO8)
+
+---
+
+## 🚀 Getting Started (Local Setup)
+
+Want to run the Indexer and Gasless features locally? Follow these steps:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/MrunalGhorpade13/De-Bachat-Stellar.git
+   cd De-Bachat-Stellar/frontend
+   ```
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+3. **Configure Environment Variables**
+   Create a `.env.local` file in the `frontend` directory:
+   ```env
+   NEXT_PUBLIC_CONTRACT_ID=CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B
+   NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org:443
+   NEXT_PUBLIC_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
+   SPONSOR_SECRET_KEY=S... (Your treasury secret key for gasless tx)
+   ```
+4. **Run the Development Server**
+   ```bash
+   npm run dev
+   ```
+5. **View the Dashboard**
+   Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to see the Horizon Data Indexer in action.
 
 ---
 
