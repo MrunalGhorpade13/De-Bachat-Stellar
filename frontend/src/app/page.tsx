@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useWallet, WalletType } from "../components/WalletProvider";
 import { GroupDashboard } from "../components/GroupDashboard";
 import { JoinGroupModal } from "../components/JoinGroupModal";
@@ -53,6 +54,9 @@ export default function Home() {
         </button>
 
         <nav className="header-nav">
+          <Link href="/dashboard" className="nav-pill text-emerald-400 border border-emerald-900/50 hover:bg-emerald-950/30">
+            📊 Live Metrics
+          </Link>
           {address && (
             <>
               <button

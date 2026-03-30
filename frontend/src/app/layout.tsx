@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { WalletProvider } from "../components/WalletProvider";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col items-center justify-center bg-zinc-950 text-white">
         <WalletProvider>{children}</WalletProvider>
+        <Analytics />
       </body>
     </html>
   );
