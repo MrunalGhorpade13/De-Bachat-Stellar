@@ -99,15 +99,15 @@ To satisfy the "Data Indexing" requirement, we built a custom indexing engine th
 
 ---
 
-## 👛 Verified Wallet Addresses (34 Participants)
+## 👛 Verified Wallet Addresses (35 Participants)
 
 | # | Name | Wallet Address | Role |
 |---|------|----------------|------|
 | 1 | Mrunal Ghorpade | `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` | Organiser |
 | 2 | Ayush Gaikwad | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` | Participant |
 | 3 | Durvesh Dongare | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` | Participant |
-| ... | (30 more users) | ... | Participant |
-| 34 | Yash Annadate | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | Participant |
+| ... | (31 more users) | ... | Participant |
+| 35 | Vaibhavi Agale | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` | Participant |
 
 > [📊 View Full Feedback & Validation Log](user_feedback.md)
 

@@ -40,6 +40,7 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | 32 | Thanchan Bhumij | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) |
 | 33 | Khushi Nagare | `GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) |
 | 34 | Yash Annadate | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE) |
+| 35 | Vaibhavi Agale | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ) |
 
 ## 💬 User Feedback Summary
 
@@ -79,6 +80,7 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | Thanchan Bhumij | 5 ⭐ | UI | The application is good just focused on user-boarding. |
 | Khushi Nagare | 5 ⭐ | No need perfect application | Excellent UI and user friendly. |
 | Yash Annadate | 5 ⭐ | Expand to more users overall its good application | None for now. |
+| Vaibhavi Agale | 5 ⭐ | null | Great Dapp with usefull applications, and smooth flow. |
 
 ## 🔄 Final Iteration Plan
 - **Selected Feedback**: "More options for wallet" (from Ayush Gaikwad).
