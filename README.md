@@ -104,7 +104,7 @@ To satisfy the "Data Indexing" requirement, we built a custom indexing engine th
 ## 🤝 Community Contribution
 As part of the Level 6 Community requirement, I shared De-Bachat's progress with the Stellar ecosystem.
 - **Submission Kit**: [View Community Post Guide](docs/COMMUNITY_POST_GUIDE.md)
-- **Contribution Link**: [Link Placeholder - User to Add Post Link Here]
+- **Contribution Link**: [View LinkedIn Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8?utm_source=share&utm_medium=member_android&rcm=ACoAAFHT1NABmbvzaoc9_8moYyakhlVK3Xs2tO8)
 
 ---
 
