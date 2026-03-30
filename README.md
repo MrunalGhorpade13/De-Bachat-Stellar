@@ -86,6 +86,35 @@ To satisfy the "Data Indexing" requirement, we built a custom indexing engine th
 
 ---
 
+## ⚙️ Technical Workflow
+
+The following diagram illustrates the lifecycle of a De-Bachat ROSCA pool, including the Level 6 **Fee Sponsorship** and **Data Indexing** layers:
+
+```mermaid
+graph TD
+    A[Organizer: Create Group] -->|initialize_group| B(Smart Contract Deployed)
+    B --> C{Participants: Join}
+    C -->|join_group| D[Active ROSCA Pool]
+    
+    subgraph "Level 6: Production Gasless UX"
+    E[User: Signed XDR] --> F[Sponsor API Node]
+    F -->|FeeBump Signature| G[Stellar Network]
+    end
+
+    D --> H[Cycle Start]
+    H -->|contribute| I{Contract Payout Logic}
+    I -->|transfer| J[Recipient Wallet]
+    J --> K[Cycle Increment / Reset]
+    K --> H
+
+    subgraph "Level 6: Data Indexing"
+    G -->|getEvents| L[Horizon Indexer]
+    L --> M[Live Metrics Dashboard]
+    end
+```
+
+---
+
 ## 🏗️ Architecture
 
 ```text
