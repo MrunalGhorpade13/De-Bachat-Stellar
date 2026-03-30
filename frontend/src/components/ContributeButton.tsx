@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { buildContributeTx, submitTransaction, signTransaction } from "../lib/contractClient";
+import { submitSponsoredTransaction } from "../lib/feeSponsor";
 import { useWallet } from "../components/WalletProvider";
 
 interface Props {
@@ -25,7 +26,15 @@ export function ContributeButton({ contractId, address, disabled, onSuccess }: P
       const { signedTxXdr } = await signTransaction(xdrTx, walletType, {
         networkPassphrase: process.env.NEXT_PUBLIC_NETWORK_PASSPHRASE || "Test SDF Network ; September 2015",
       });
-      await submitTransaction(signedTxXdr);
+      
+      try {
+        // Advanced Feature: Gasless Fee Sponsorship via Fee Bump
+        await submitSponsoredTransaction(signedTxXdr);
+      } catch (sponsorErr) {
+        console.warn("Sponsorship unavailable/failed, falling back to normal submission:", sponsorErr);
+        await submitTransaction(signedTxXdr);
+      }
+      
       setStatus("success");
       onSuccess?.();
       setTimeout(() => setStatus("idle"), 3000);
@@ -38,6 +47,11 @@ export function ContributeButton({ contractId, address, disabled, onSuccess }: P
 
   return (
     <div className="flex flex-col gap-2">
+      <div className="flex items-center justify-between mb-1">
+        <span className="text-xs font-semibold text-emerald-400 bg-emerald-900/30 px-2 py-1 rounded border border-emerald-500/20">
+          ⚡ Gasless Supported
+        </span>
+      </div>
       <button
         onClick={handleContribute}
         disabled={disabled || status === "loading"}
