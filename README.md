@@ -10,7 +10,7 @@ A trustless, community-driven savings platform built on the **Stellar Soroban Te
 
 ### 📊 Live Metrics Dashboard
 ![Metrics Dashboard](docs/screenshots/metrics_dashboard.png)
-> [View Live Metrics Dashboard](/dashboard) — Scaled to production with real-time indexing.
+> [View Live Metrics Dashboard](https://de-bachat-stellar.vercel.app/dashboard) — Scaled to production with real-time indexing.
 
 ### 📈 Active Monitoring
 Monitoring is active via **Vercel Web Analytics**, tracking Daily Active Users (DAU), retention, and transaction success rates.
@@ -86,7 +86,7 @@ We implemented **Stellar Fee Bump** transactions to eliminate the "gas barrier" 
 To satisfy the "Data Indexing" requirement, we built a custom indexing engine that:
 1. Queries the **Soroban RPC `getEvents`** endpoint for all contract activity.
 2. Parses XDR payloads to aggregate Daily Active Users (DAU), Transaction counts, and Pool Volume.
-3. Serves this data via a cached JSON-RPC proxy to our [Metrics Dashboard](/dashboard).
+3. Serves this data via a cached JSON-RPC proxy to our [Metrics Dashboard](https://de-bachat-stellar.vercel.app/dashboard).
 - **Endpoint**: `/api/metrics`
 
 ---
