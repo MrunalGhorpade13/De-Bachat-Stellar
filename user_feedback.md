@@ -36,6 +36,10 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | 28 | Pallavi Rane | `GVE4IQT7L5F6U0G3H2IJK8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GVE4IQT7L5F6U0G3H2IJK8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D) |
 | 29 | Abhishek Pisal | `GWF5JRU8M6G7V1H4I3JKL9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GWF5JRU8M6G7V1H4I3JKL9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E) |
 | 30 | Rutuja Gole | `GXG6KSV9N7H8W2I5J4KLM0N1P2Q3R4S5T6U7V8W9X0Y1Z2A3B4C5D6F` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GXG6KSV9N7H8W2I5J4KLM0N1P2Q3R4S5T6U7V8W9X0Y1Z2A3B4C5D6F) |
+| 31 | Shantanu Udhane | `GCNHSCGCWZZ3W5ETWZENPWORQIHTEPCB57OR52XK3MDTBWWWNNUMQOZI` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GCNHSCGCWZZ3W5ETWZENPWORQIHTEPCB57OR52XK3MDTBWWWNNUMQOZI) |
+| 32 | Thanchan Bhumij | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) |
+| 33 | Khushi Nagare | `GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) |
+| 34 | Yash Annadate | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE) |
 
 ## 💬 User Feedback Summary
 
@@ -71,6 +75,10 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | Pallavi Rane | 5 ⭐ | Nothing | Brilliant application for financial inclusion. |
 | Abhishek Pisal | 5 ⭐ | Nothing | Quick and easy wallet connecting. |
 | Rutuja Gole | 5 ⭐ | Nothing | Highly recommended decentralized dApp. |
+| Shantanu Udhane | 5 ⭐ | Nothing | Perfect integration and UI layout. |
+| Thanchan Bhumij | 5 ⭐ | UI | The application is good just focused on user-boarding. |
+| Khushi Nagare | 5 ⭐ | No need perfect application | Excellent UI and user friendly. |
+| Yash Annadate | 5 ⭐ | Expand to more users overall its good application | None for now. |
 
 ## 🔄 Final Iteration Plan
 - **Selected Feedback**: "More options for wallet" (from Ayush Gaikwad).
