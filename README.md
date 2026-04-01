@@ -199,6 +199,9 @@ npm install
 npm run dev
 ```
 
+### 3. View the Dashboard
+Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to see the Horizon Data Indexer in action.
+
 ---
 
 <p align="center">
@@ -208,13 +211,6 @@ npm run dev
   <b>Stellar Journey to Mastery 2026</b><br/><br/>
   Released under the MIT License
 </p>
-   ```
-4. **Run the Development Server**
-   ```bash
-   npm run dev
-   ```
-5. **View the Dashboard**
-   Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to see the Horizon Data Indexer in action.
 
 ---
 
