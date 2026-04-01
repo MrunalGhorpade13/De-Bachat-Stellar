@@ -98,7 +98,7 @@ export function GroupDashboard({ contractId, address }: Props) {
   return (
     <div className="flex flex-col gap-6 w-full">
       {/* Header Card */}
-      <div className="relative p-6 bg-zinc-900/60 border border-zinc-800 rounded-2xl overflow-hidden">
+      <div className="relative p-4 sm:p-6 bg-zinc-900/60 border border-zinc-800 rounded-2xl overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-transparent pointer-events-none" />
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
@@ -142,8 +142,8 @@ export function GroupDashboard({ contractId, address }: Props) {
           { label: "Members", value: `${memberCount} / ${config.max_members}`, icon: "👥" },
           { label: "Cycle", value: `#${poolState.cycle + 1}`, icon: "🔄" },
         ].map((stat) => (
-          <div key={stat.label} className="p-4 bg-zinc-900/40 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors">
-            <div className="text-2xl mb-2">{stat.icon}</div>
+          <div key={stat.label} className="p-3 sm:p-4 bg-zinc-900/40 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors">
+            <div className="text-2xl mb-1 sm:mb-2">{stat.icon}</div>
             <div className="text-lg font-bold text-white">{stat.value}</div>
             <div className="text-xs text-zinc-500 mt-0.5">{stat.label}</div>
           </div>
@@ -152,7 +152,7 @@ export function GroupDashboard({ contractId, address }: Props) {
 
       {/* My Status & Action */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className={`p-5 border rounded-2xl ${hasContributed ? "bg-emerald-950/30 border-emerald-800" : "bg-zinc-900/40 border-zinc-800"}`}>
+        <div className={`p-4 sm:p-5 border rounded-2xl ${hasContributed ? "bg-emerald-950/30 border-emerald-800" : "bg-zinc-900/40 border-zinc-800"}`}>
           <h3 className="text-sm font-medium text-zinc-400 mb-3 uppercase tracking-widest">My Contribution Status</h3>
           <div className={`flex items-center gap-2 text-lg font-semibold ${hasContributed ? "text-emerald-400" : "text-yellow-400"}`}>
             <span>{hasContributed ? "✓" : "○"}</span>
@@ -173,7 +173,7 @@ export function GroupDashboard({ contractId, address }: Props) {
           )}
         </div>
 
-        <div className={`p-5 border rounded-2xl ${isUserRecipient ? "bg-amber-950/30 border-amber-700" : "bg-zinc-900/40 border-zinc-800"}`}>
+        <div className={`p-4 sm:p-5 border rounded-2xl ${isUserRecipient ? "bg-amber-950/30 border-amber-700" : "bg-zinc-900/40 border-zinc-800"}`}>
           <h3 className="text-sm font-medium text-zinc-400 mb-3 uppercase tracking-widest">Next Payout Recipient</h3>
           {currentRecipient ? (
             <>
@@ -200,7 +200,7 @@ export function GroupDashboard({ contractId, address }: Props) {
       </div>
 
       {/* Participants List */}
-      <div className="p-5 bg-zinc-900/40 border border-zinc-800 rounded-2xl">
+      <div className="p-4 sm:p-5 bg-zinc-900/40 border border-zinc-800 rounded-2xl">
         <h3 className="text-sm font-medium text-zinc-400 mb-4 uppercase tracking-widest">Participants ({memberCount})</h3>
         {participants.length === 0 ? (
           <p className="text-zinc-600 text-sm">No members yet.</p>

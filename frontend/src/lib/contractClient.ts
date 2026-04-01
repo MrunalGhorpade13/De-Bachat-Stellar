@@ -284,7 +284,11 @@ export async function submitTransaction(signedXdr: string): Promise<string> {
   throw new Error(`Transaction failed or timed out: ${getResult.status}`);
 }
 
-export async function signTransaction(xdrTx: string, walletType: "freighter" | "albedo", opts?: any) {
+export async function signTransaction(xdrTx: string, walletType: "freighter" | "albedo" | "metamask", opts?: { networkPassphrase?: string; address?: string }) {
+  if (walletType === "metamask") {
+    throw new Error("MetaMask is connected for authentication only. To sign Stellar transactions, please use Freighter or Albedo.");
+  }
+
   if (walletType === "albedo") {
     const albedo = (await import("@albedo-link/intent")).default;
     const result = await albedo.tx({

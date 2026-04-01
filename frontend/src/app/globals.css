@@ -53,8 +53,9 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
   background: rgba(9,9,11,0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -65,7 +66,13 @@ body::before {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 1.25rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .de-bachat-content {
+    padding: 2.5rem 1.5rem;
+  }
 }
 
 .de-bachat-footer {
@@ -85,6 +92,7 @@ body::before {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -96,8 +104,9 @@ body::before {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-pill {
@@ -165,8 +174,15 @@ body::before {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5rem 1rem;
-  gap: 1.5rem;
+  padding: 2rem 0.5rem;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 5rem 1rem;
+    gap: 1.5rem;
+  }
 }
 
 .hero-orb {
@@ -184,7 +200,7 @@ body::before {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.8rem, 8vw, 3.5rem);
   font-weight: 800;
   background: linear-gradient(135deg, #fff 0%, #6ee7b7 60%, var(--emerald) 100%);
   -webkit-background-clip: text;

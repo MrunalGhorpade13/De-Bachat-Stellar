@@ -7,14 +7,16 @@ import {
 } from "@stellar/freighter-api";
 import albedo from "@albedo-link/intent";
 
-export type WalletType = "freighter" | "albedo" | null;
+export type WalletType = "freighter" | "albedo" | "metamask" | null;
 
 interface WalletContextType {
   address: string | null;
   walletType: WalletType;
+
   connect: (type: WalletType) => Promise<void>;
   disconnect: () => void;
   isFreighterInstalled: boolean;
+  isMetaMaskInstalled: boolean;
 }
 
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
@@ -23,6 +25,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   const [address, setAddress] = useState<string | null>(null);
   const [walletType, setWalletType] = useState<WalletType>(null);
   const [isFreighterInstalled, setIsFreighterInstalled] = useState<boolean>(false);
+  const [isMetaMaskInstalled, setIsMetaMaskInstalled] = useState<boolean>(false);
 
   useEffect(() => {
     const checkFreighter = async () => {
@@ -35,6 +38,13 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
       }
     };
     checkFreighter();
+    
+    // Check MetaMask
+    setTimeout(() => {
+      if (typeof window !== "undefined" && (window as unknown as { ethereum?: unknown }).ethereum) {
+        setIsMetaMaskInstalled(true);
+      }
+    }, 0);
   }, []);
 
   const connect = async (type: WalletType) => {
@@ -58,6 +68,16 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
           setAddress(result.pubkey);
           setWalletType("albedo");
         }
+      } else if (type === "metamask") {
+        if (!isMetaMaskInstalled) {
+          window.open("https://metamask.io/download/", "_blank");
+          return;
+        }
+        const accounts = await (window as unknown as { ethereum: { request: (args: { method: string }) => Promise<string[]> } }).ethereum.request({ method: 'eth_requestAccounts' });
+        if (accounts && accounts.length > 0) {
+          setAddress(accounts[0]);
+          setWalletType("metamask");
+        }
       }
     } catch (e) {
       console.error("Wallet connection error:", e);
@@ -71,7 +91,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <WalletContext.Provider value={{ address, walletType, connect, disconnect, isFreighterInstalled }}>
+    <WalletContext.Provider value={{ address, walletType, connect, disconnect, isFreighterInstalled, isMetaMaskInstalled }}>
       {children}
     </WalletContext.Provider>
   );

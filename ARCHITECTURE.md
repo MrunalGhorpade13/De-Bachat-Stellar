@@ -10,12 +10,15 @@ De-Bachat is a decentralized Rotating Savings and Credit Association (ROSCA) bui
 - **Wallet**: Freighter API (Browser Extension)
 - **Network**: Stellar Testnet
 
-## 2. On-Chain State Storage
-The Soroban smart contract is the single source of truth. It stores:
-1. **Group Configuration**: Group Name, Contribution Amount per member, funding goal.
-2. **Participant Roster**: A list (or map) of member wallet addresses, determining the order of payouts.
-3. **Pool State**: Current accumulated balance, current cycle number, and mapping of who has contributed in the current cycle.
-4. **Turn Mapping**: Logic to determine the recipient of the pooled funds at the end of each cycle.
+## 2. Security & On-Chain State
+De-Bachat prioritizes security through several layers:
+1. **Checks-Effects-Interactions (CEI)**: The contract updates all internal state (cycle counters, balance resets) *before* performing external token transfers.
+2. **Checked Arithmetic**: All pool balance operations use `.checked_add()` and `.checked_sub()` to prevent data corruption via overflow.
+3. **API Guard**: The Fee Sponsor API decodes and validates every transaction to ensure only legitimate ROSCA operations are signed by the treasury.
+4. **Single Source of Truth**: The Soroban smart contract stores:
+    - **Group Configuration**: Name, contribution amount, etc.
+    - **Participant Roster**: Determines payout order.
+    - **Pool State**: Current balance, cycle, and payout status.
 
 ## 3. Core Data Flow & User Journeys
 

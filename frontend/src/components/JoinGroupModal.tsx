@@ -38,7 +38,7 @@ export function JoinGroupModal({ address, onSuccess }: Props) {
 
   if (status === "success") {
     return (
-      <div className="p-6 bg-emerald-900/30 border border-emerald-700 rounded-2xl text-center">
+      <div className="p-4 sm:p-6 bg-emerald-900/30 border border-emerald-700 rounded-2xl text-center">
         <div className="text-3xl mb-2">✓</div>
         <p className="text-emerald-400 font-semibold">Successfully joined!</p>
         <p className="text-zinc-400 text-sm mt-1 font-mono break-all">{contractId}</p>
@@ -47,10 +47,10 @@ export function JoinGroupModal({ address, onSuccess }: Props) {
   }
 
   return (
-    <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl backdrop-blur-sm">
+    <div className="p-4 sm:p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl backdrop-blur-sm">
       <h2 className="text-xl font-semibold mb-1">Join an Existing Group</h2>
       <p className="text-zinc-400 text-sm mb-4">Enter the contract ID of an active savings group.</p>
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-2">
         <input
           type="text"
           value={contractId}
@@ -61,7 +61,7 @@ export function JoinGroupModal({ address, onSuccess }: Props) {
         <button
           onClick={handleJoin}
           disabled={!contractId.trim() || status === "loading"}
-          className="px-5 py-2 border border-emerald-500 text-emerald-400 rounded-xl hover:bg-emerald-500/10 transition-colors disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap"
+          className="w-full sm:w-auto px-5 py-3 sm:py-2 bg-emerald-500/10 border border-emerald-500 text-emerald-400 rounded-xl hover:bg-emerald-500/20 transition-colors disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap flex justify-center items-center"
         >
           {status === "loading" ? (
             <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">

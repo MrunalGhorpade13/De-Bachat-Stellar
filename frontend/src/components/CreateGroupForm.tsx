@@ -100,7 +100,7 @@ export function CreateGroupForm({ address, onCreated }: Props) {
 
   if (status === "success") {
     return (
-      <div className="p-6 bg-emerald-900/30 border border-emerald-700 rounded-2xl text-center space-y-2">
+      <div className="p-4 sm:p-6 bg-emerald-900/30 border border-emerald-700 rounded-2xl text-center space-y-2">
         <div className="text-3xl">🎉</div>
         <p className="text-emerald-400 font-semibold text-lg">Group Created!</p>
         <p className="text-zinc-400 text-sm font-mono break-all">{contractId}</p>
@@ -109,7 +109,7 @@ export function CreateGroupForm({ address, onCreated }: Props) {
   }
 
   return (
-    <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl backdrop-blur-sm space-y-4">
+    <div className="p-4 sm:p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl backdrop-blur-sm space-y-4">
       <div>
         <h2 className="text-xl font-semibold">Initialize New Group</h2>
         <p className="text-zinc-500 text-sm mt-1">
@@ -128,7 +128,7 @@ export function CreateGroupForm({ address, onCreated }: Props) {
             className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500 transition-colors"
           />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="text-xs text-zinc-400 uppercase tracking-widest block mb-1">Max Members</label>
             <input

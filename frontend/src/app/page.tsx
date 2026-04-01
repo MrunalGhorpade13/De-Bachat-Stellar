@@ -11,7 +11,7 @@ import { WalletLogger } from "../components/WalletLogger";
 type View = "home" | "join" | "create" | "dashboard";
 
 export default function Home() {
-  const { address, walletType, connect, isFreighterInstalled } = useWallet();
+  const { address, walletType, connect, disconnect, isFreighterInstalled, isMetaMaskInstalled } = useWallet();
   const [view, setView] = useState<View>("home");
   const [showWalletSelector, setShowWalletSelector] = useState(false);
   const [activeContractId, setActiveContractId] = useState(
@@ -54,39 +54,50 @@ export default function Home() {
         </button>
 
         <nav className="header-nav">
-          <Link href="/dashboard" className="nav-pill text-emerald-400 border border-emerald-900/50 hover:bg-emerald-950/30">
-            📊 Live Metrics
+          <Link href="/dashboard" className="px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-900/50 hover:bg-emerald-500/20 transition-all flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            Metrics
           </Link>
+          
           {address && (
-            <>
+            <div className="flex bg-zinc-900/50 border border-zinc-800 rounded-full p-1 overflow-x-auto">
               <button
                 onClick={() => setView("create")}
-                className={`nav-pill ${view === "create" ? "nav-pill--active" : ""}`}
+                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${view === "create" ? "bg-zinc-800 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`}
               >
-                + Create
+                Create
               </button>
               <button
                 onClick={() => setView("join")}
-                className={`nav-pill ${view === "join" ? "nav-pill--active" : ""}`}
+                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${view === "join" ? "bg-zinc-800 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`}
               >
                 Join
               </button>
               {activeContractId && (
                 <button
                   onClick={() => setView("dashboard")}
-                  className={`nav-pill ${view === "dashboard" ? "nav-pill--active" : ""}`}
+                  className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${view === "dashboard" ? "bg-zinc-800 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`}
                 >
                   Dashboard
                 </button>
               )}
-            </>
+            </div>
           )}
 
           {address ? (
-            <div className="wallet-badge">
-              <span className="wallet-dot" />
-              <span className="capitalize text-[10px] mr-1 opacity-60">[{walletType}]</span>
-              {address.slice(0, 5)}…{address.slice(-4)}
+            <div className="flex items-center gap-2">
+              <div className="wallet-badge" title="Connected Wallet">
+                <span className="wallet-dot" />
+                <span className="capitalize text-[10px] mr-1 opacity-60">[{walletType}]</span>
+                {address.slice(0, 5)}…{address.slice(-4)}
+              </div>
+              <button 
+                onClick={disconnect}
+                className="w-8 h-8 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-full hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-400 text-zinc-500 transition-all"
+                title="Disconnect Wallet"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              </button>
             </div>
           ) : (
             <button
@@ -208,7 +219,7 @@ export default function Home() {
       {/* ── Wallet Selector Modal ───────────────────────── */}
       {showWalletSelector && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 w-full max-w-sm shadow-2xl animate-in zoom-in-95 duration-200">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-8 w-full max-w-sm shadow-2xl animate-in zoom-in-95 duration-200">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold">Connect Wallet</h2>
               <button onClick={() => setShowWalletSelector(false)} className="text-zinc-500 hover:text-white transition-colors">✕</button>
@@ -233,6 +244,17 @@ export default function Home() {
                   <div>
                     <div className="font-semibold text-zinc-100">Albedo</div>
                     <div className="text-xs text-zinc-400">Browser Extension / Web</div>
+                  </div>
+              </button>
+
+              <button 
+                onClick={() => handleConnect("metamask")}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-800/50 border border-zinc-700 hover:border-orange-500/50 hover:bg-zinc-800 transition-all text-left"
+              >
+                  <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-xl">🦊</div>
+                  <div>
+                    <div className="font-semibold text-zinc-100">MetaMask</div>
+                    <div className="text-xs text-zinc-400">{isMetaMaskInstalled ? "Installed" : "Browser Extension"}</div>
                   </div>
               </button>
             </div>

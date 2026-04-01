@@ -222,7 +222,7 @@ impl DeBachatContract {
 
         // Record contribution
         contributions.set(member, true);
-        state.total_contributed += config.contribution_amount;
+        state.total_contributed = state.total_contributed.checked_add(config.contribution_amount).expect("overflow in total_contributed");
         state.payout_done = false;
 
         env.storage()
@@ -282,17 +282,10 @@ impl DeBachatContract {
 
         let payout_amount = state.total_contributed;
 
-        // Transfer full pool to recipient
-        let token_client = token::Client::new(&env, &config.token);
-        token_client.transfer(
-            &env.current_contract_address(),
-            &recipient,
-            &payout_amount,
-        );
-
-        // Advance cycle
-        state.current_recipient_index += 1;
-        state.cycle += 1;
+        // --- EFFECTS ---
+        // Advance cycle and reset pool values BEFORE the transfer (CEI Pattern)
+        state.current_recipient_index = state.current_recipient_index.checked_add(1).expect("overflow in recipient index");
+        state.cycle = state.cycle.checked_add(1).expect("overflow in cycle count");
         state.total_contributed = 0;
         state.payout_done = true;
 
@@ -303,6 +296,15 @@ impl DeBachatContract {
             .set(&symbol_short!("CONTRIBS"), &empty_contributions);
 
         env.storage().persistent().set(&POOL_STATE, &state);
+
+        // --- INTERACTIONS ---
+        // Transfer full pool to recipient after all state changes
+        let token_client = token::Client::new(&env, &config.token);
+        token_client.transfer(
+            &env.current_contract_address(),
+            &recipient,
+            &payout_amount,
+        );
 
         recipient
     }
