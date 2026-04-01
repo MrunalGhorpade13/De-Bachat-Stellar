@@ -176,23 +176,25 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ---
 
-## 🌟 Advanced Feature: Fee Sponsorship (Gasless Mode)
-**Description:** We integrated Stellar's FeeBumpTransaction architecture. The frontend collects a signed transaction from the user, and the `/api/sponsor-fee` backend wraps it with a sponsor signature before submission.
-**Proof of Implementation:** [Sponsor Route](./frontend/src/app/api/sponsor-fee/route.ts) | [Fee Sponsor Lib](./frontend/src/lib/feeSponsor.ts).
-
-## 🗂️ Data Indexing Architecture
-**Description:** A custom indexer built on Soroban RPC `getEvents`. It aggregates contract activity into DAU and Volume metrics without external databases.
-**Endpoint:** [`/api/metrics`](https://de-bachat-stellar.vercel.app/api/metrics)
-
----
-
 ## ⚙️ Quick Start
+
+### 1. Configure Example Environment
+Create a `.env.local` file in the `frontend` directory:
+
+```env
+NEXT_PUBLIC_CONTRACT_ID=CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B
+NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org:443
+NEXT_PUBLIC_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
+SPONSOR_SECRET_KEY=S... (Your treasury secret key for gasless tx)
+```
+
+### 2. Install and Run Locally
 ```bash
 # Clone the repository
 git clone https://github.com/MrunalGhorpade13/De-Bachat-Stellar.git
 cd De-Bachat-Stellar/frontend
 
-# Install dependencies and start the local development server (Node 18+)
+# Install dependencies and start server
 npm install
 npm run dev
 ```
@@ -206,12 +208,6 @@ npm run dev
   <b>Stellar Journey to Mastery 2026</b><br/><br/>
   Released under the MIT License
 </p>
-ry:
-   ```env
-   NEXT_PUBLIC_CONTRACT_ID=CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B
-   NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org:443
-   NEXT_PUBLIC_NETWORK_PASSPHRASE=Test SDF Network ; September 2015
-   SPONSOR_SECRET_KEY=S... (Your treasury secret key for gasless tx)
    ```
 4. **Run the Development Server**
    ```bash
