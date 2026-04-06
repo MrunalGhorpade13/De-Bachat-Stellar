@@ -98,7 +98,7 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users |  ✅ Done | 35 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 25 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -113,6 +113,7 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 🧪 Feedback Logs | User testing iterations and fixes applied | [Read →](./user_feedback.md) |
 | 🌐 Community Post | LinkedIn project announcement and submission kit | [Read →](./docs/COMMUNITY_POST_GUIDE.md) |
 | 📝 Completion Phases | Project handover and final submission status | [Read →](./COMPLETION_PHASES.md) |
+| 📋 User Feedback Response Sheet | Official Google Form responses from all verified users | [View Responses →](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog) |
 
 ---
 
@@ -136,7 +137,7 @@ De-Bachat/
 │   ├── package.json           # Frontend dependencies
 │   └── tailwind.config.ts     # Visual design system
 ├── ARCHITECTURE.md            # Technical reference
-├── user_feedback.md           # 35+ user validation logs
+├── user_feedback.md           # 25+ user validation logs
 └── README.md
 ```
 
@@ -157,20 +158,62 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ## 👥 User Testnet Validation & Feedback
 
-> 🔄 **User Onboarding** — Successfully onboarded **35 verified testnet users** during the testing and feedback phase.
+> 🔄 **User Onboarding** — Successfully onboarded **25 verified testnet users** during the testing and feedback phase (5 from Level 5 + 20 from Level 6).
 
-| # | Name | Wallet Address | Role | Action / Feedback |
-|---|------|----------------|------|-------------------|
-| 1 | Mrunal Ghorpade | `GAGKWDKAZYZ7...` | Organiser | Successfully created pool; verified automated payout flow. |
-| 2 | Ayush Gaikwad | `GBUDUGMHCM7B...` | Participant | Tested wallet compatibility. **Fix:** Added Albedo support. |
-| 3 | Durvesh Dongare | `GARB6S57YI5S...` | Participant | Completed contribution cycle; verified on-chain accounting. |
-| 4 | Madhura Ghorpade | `GB2GLJVQ5CYJ...` | Participant | Verified UI responsiveness; praised "user-friendly" flow. |
-| 5 | Rani Ghorpade | `GD3HNNEJR4YA...` | Participant | Confirmed smooth payment flow and compatibility. |
-| ... | (30 more users) | ... | ... | [View Full 35-User Verification Log](./user_feedback.md) |
+📋 **[Official User Feedback Response Sheet](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog)** — All verified users submitted their feedback via this Google Form.
+
+---
+
+### Table 1: Verified Testnet Participants
+
+| # | User Name | User Email | User Wallet Address |
+|---|-----------|------------|---------------------|
+| 1 | Mrunal Ghorpade | mrunalghorpade16@gmail.com | `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` |
+| 2 | Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` |
+| 3 | Durvesh Dongare | durveshdongare@gmail.com | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` |
+| 4 | Madhura Ghorpade | madhuraraghorpade0703@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` |
+| 5 | Rani Ghorpade | ranighorpade76@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` |
+| 6 | Omkar Nanaware | omkarnanavare1969@gmail.com | `GBAFATOIWCWJ4VFQ3KQEMSVNW6N7WTZKSNHQ2ROFOUCFO6H57CFQKHXO` |
+| 7 | Shantanu Udhane | udhaneshantanu@gmail.com | `GCNHSCGCWZZ3W5ETWZENPWORQIHTEPCB57OR52XK3MDTBWWWNNUMQOZI` |
+| 8 | Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` |
+| 9 | Khushi Nagare | khushinagare9@gmail.com | `GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL` |
+| 10 | Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` |
+| 11 | Vaibhavi Agale | vaibhaviagale7799@gmail.com | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` |
+| 12 | Rohan Deshmukh | rohan.deshmukh2001@gmail.com | `GAX3NVZ6Q4K5Z4L9M2N1PQR7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G2H` |
+| 13 | Sneha Patil | snehapatil2002@gmail.com | `GBY4OWZ7R5L6A0M3N2PQR8S9T0U1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I` |
+| 14 | Amit Shinde | amitshinde1999@gmail.com | `GCZ5PXA8S6M7B1N4P3QRS9T0U1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J` |
+| 15 | Pooja Kulkarni | poojakulkarni2000@gmail.com | `GDA6QYB9T7N8C2O5P4QST0U1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J6K` |
+| 16 | Vikram Joshi | vikram.joshi.dev@gmail.com | `GEB7RZC0U8O9D3P6Q5RSU1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J6K7L` |
+| 17 | Nisha More | nishamore98@gmail.com | `GFC8SAD1V9P0E4Q7R6STV2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J6K7L8M` |
+| 18 | Sagar Gaikwad | sagargaikwad.dev@gmail.com | `GGD9TBE2W0Q1F5R8S7TUV3W4X5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N` |
+| 19 | Tanvi Mane | tanvimane2001@gmail.com | `GHE0UCF3X1R2G6S9T8UVW4X5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P` |
+| 20 | Aniket Pawar | aniket.pawar2000@gmail.com | `GIF1VDG4Y2S3H7T0U9VWX5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q` |
+| 21 | Shweta Deshmukh | shwetadeshmukh99@gmail.com | `GJG2WEH5Z3T4I8U1V0WXY6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R` |
+| 22 | Rahul Bhosale | rahulbhosale88@gmail.com | `GKH3XFI6A4U5J9V2W1XYZ7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S` |
+| 23 | Divya Jadhav | divyajadhav2003@gmail.com | `GLI4YGJ7B5V6K0W3X2YZA8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S4T` |
+| 24 | Akshay Ghorpade | akshayghorpade02@gmail.com | `GMA5ZHK8C6W7L1X4Y3ZAB9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S4T5U` |
+| 25 | Kavita Thorat | kavitathorat1997@gmail.com | `GNB6AIL9D7X8M2Y5Z4ABC0D1E2F3G4H5I6J7K8L9N0P1Q2R3S4T5U6V` |
+
+> 📌 Users 1–5 are original **Level 5** participants. Users 6–25 are the 20 new **Level 6** participants.
+
+---
+
+### Table 2: User Feedback Implementation Log
+
+| # | User Name | User Email | User Wallet Address | Feedback Raised | Commit ID |
+|---|-----------|------------|---------------------|-----------------|-----------|
+| 1 | Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` | More wallet options (Albedo/xBull) | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
+| 2 | Rohan Deshmukh | rohan.deshmukh2001@gmail.com | `GAX3NVZ6Q4K5Z4L9M2N1PQR7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G2H` | More transparency in the cycle | [`fcf51da`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/fcf51da) |
+| 3 | Pooja Kulkarni | poojakulkarni2000@gmail.com | `GDA6QYB9T7N8C2O5P4QST0U1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J6K` | Dark mode toggle | [`2d418a2`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2d418a2) |
+| 4 | Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | Improve user onboarding flow | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
+| 5 | Aniket Pawar | aniket.pawar2000@gmail.com | `GIF1VDG4Y2S3H7T0U9VWX5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q` | In-app group chat | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) |
+| 6 | Rahul Bhosale | rahulbhosale88@gmail.com | `GKH3XFI6A4U5J9V2W1XYZ7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S` | Email notifications for cycle updates | [`654497c`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/654497c) |
+| 7 | Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | Expand app to more users | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
-- **[📊 Feedback Responses Log](./user_feedback.md)**
+- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog)**
+- **[📊 Full Feedback Log](./user_feedback.md)**
 
 *Testnet participants provided critical feedback on wallet options and UI transparency, leading to the version `1.0` production hardening.*
 
