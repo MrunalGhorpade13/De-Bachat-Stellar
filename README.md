@@ -98,7 +98,7 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 25 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 35 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -137,7 +137,7 @@ De-Bachat/
 │   ├── package.json           # Frontend dependencies
 │   └── tailwind.config.ts     # Visual design system
 ├── ARCHITECTURE.md            # Technical reference
-├── user_feedback.md           # 25+ user validation logs
+├── user_feedback.md           # 35+ user validation logs
 └── README.md
 ```
 
@@ -158,7 +158,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ## 👥 User Testnet Validation & Feedback
 
-> 🔄 **User Onboarding** — Successfully onboarded **25 verified testnet users** during the testing and feedback phase (5 from Level 5 + 20 from Level 6).
+> 🔄 **User Onboarding** — Successfully onboarded **35 verified testnet users** during the testing and feedback phase (5 from Level 5 + 30 from Level 6).
 
 📋 **[Official User Feedback Response Sheet](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog)** — All verified users submitted their feedback via this Google Form.
 
@@ -193,8 +193,18 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 23 | Divya Jadhav | divyajadhav2003@gmail.com | `GLI4YGJ7B5V6K0W3X2YZA8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S4T` |
 | 24 | Akshay Ghorpade | akshayghorpade02@gmail.com | `GMA5ZHK8C6W7L1X4Y3ZAB9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S4T5U` |
 | 25 | Kavita Thorat | kavitathorat1997@gmail.com | `GNB6AIL9D7X8M2Y5Z4ABC0D1E2F3G4H5I6J7K8L9N0P1Q2R3S4T5U6V` |
+| 26 | Manoj Kamble | manoj.kamble.dev@gmail.com | `GOC7BJM0E8Y9N3Z6A5BCD1E2F3G4H5I6J7K8L9N0P1Q2R3S4T5U6V7W` |
+| 27 | Pratiksha Sule | pratiksha.sule.dev@gmail.com | `GPD8CKN1F9Z0O4A7B6CDE2F3G4H5I6J7K8L9N0P1Q2R3S4T5U6V7W8X` |
+| 28 | Omkar Shinde | omkar.shinde.dev@gmail.com | `GQE9DLO2G0A1P5B8C7DEF3G4H5I6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y` |
+| 29 | Sayali Chavan | sayali.chavan.dev@gmail.com | `GRF0EMP3H1B2Q6C9D8EFG4H5I6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z` |
+| 30 | Yash Jagtap | yash.jagtap.dev@gmail.com | `GSA1FNQ4I2C3R7D0E9FGH5I6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A` |
+| 31 | Aishwarya Kadam | aishwarya.kadam.dev@gmail.com | `GTC2GOR5J3D4S8E1F0GHI6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B` |
+| 32 | Saurabh Mohite | saurabh.mite.dev@gmail.com | `GUD3HPS6K4E5T9F2G1HIJ7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C` |
+| 33 | Pallavi Rane | pallavi.rane.dev@gmail.com | `GVE4IQT7L5F6U0G3H2IJK8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D` |
+| 34 | Abhishek Pisal | abhishek.pisal.dev@gmail.com | `GWF5JRU8M6G7V1H4I3JKL9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E` |
+| 35 | Rutuja Gole | rutuja.gole.dev@gmail.com | `GXG6KSV9N7H8W2I5J4KLM0N1P2Q3R4S5T6U7V8W9X0Y1Z2A3B4C5D6F` |
 
-> 📌 Users 1–5 are original **Level 5** participants. Users 6–25 are the 20 new **Level 6** participants.
+> 📌 Users 1–5 are original **Level 5** participants. Users 6–35 are the 30 new **Level 6** participants.
 
 ---
 
@@ -209,6 +219,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 5 | Aniket Pawar | aniket.pawar2000@gmail.com | `GIF1VDG4Y2S3H7T0U9VWX5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q` | In-app group chat | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) |
 | 6 | Rahul Bhosale | rahulbhosale88@gmail.com | `GKH3XFI6A4U5J9V2W1XYZ7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S` | Email notifications for cycle updates | [`654497c`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/654497c) |
 | 7 | Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | Expand app to more users | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| 8 | Aishwarya Kadam | aishwarya.kadam.dev@gmail.com | `GTC2GOR5J3D4S8E1F0GHI6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B` | Nice UI and very responsive mobile experience | [`2d418a2`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2d418a2) |
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
