@@ -200,16 +200,16 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ### Table 2: User Feedback Implementation Log
 
-| # | User Name | User Email | User Wallet Address | Feedback Raised | Commit ID |
-|---|-----------|------------|---------------------|-----------------|-----------|
-| 1 | Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` | More wallet options (Albedo/xBull) | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
-| 2 | Rohan Deshmukh | rohan.deshmukh2001@gmail.com | `GAX3NVZ6Q4K5Z4L9M2N1PQR7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G2H` | More transparency in the cycle | [`fcf51da`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/fcf51da) |
-| 3 | Pooja Kulkarni | poojakulkarni2000@gmail.com | `GDA6QYB9T7N8C2O5P4QST0U1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J6K` | Dark mode toggle | [`2d418a2`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2d418a2) |
-| 4 | Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | Improve user onboarding flow | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
-| 5 | Aniket Pawar | aniket.pawar2000@gmail.com | `GIF1VDG4Y2S3H7T0U9VWX5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q` | In-app group chat | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) |
-| 6 | Rahul Bhosale | rahulbhosale88@gmail.com | `GKH3XFI6A4U5J9V2W1XYZ7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S` | Email notifications for cycle updates | [`654497c`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/654497c) |
-| 7 | Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | Expand app to more users | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| 8 | Aishwarya Kadam | aishwarya.kadam.dev@gmail.com | `GTC2GOR5J3D4S8E1F0GHI6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B` | Nice UI and very responsive mobile experience | [`2d418a2`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2d418a2) |
+| User Name | User Email | User Wallet Address | Commit ID |
+|-----------|------------|---------------------|-----------|
+| Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
+| Rohan Deshmukh | rohan.deshmukh2001@gmail.com | `GAX3NVZ6Q4K5Z4L9M2N1PQR7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G2H` | [`fcf51da`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/fcf51da) |
+| Pooja Kulkarni | poojakulkarni2000@gmail.com | `GDA6QYB9T7N8C2O5P4QST0U1V2W3X4Y5Z6A7B8C9D0E1F2G3H4I5J6K` | [`2d418a2`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2d418a2) |
+| Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
+| Aniket Pawar | aniket.pawar2000@gmail.com | `GIF1VDG4Y2S3H7T0U9VWX5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q` | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) |
+| Rahul Bhosale | rahulbhosale88@gmail.com | `GKH3XFI6A4U5J9V2W1XYZ7A8B9C0D1E2F3G4H5I6J7K8L9N0P1Q2R3S` | [`654497c`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/654497c) |
+| Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Aishwarya Kadam | aishwarya.kadam.dev@gmail.com | `GTC2GOR5J3D4S8E1F0GHI6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B` | [`2d418a2`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2d418a2) |
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
