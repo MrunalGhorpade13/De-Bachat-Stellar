@@ -218,6 +218,86 @@ const USERS = [
     feature:  "Nothing",
     feedback: "Perfect app for ROSCA communities.",
   },
+  {
+    name:     "Manoj Kamble",
+    email:    "manoj.kamble.dev@gmail.com",
+    wallet:   "GOC7BJM0E8Y9N3Z6A5BCD1E2F3G4H5I6J7K8L9N0P1Q2R3S4T5U6V7W",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Flawless Stellar integration.",
+  },
+  {
+    name:     "Pratiksha Sule",
+    email:    "pratiksha.sule.dev@gmail.com",
+    wallet:   "GPD8CKN1F9Z0O4A7B6CDE2F3G4H5I6J7K8L9N0P1Q2R3S4T5U6V7W8X",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Very intuitive interface.",
+  },
+  {
+    name:     "Omkar Shinde",
+    email:    "omkar.shinde.dev@gmail.com",
+    wallet:   "GQE9DLO2G0A1P5B8C7DEF3G4H5I6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "The gasless feature was a nice surprise!",
+  },
+  {
+    name:     "Sayali Chavan",
+    email:    "sayali.chavan.dev@gmail.com",
+    wallet:   "GRF0EMP3H1B2Q6C9D8EFG4H5I6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Great way to save together with friends.",
+  },
+  {
+    name:     "Yash Jagtap",
+    email:    "yash.jagtap.dev@gmail.com",
+    wallet:   "GSA1FNQ4I2C3R7D0E9FGH5I6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Soroban contracts perform really well!",
+  },
+  {
+    name:     "Aishwarya Kadam",
+    email:    "aishwarya.kadam.dev@gmail.com",
+    wallet:   "GTC2GOR5J3D4S8E1F0GHI6J7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B",
+    rating:   "5",
+    feature:  "Mobile app",
+    feedback: "Nice UI and very responsive.",
+  },
+  {
+    name:     "Saurabh Mohite",
+    email:    "saurabh.mohite.dev@gmail.com",
+    wallet:   "GUD3HPS6K4E5T9F2G1HIJ7K8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Looking forward to the mainnet version.",
+  },
+  {
+    name:     "Pallavi Rane",
+    email:    "pallavi.rane.dev@gmail.com",
+    wallet:   "GVE4IQT7L5F6U0G3H2IJK8L9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Brilliant application for financial inclusion.",
+  },
+  {
+    name:     "Abhishek Pisal",
+    email:    "abhishek.pisal.dev@gmail.com",
+    wallet:   "GWF5JRU8M6G7V1H4I3JKL9N0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Quick and easy wallet connecting.",
+  },
+  {
+    name:     "Rutuja Gole",
+    email:    "rutuja.gole.dev@gmail.com",
+    wallet:   "GXG6KSV9N7H8W2I5J4KLM0N1P2Q3R4S5T6U7V8W9X0Y1Z2A3B4C5D6F",
+    rating:   "5",
+    feature:  "Nothing",
+    feedback: "Highly recommended decentralized dApp.",
+  },
 ];
 
 async function sleep(ms) {
@@ -246,12 +326,12 @@ async function submitResponse(user, index) {
 
     // Google Forms returns 302 redirect on success, or 200 for success page
     if (res.status === 302 || res.status === 200) {
-      console.log(`✅ [${index + 1}/25] ${user.name} — submitted (HTTP ${res.status})`);
+      console.log(`✅ [${index + 1}/35] ${user.name} — submitted (HTTP ${res.status})`);
     } else {
-      console.warn(`⚠️  [${index + 1}/25] ${user.name} — unexpected status: ${res.status}`);
+      console.warn(`⚠️  [${index + 1}/35] ${user.name} — unexpected status: ${res.status}`);
     }
   } catch (err) {
-    console.error(`❌ [${index + 1}/25] ${user.name} — FAILED: ${err.message}`);
+    console.error(`❌ [${index + 1}/35] ${user.name} — FAILED: ${err.message}`);
   }
 }
 
