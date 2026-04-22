@@ -178,7 +178,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 8 | Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` |
 | 9 | Durvesh Dongare | durveshdongare@gmail.com | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` |
 | 10 | Madhura Ghorpade | madhuraraghorpade0703@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` |
-| 11 | Vaibhavi Agale | vaibhaviagale7799@gmail.com | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` |
+| 11 | Rani Ghorpade | ranighorpade76@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` |
 | 12 | Poorva | [Verified Email] | [Real Wallet Address] |
 
 > 📌 These are the **12 real verified participants** who responded to the official Google Form.
@@ -198,7 +198,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 - **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
 - **[📊 Full Feedback Log](./user_feedback.md)**
 
-*Testnet participants provided critical feedback on wallet options and UI transparency, leading to the version `1.0` production hardening.*
+*Testnet participants like **Thanchan Bhumij** provided critical feedback on wallet options and UI transparency, leading to the version `1.0` production hardening.*
 
 ---
 
