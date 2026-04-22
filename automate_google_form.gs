@@ -1,19 +1,23 @@
 /**
- * De-Bachat Survey Automator
+ * De-Bachat Fresh Start: Clean Feedback Form Creator
  * 
  * INSTRUCTIONS:
  * 1. Go to https://script.google.com/
  * 2. Click "New Project"
- * 3. Paste this code and click "Run" (the play icon)
- * 4. Your form is created instantly!
+ * 3. Delete any code there and PASTE THIS CODE.
+ * 4. Click the "Save" icon (rename to "De-Bachat Form Creator")
+ * 5. Click the "Run" button (the play icon).
+ * 6. Click "Review Permissions" and allow (it might show a warning, click Advanced -> Go to ...).
+ * 
+ * Your 100% clean 5-question form will be created instantly!
  */
 
-function createDeBachatForm() {
-  const formName = "De-Bachat User Onboarding & Feedback";
+function createCleanFeedbackForm() {
+  const formName = "De-Bachat User Feedback (Verified Participants)";
   const form = FormApp.create(formName);
   
   form.setTitle(formName)
-      .setDescription("Help us validate the De-Bachat ROSCA MVP! Your feedback helps us build the future of decentralized savings.\n\nLIVE APP LINK: https://de-bachat-stellar.vercel.app/");
+      .setDescription("Help us validate the De-Bachat ROSCA dApp! Your feedback helps us improve the decentralized savings experience.\n\nLIVE DApp: https://de-bachat-stellar.vercel.app/");
 
   // Question 1: Name
   form.addTextItem()
@@ -25,34 +29,32 @@ function createDeBachatForm() {
       .setTitle("Email Address")
       .setRequired(true);
 
-  // Question 3: Stellar Wallet Address
+  // Question 3: Wallet
   form.addTextItem()
       .setTitle("Stellar Testnet Wallet Address")
-      .setHelpText("The address you used to join the ROSCA group.")
       .setRequired(true);
 
-  // Question 4: Application Rating
+  // Question 4: Rating
   form.addScaleItem()
-      .setTitle("How would you rate the De-Bachat Dashboard experience?")
+      .setTitle("How would you rate the experience?")
       .setBounds(1, 5)
       .setLabels("Poor", "Excellent")
       .setRequired(true);
 
   // Question 5: Feedback
   form.addParagraphTextItem()
-      .setTitle("What was the hardest part about joining or contributing?")
-      .setRequired(false);
-
-  // Question 6: Feature Suggestion
-  form.addParagraphTextItem()
-      .setTitle("What one feature should we add next?")
+      .setTitle("Any feedback or suggestions for improvement?")
       .setRequired(true);
 
-  console.log('Form URL: ' + form.getEditUrl());
-  console.log('Published URL: ' + form.getPublishedUrl());
+  const editUrl = form.getEditUrl();
+  const publishedUrl = form.getPublishedUrl();
+
+  console.log('✅ CLEAN FORM CREATED SUCCESSFULLY!');
+  console.log('🔗 FORM EDIT LINK (For you): ' + editUrl);
+  console.log('🔗 PUBLIC LINK (For users): ' + publishedUrl);
   
-  const ui = SpreadsheetApp.getUi ? SpreadsheetApp.getUi() : null;
-  if (ui) {
-    ui.alert('Form Created Successfully! URL: ' + form.getPublishedUrl());
-  }
+  // Create a linked spreadsheet for responses
+  const ss = SpreadsheetApp.create(formName + " (Responses)");
+  form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
+  console.log('📊 LINKED SHEET CREATED: ' + ss.getUrl());
 }

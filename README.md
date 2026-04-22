@@ -98,7 +98,7 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 11 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 12 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -113,7 +113,7 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 🧪 Feedback Logs | User testing iterations and fixes applied | [Read →](./user_feedback.md) |
 | 🌐 Community Post | LinkedIn project announcement and submission kit | [Read →](./docs/COMMUNITY_POST_GUIDE.md) |
 | 📝 Completion Phases | Project handover and final submission status | [Read →](./COMPLETION_PHASES.md) |
-| 📋 User Feedback Response Sheet | Official Google Form responses from all verified users | [View Responses →](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog) |
+| 📋 User Feedback Response Sheet | Official Google Form responses from all verified users | [View Responses →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
 
 ---
 
@@ -158,9 +158,9 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ## 👥 User Testnet Validation & Feedback
 
-> 🔄 **User Onboarding** — Successfully onboarded **11 verified testnet users** during the testing and feedback phase.
+> 🔄 **User Onboarding** — Successfully onboarded **12 verified testnet users** during the testing and feedback phase.
 
-📋 **[Official User Feedback Response Sheet](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog)** — All verified users submitted their feedback via this Google Form.
+📋 **[Official User Feedback Response Sheet](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)** — All verified users submitted their feedback via this Google Form.
 
 ---
 
@@ -178,9 +178,10 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 8 | Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` |
 | 9 | Durvesh Dongare | durveshdongare@gmail.com | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` |
 | 10 | Madhura Ghorpade | madhuraraghorpade0703@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` |
-| 11 | Rani Ghorpade | ranighorpade76@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` |
+| 11 | Vaibhavi Agale | vaibhaviagale7799@gmail.com | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` |
+| 12 | Poorva | [Verified Email] | [Real Wallet Address] |
 
-> 📌 These are the **11 real verified participants** who responded to the official Google Form.
+> 📌 These are the **12 real verified participants** who responded to the official Google Form.
 
 ---
 
@@ -194,7 +195,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
-- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSfexc_X2pXeFr6InZn6rwkQgDhVAHyy56FM9-zmRp5UClSQTg/viewform?usp=dialog)**
+- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
 - **[📊 Full Feedback Log](./user_feedback.md)**
 
 *Testnet participants provided critical feedback on wallet options and UI transparency, leading to the version `1.0` production hardening.*

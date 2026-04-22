@@ -17,6 +17,9 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | 9 | Khushi Nagare | `GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) |
 | 10 | Yash Annadate | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE) |
 | 11 | Vaibhavi Agale | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ) |
+| 12 | Poorva | `[Real Wallet Address]` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/) |
+
+> 📊 **Official Feedback Response Sheet**: [View Responses →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
 
 ## 💬 User Feedback Summary
 
