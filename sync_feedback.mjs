@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/1rRSr3L0D3mYeXAWOXvHhujNQtJM8vqyTXPusWL-aPN8/export?format=csv";
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/export?format=csv';
 const FEEDBACK_FILE = "./user_feedback.md";
 const README_FILE = "./README.md";
 

@@ -168,18 +168,18 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 | # | User Name | User Email | User Wallet Address |
 |---|-----------|------------|---------------------|
-| 1 | Omkar Nanaware | omkarnanavare1969@gmail.com | `GBAFATOIWCWJ4VFQ3KQEMSVNW6N7WTZKSNHQ2ROFOUCFO6H57CFQKHXO` |
-| 2 | Shantanu Udhane | udhaneshantanu@gmail.com | `GCNHSCGCWZZ3W5ETWZENPWORQIHTEPCB57OR52XK3MDTBWWWNNUMQOZI` |
-| 3 | Khushi Nagare | khushinagare9@gmail.com | `GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL` |
-| 4 | Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` |
-| 5 | Vaibhavi Agale | vaibhaviagale7799@gmail.com | `GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ` |
-| 6 | Mrunal Ghorpade | mrunalghorpade16@gmail.com | `GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX` |
-| 7 | Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` |
-| 8 | Durvesh Dongare | durveshdongare@gmail.com | `GARB6S57YI5SERVHU6G56CHNXLX2EKANQJ3X4HCQPGZYF55O56W7UBSQ` |
-| 9 | Madhura Ghorpade | madhuraraghorpade0703@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` |
-| 10 | Rani Ghorpade | ranighorpade76@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` |
+| 1 | Madhura | madhuraworkspace@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` |
+| 2 | Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` |
+| 3 | Aditi Mhaske | aditidmhaske17@gmail.com | `GAWOCI3JKKRFYYUJGOR7I3LZM6BMFCLUBN3EXBNLRISO6XWW3YDSTHDU` |
+| 4 | Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` |
+| 5 | Omkar nanaware | omkarnanavare1969@gmail.com | `GCWD2XRCJFP5AMT57MRYIVEK2QRWZUNUVROGYYRK2XGCZFOORXCXTRW3` |
+| 6 | Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` |
+| 7 | Shreya dhaware | shreyasdhaware@gmail.com | `GCTRYJB6THCS3EDAY3NM7VTDKC4H572BY5MLZ343IWFSLOG6KAROSPD2` |
+| 8 | Aayusha Jagtap | jagtapaayusha17@gmail.com | `GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3` |
+| 9 | Tanmay Tad | tanmaytad23@gmail.com | `GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ` |
+| 10 | Khushi Nagare | khushinagare8@gmail.com | `GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63` |
 
-> 📌 These are the **10 real verified participants** who responded to the official Google Form.
+> 📌 These are the **10 real verified participants** logged in the latest responder dashboard.
 
 ---
 
@@ -187,8 +187,9 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 | User Name | User Email | User Wallet Address | Commit ID |
 |-----------|------------|---------------------|-----------|
-| Ayush Gaikwad | ayyush1326@gmail.com | `GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG` | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
-| Yash Annadate | yashannadate2005@gmail.com | `GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE` | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
+| Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
