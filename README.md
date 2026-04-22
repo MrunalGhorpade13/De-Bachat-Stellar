@@ -185,11 +185,11 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ### Table 2: User Feedback Implementation Log
 
-| User Name | User Email | User Wallet Address | Commit ID |
-|-----------|------------|---------------------|-----------|
-| Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
-| Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
+| User Name | User Email | User Wallet Address | User Feedback | Commit ID |
+|-----------|------------|---------------------|---------------|-----------|
+| Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | no suggestion perfect integration of wallets | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
+| Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` | Good ui | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
