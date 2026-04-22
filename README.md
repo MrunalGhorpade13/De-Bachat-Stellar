@@ -187,9 +187,16 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 | User Name | User Email | User Wallet Address | User Feedback | Commit ID |
 |-----------|------------|---------------------|---------------|-----------|
+| Madhura | madhuraworkspace@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` | no suggestion , great ui | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
 | Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | no suggestion perfect integration of wallets | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) |
-| Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Aditi Mhaske | aditidmhaske17@gmail.com | `GAWOCI3JKKRFYYUJGOR7I3LZM6BMFCLUBN3EXBNLRISO6XWW3YDSTHDU` | (Verified Participant) | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
 | Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` | Good ui | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
+| Omkar nanaware | omkarnanavare1969@gmail.com | `GCWD2XRCJFP5AMT57MRYIVEK2QRWZUNUVROGYYRK2XGCZFOORXCXTRW3` | Everything looks great | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shreya dhaware | shreyasdhaware@gmail.com | `GCTRYJB6THCS3EDAY3NM7VTDKC4H572BY5MLZ343IWFSLOG6KAROSPD2` | Great application | [`475eaa6`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/475eaa6) |
+| Aayusha Jagtap | jagtapaayusha17@gmail.com | `GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3` | (Verified Participant) | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Tanmay Tad | tanmaytad23@gmail.com | `GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ` | no suggestion , good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Khushi Nagare | khushinagare8@gmail.com | `GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63` | The ui is working properly and the application is also nice | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
