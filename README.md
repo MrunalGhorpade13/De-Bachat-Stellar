@@ -137,7 +137,7 @@ De-Bachat/
 │   ├── package.json           # Frontend dependencies
 │   └── tailwind.config.ts     # Visual design system
 ├── ARCHITECTURE.md            # Technical reference
-├── user_feedback.md           # 35+ user validation logs
+├── user_feedback.md           # 12 real user validation logs
 └── README.md
 ```
 
