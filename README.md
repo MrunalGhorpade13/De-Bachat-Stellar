@@ -113,7 +113,8 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 🧪 Feedback Logs | User testing iterations and fixes applied | [Read →](./user_feedback.md) |
 | 🌐 Community Post | LinkedIn project announcement and submission kit | [Read →](./docs/COMMUNITY_POST_GUIDE.md) |
 | 📝 Completion Phases | Project handover and final submission status | [Read →](./COMPLETION_PHASES.md) |
-| 📋 User Feedback Response Sheet | Official Google Form responses from all verified users | [View Responses →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
+| 📋 Feedback Form | Official Google Form for project validation and user reviews | [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
+| 📊 Feedback Response Sheet | Real-time spreadsheet log of user ratings and suggestions | [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) |
 
 ---
 
@@ -160,7 +161,9 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 > 🔄 **User Onboarding** — Successfully onboarded **16 verified testnet users** during the testing and feedback phase.
 
-📋 **[Official User Feedback Response Sheet](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)** — All verified users submitted their feedback via this Google Form.
+📋 **[Official Feedback Submission Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)** — New users can submit their validation logs here.
+
+📊 **[Official Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)** — View the live ledger of all 16+ verified user responses.
 
 ---
 
@@ -213,13 +216,12 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
 - **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
-- **[📊 Full Feedback Log](./user_feedback.md)**
+- **[📊 Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)**
+- **[🧪 Full User Feedback Logs](./user_feedback.md)**
 
 *Testnet participants provided critical feedback on wallet options and UI transparency, leading to the version `1.0` production hardening.*
 
 ---
-
-## ⚙️ Quick Start
 
 ### 1. Configure Example Environment
 Create a `.env.local` file in the `frontend` directory:

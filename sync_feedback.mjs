@@ -64,12 +64,14 @@ async function syncFeedback() {
     if (fs.existsSync(FEEDBACK_FILE)) {
       let content = fs.readFileSync(FEEDBACK_FILE, 'utf8');
       
+      const linksMd = `\n> 📋 **Official Feedback Form**: [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)\n> 📊 **Official Feedback Response Sheet**: [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)\n\n`;
+
       // Update Verified Testnet Participants Table
       const participantStart = content.indexOf("| # | Name | Wallet Address | Status | Verified on Explorer |");
       const participantEnd = content.indexOf("## 💬 User Feedback Summary");
       if (participantStart !== -1 && participantEnd !== -1) {
         const header = "| # | Name | Wallet Address | Status | Verified on Explorer |\n|---|------|----------------|--------|----------------------|\n";
-        content = content.slice(0, participantStart) + header + participantMd + "\n" + content.slice(participantEnd);
+        content = content.slice(0, participantStart) + header + participantMd + linksMd + content.slice(participantEnd);
       }
 
       // Update User Feedback Summary Table
@@ -98,16 +100,19 @@ async function syncFeedback() {
 
       // Update Table 2: User Feedback Implementation Log
       const t2Start = content.indexOf("| User Name | User Email | User Wallet Address | User Feedback | Commit ID |");
-      const t2End = content.indexOf("**Community Insight:**");
+      const t2End = content.indexOf("### 1. Configure");
       if (t2Start !== -1 && t2End !== -1) {
         const header = "| User Name | User Email | User Wallet Address | User Feedback | Commit ID |\n|-----------|------------|---------------------|---------------|-----------|\n";
-        content = content.slice(0, t2Start) + header + readmeTable2Rows + "\n" + content.slice(t2End);
+        
+        const communityLinks = `\n**Community Insight:**\n- **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**\n- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**\n- **[📊 Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)**\n- **[🧪 Full User Feedback Logs](./user_feedback.md)**\n\n*Testnet participants provided critical feedback on wallet options and UI transparency, leading to the version \`1.0\` production hardening.*\n\n---\n\n`;
+
+        content = content.slice(0, t2Start) + header + readmeTable2Rows + communityLinks + content.slice(t2End);
       }
 
       // Update participant count in text
-      content = content.replace(/Successfully onboarded \*\*.*?verified testnet users\*\*/i, `Successfully onboarded **${users.length} verified testnet users**`);
+      content = content.replace(/Successfully onboarded \*\*.*?\*\* verified testnet users/i, `Successfully onboarded **${users.length} verified testnet users**`);
       content = content.replace(/Verified Users \| ✅ Done \| .*? verified testnet participants/i, `Verified Users | ✅ Done | ${users.length} verified testnet participants`);
-      content = content.replace(/These are the \*\*.*?real verified participants\*\*/i, `These are the **${users.length} real verified participants**`);
+      content = content.replace(/These are the \*\*.*?\*\* real verified participants/i, `These are the **${users.length} real verified participants**`);
 
       fs.writeFileSync(README_FILE, content);
       console.log(`Updated ${README_FILE} with ${users.length} entries.`);
