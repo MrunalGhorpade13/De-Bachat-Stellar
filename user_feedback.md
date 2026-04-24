@@ -16,23 +16,33 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | 8 | Aayusha Jagtap | `GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3) |
 | 9 | Tanmay Tad | `GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ) |
 | 10 | Khushi Nagare | `GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63) |
-
-> 📊 **Official Feedback Response Sheet**: [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
+| 11 | Gayatri Deshmukh | `GBQQRG45YXIOLM7UR2W7DN2XP7SZVIDY4D5NWCUMRX7CEXJVVFGU26PB` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GBQQRG45YXIOLM7UR2W7DN2XP7SZVIDY4D5NWCUMRX7CEXJVVFGU26PB) |
+| 12 | Yash Annadate | `GB6B6QEJFY4HAKATRO6MI77WDZ66W4FFPJN6AYLISJEHTLXYFPHQFFTV` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GB6B6QEJFY4HAKATRO6MI77WDZ66W4FFPJN6AYLISJEHTLXYFPHQFFTV) |
+| 13 | janhavi lipare | `GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI) |
+| 14 | Poorva | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) |
+| 15 | Poorva | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) |
+| 16 | Thanchan Bhumij | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) |
 
 ## 💬 User Feedback Summary
 
 | User | Rating | Issue Raised | Feedback |
 |------|--------|--------------|----------|
-| Madhura | 5 ⭐ | None | no suggestion , great ui |
-| Anand | 5 ⭐ | Wallet Integration | perfect integration of wallets |
-| Aditi Mhaske | 5 ⭐ | None | Participant provided high rating with no specific text issues. |
+| Madhura | 5 ⭐ | UI | no suggestion , great ui |
+| Anand | 5 ⭐ | Wallet Integration | no suggestion perfect integration of wallets |
+| Aditi Mhaske | 5 ⭐ | None | No additional feedback |
 | Shantanu Udhane | 5 ⭐ | UI | Good ui |
-| Omkar nanaware | 5 ⭐ | None | Everything looks great |
+| Omkar nanaware | 5 ⭐ | UI | Everything looks great |
 | Om nanaware | 5 ⭐ | User Experience | Make it more user friendly |
 | Shreya dhaware | 5 ⭐ | None | Great application |
-| Aayusha Jagtap | 5 ⭐ | None | High rating provided, no specific issues raised. |
+| Aayusha Jagtap | 5 ⭐ | None | No additional feedback |
 | Tanmay Tad | 5 ⭐ | Concept | no suggestion , good idea |
 | Khushi Nagare | 5 ⭐ | UI | The ui is working properly and the application is also nice |
+| Gayatri Deshmukh | 5 ⭐ | None | Fabulous |
+| Yash Annadate | 5 ⭐ | None | Good application for savings with etc features |
+| janhavi lipare | 5 ⭐ | None | app is working very well |
+| Poorva | 5 ⭐ | Concept | Liked the app, good idea |
+| Poorva | 5 ⭐ | None | Liked the app |
+| Thanchan Bhumij | 5 ⭐ | None | No additional feedback |
 
 ## 🔄 Final Iteration Plan
 - **Selected Feedback**: "Make it more user friendly" (from Om nanaware).
