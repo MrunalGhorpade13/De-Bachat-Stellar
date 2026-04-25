@@ -1,28 +1,56 @@
-<h1 align="center">De-Bachat – Decentralised ROSCA dApp</h1>
+# 💰 De-Bachat — Decentralised ROSCA dApp
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Stellar-7D7D7D?style=for-the-badge&logo=stellar&logoColor=white" alt="Stellar" />
-  <img src="https://img.shields.io/badge/Soroban-8b5cf6?style=for-the-badge&logo=stellar&logoColor=white" alt="Soroban" />
-  <img src="https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Level_6-Black_Belt-111111?style=for-the-badge" alt="Black Belt" />
-  <br />
-  <a href="https://de-bachat-stellar.vercel.app/">
-    <img src="https://img.shields.io/badge/Deployed-Live%20on%20Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-  </a>
-</div>
+> **A trustless, on-chain Rotating Savings & Credit Association (ROSCA) protocol that transforms community savings into automated, immutable cycles — built on Stellar & Soroban.**
 
-<br />
+[![Vercel Deploy](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel&logoColor=white)](https://de-bachat-stellar.vercel.app)
+[![CI/CD](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/actions/workflows/deploy.yml/badge.svg)](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/actions/workflows/deploy.yml)
+[![Stellar Network](https://img.shields.io/badge/Network-Stellar%20Testnet-blueviolet?logo=stellar&logoColor=white)](https://stellar.expert/explorer/testnet)
+[![Level 6](https://img.shields.io/badge/Level_6-Black_Belt-111111?style=flat-square)](./FINAL_CHECKLIST.md)
+[![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 
-<div align="center">
-  <strong>The Future of Community-Driven Savings on Stellar.</strong>
-</div>
+---
 
-<p align="center">
-  De-Bachat is a decentralized, non-custodial Rotating Savings and Credit Association (ROSCA) protocol built from the ground up using Soroban smart contracts. It transforms traditional community savings into trustless, on-chain cycles. Create groups, join peers, and watch your collective wealth grow—because financial inclusion counts.
-  <br />
-  <br />
-  <a href="https://de-bachat-stellar.vercel.app/"><strong>🔴 Launch Live Demo</strong></a> · <a href="https://drive.google.com/file/d/1FXNovrfNOnoiRfa0WCsm_O6AmPclMsM1/view?usp=sharing"><strong>🎥 Watch Demo Video</strong></a>
-</p>
+## 🌟 Bridging the Savings Gap
+
+Communities across India have long relied on **chit funds and ROSCAs** — informal, trust-based savings circles — yet millions fail every year due to the **lack of enforcement, transparency, and accountability**.
+
+**De-Bachat** solves this by replacing handshake agreements with an immutable Layer-1 trust engine built on **Stellar Soroban**, ensuring every contribution and payout is enforced by a smart contract — not a person.
+
+---
+
+## 💎 Core Pillars
+
+| 🛡️ Non-Custodial Escrow | ⛽ Gasless Transactions | 📊 Real-Time Analytics |
+| :--- | :--- | :--- |
+| XLM funds are locked in an immutable Soroban contract and disbursed only when all contributions are verified. | New users need **zero XLM** to get started. Fee Bump sponsorship eliminates the "gas barrier" entirely. | Live dashboard tracks DAU, transaction count, and pool volume via the Stellar Horizon API. |
+
+---
+
+## 🔗 Project Links
+
+- **Live Demo**: [https://de-bachat-stellar.vercel.app](https://de-bachat-stellar.vercel.app)
+- **Demo Video**: [Watch on Google Drive](https://drive.google.com/file/d/1FXNovrfNOnoiRfa0WCsm_O6AmPclMsM1/view?usp=sharing)
+- **Metrics Dashboard**: [https://de-bachat-stellar.vercel.app/dashboard](https://de-bachat-stellar.vercel.app/dashboard)
+- **Community Post**: [LinkedIn Announcement](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)
+- **Feedback Form**: [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
+- **Response Sheet**: [View Live Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
+
+---
+
+## ⚡ Advanced Feature — Fee Sponsorship (Account Abstraction)
+
+- **Gasless transactions** using Stellar Fee Bump transactions.
+- New users need **zero XLM** to participate in any ROSCA group.
+- De-Bachat treasury pays the 0.00001 XLM network fee on behalf of every participant.
+- **Implementation**: [`/frontend/src/lib/contractClient.ts`](./frontend/src/lib/contractClient.ts) · API route: `/api/sponsor-fee`
+
+---
+
+## ⛓️ Smart Contracts (Stellar Testnet)
+
+| Contract | Address | Tests |
+|---|---|---|
+| **De-Bachat Core (ROSCA)** | [`CBII5RAQTZXMD...`](https://stellar.expert/explorer/testnet/contract/CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B) | 5/5 ✅ |
 
 ---
 
@@ -36,9 +64,7 @@
 
 ---
 
-## 🏗 System Architecture & Workflow
-
-De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom backend storage. The Soroban Ledger is the single source of truth.
+## 🏗️ Architecture
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
@@ -49,13 +75,13 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
         Soroban RPC      Soroban RPC    Horizon REST   Horizon REST
                │              │              │              │
   ┌────────────▼──────────────▼───┐  ┌───────▼──────────────▼──────┐
-  │      De-Bachat Soroban        │  │        Stellar Testnet      │
-  │        Smart Contract         │  │       (Account Details)     │
-  │                               │  │                             │
-  │ initialize_group              │  │                             │
-  │ join_group      ──────────────┼──► XLM Contributed on-chain    │
-  │ contribute / disburse         │  │                             │
-  └───────────────────────────────┘  └─────────────────────────────┘
+  │      De-Bachat Soroban        │  │        Stellar Testnet       │
+  │        Smart Contract         │  │       (Account Details)      │
+  │                               │  │                              │
+  │  initialize_group             │  │                              │
+  │  join_group      ─────────────┼──► XLM Contributed on-chain    │
+  │  contribute / disburse        │  │                              │
+  └───────────────────────────────┘  └──────────────────────────────┘
 ```
 
 **Inter-Contract Data Flow:**
@@ -66,23 +92,14 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 
 ---
 
-## ⚡ Core Features
+## 🛠️ Tech Stack
 
-- 💰 **Trustless Group Savings** — Automated ROSCA cycles handled entirely by immutable smart contracts.
-- ⛽ **Gasless Transactions** — Fee Bump sponsorship eliminates the "gas barrier" for new users.
-- 📊 **Real-Time Data Indexing** — Live dashboard tracking DAU, transaction count, and pool volume via Horizon API.
-- 🛡️ **Non-Custodial Escrow** — Your keys, your funds. Tokens are held by the contract, not the organizer.
-- 📱 **Multi-Wallet Support** — Seamlessly connect with Freighter (Extension) or Albedo (Web/Mobile).
-- ⚡ **Automated Payouts** — Mathematical certainty of disbursement at the end of each cycle.
-- 🔒 **Production Hardened** — Implements Checks-Effects-Interactions (CEI) and Checked Arithmetic.
-
----
-
-## 🚀 Deployed Contracts
-
-| Contract | Address | Network |
-|---|---|---|
-| **De-Bachat Core** | [`CBII5RAQTZXMD...`](https://stellar.expert/explorer/testnet/contract/CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B) | Stellar Testnet |
+- **Smart Contracts**: Rust + Soroban (Stellar)
+- **Frontend**: Next.js 14 + Tailwind CSS v4
+- **Blockchain**: Stellar Testnet
+- **Currency**: XLM (native Stellar token)
+- **Wallet Support**: Freighter (Extension) + Albedo (Web/Mobile)
+- **Deployment**: Vercel + GitHub Actions CI/CD
 
 ---
 
@@ -113,12 +130,13 @@ De-Bachat follows a **Pure dApp Pattern**: no centralized database, no custom ba
 | 🧪 Feedback Logs | User testing iterations and fixes applied | [Read →](./user_feedback.md) |
 | 🌐 Community Post | LinkedIn project announcement and submission kit | [Read →](./docs/COMMUNITY_POST_GUIDE.md) |
 | 📝 Completion Phases | Project handover and final submission status | [Read →](./COMPLETION_PHASES.md) |
-| 📋 Feedback Form | Official Google Form for project validation and user reviews | [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
-| 📊 Feedback Response Sheet | Real-time spreadsheet log of user ratings and suggestions | [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) |
+| 📋 Feedback Form | Official Google Form for project validation | [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
+| 📊 Feedback Response Sheet | Real-time spreadsheet log of all user ratings | [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) |
 
 ---
 
 ## 📁 Project Structure
+
 ```text
 De-Bachat/
 ├── .github/workflows/         # CI/CD pipelines
@@ -126,8 +144,8 @@ De-Bachat/
 │   └── src/lib.rs             # Core ROSCA Logic (Soroban Rust)
 │   └── Cargo.toml             # Rust dependencies
 ├── docs/
-│   ├── SECURITY_CHECKLIST.md   # Security audit (Level 6)
-│   ├── COMMUNITY_POST_GUIDE.md # Community outreach
+│   ├── SECURITY_CHECKLIST.md  # Security audit (Level 6)
+│   ├── COMMUNITY_POST_GUIDE.md# Community outreach
 │   └── screenshots/           # Application visuals
 ├── frontend/
 │   ├── src/
@@ -138,7 +156,7 @@ De-Bachat/
 │   ├── package.json           # Frontend dependencies
 │   └── tailwind.config.ts     # Visual design system
 ├── ARCHITECTURE.md            # Technical reference
-├── user_feedback.md           # 10 real user validation logs
+├── user_feedback.md           # 16 real user validation logs
 └── README.md
 ```
 
@@ -157,73 +175,109 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ---
 
-## 👥 User Testnet Validation & Feedback
+## 📊 Data Indexing & Monitoring
 
-> 🔄 **User Onboarding** — Successfully onboarded **16 verified testnet users** during the testing and feedback phase.
+- **Approach**: Stellar Horizon REST API
+- **Used for**: Transaction history, account queries, real-time pool analytics
+- **Endpoint**: [https://horizon-testnet.stellar.org](https://horizon-testnet.stellar.org)
+- **Performance**: High-performance metrics caching implemented in `/frontend/src/app/api/metrics`
+- **Implementation**: [`/frontend/src/lib/contractClient.ts`](./frontend/src/lib/contractClient.ts)
+- **Monitoring**: Vercel Logs + Horizon-indexed DAU, tx volume, and retention events
 
-📋 **[Official Feedback Submission Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)** — New users can submit their validation logs here.
+---
 
-📊 **[Official Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)** — View the live ledger of all 16+ verified user responses.
+## 👥 User Onboarding & Feedback
+
+> [!IMPORTANT]
+> **🌟 We are community-driven!** We actively collect user details, wallet information, and product ratings via Google Form.
+>
+> **Note for Reviewers:** All **16 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
+>
+> - 📊 **Full Feedback Data**: [**Feedback Response Sheet**](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
+> - 📖 **Detailed Analysis**: [**user_feedback.md**](./user_feedback.md)
+> - 🤝 **Join Beta**: [De-Bachat Testnet Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
 
 ---
 
 ### Table 1: Verified Testnet Participants
 
-| # | User Name | User Email | User Wallet Address |
-|---|-----------|------------|---------------------|
-| 1 | Madhura | madhuraworkspace@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` |
-| 2 | Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` |
-| 3 | Aditi Mhaske | aditidmhaske17@gmail.com | `GAWOCI3JKKRFYYUJGOR7I3LZM6BMFCLUBN3EXBNLRISO6XWW3YDSTHDU` |
-| 4 | Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` |
-| 5 | Omkar nanaware | omkarnanavare1969@gmail.com | `GCWD2XRCJFP5AMT57MRYIVEK2QRWZUNUVROGYYRK2XGCZFOORXCXTRW3` |
-| 6 | Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` |
-| 7 | Shreya dhaware | shreyasdhaware@gmail.com | `GCTRYJB6THCS3EDAY3NM7VTDKC4H572BY5MLZ343IWFSLOG6KAROSPD2` |
-| 8 | Aayusha Jagtap | jagtapaayusha17@gmail.com | `GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3` |
-| 9 | Tanmay Tad | tanmaytad23@gmail.com | `GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ` |
-| 10 | Khushi Nagare | khushinagare8@gmail.com | `GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63` |
-| 11 | Gayatri Deshmukh | ggdeshmukh12107@gmail.com | `GBQQRG45YXIOLM7UR2W7DN2XP7SZVIDY4D5NWCUMRX7CEXJVVFGU26PB` |
-| 12 | Yash Annadate | yashannadate2005@gmail.com | `GB6B6QEJFY4HAKATRO6MI77WDZ66W4FFPJN6AYLISJEHTLXYFPHQFFTV` |
-| 13 | janhavi lipare | janhavilipare9948@gmail.com | `GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI` |
-| 14 | Poorva | N/A | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` |
-| 15 | Poorva | poorvam2006@gmail.com | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` |
-| 16 | Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` |
+> All wallets are verifiable on [Stellar Testnet Explorer](https://stellar.expert/explorer/testnet).
+
+| # | **Connected Wallet Address** | **Name** | **Email** |
+| :- | :--- | :--- | :--- |
+| 1 | [`GB2GLJVQ...MMVS`](https://stellar.expert/explorer/testnet/account/GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS) | Madhura | madhuraworkspace@gmail.com |
+| 2 | [`GD3HNNEJ...S4TH`](https://stellar.expert/explorer/testnet/account/GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH) | Anand | jstech801@gmail.com |
+| 3 | [`GAWOCI3J...THDU`](https://stellar.expert/explorer/testnet/account/GAWOCI3JKKRFYYUJGOR7I3LZM6BMFCLUBN3EXBNLRISO6XWW3YDSTHDU) | Aditi Mhaske | aditidmhaske17@gmail.com |
+| 4 | [`GBFMIBZ4...ZZPI`](https://stellar.expert/explorer/testnet/account/GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI) | Shantanu Udhane | udhaneshantanu@gmail.com |
+| 5 | [`GCWD2XRC...TRW3`](https://stellar.expert/explorer/testnet/account/GCWD2XRCJFP5AMT57MRYIVEK2QRWZUNUVROGYYRK2XGCZFOORXCXTRW3) | Omkar Nanavare | omkarnanavare1969@gmail.com |
+| 6 | [`GDRWMWMZ...TBL3`](https://stellar.expert/explorer/testnet/account/GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3) | Om Nanavare | omnanaware1969@gmail.com |
+| 7 | [`GCTRYJB6...SPD2`](https://stellar.expert/explorer/testnet/account/GCTRYJB6THCS3EDAY3NM7VTDKC4H572BY5MLZ343IWFSLOG6KAROSPD2) | Shreya Dhaware | shreyasdhaware@gmail.com |
+| 8 | [`GC54MZUN...FGT3`](https://stellar.expert/explorer/testnet/account/GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3) | Aayusha Jagtap | jagtapaayusha17@gmail.com |
+| 9 | [`GAYJALSD...HTMQ`](https://stellar.expert/explorer/testnet/account/GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ) | Tanmay Tad | tanmaytad23@gmail.com |
+| 10 | [`GAYUBQQS...ZU63`](https://stellar.expert/explorer/testnet/account/GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63) | Khushi Nagare | khushinagare8@gmail.com |
+| 11 | [`GBQQRG45...U26PB`](https://stellar.expert/explorer/testnet/account/GBQQRG45YXIOLM7UR2W7DN2XP7SZVIDY4D5NWCUMRX7CEXJVVFGU26PB) | Gayatri Deshmukh | ggdeshmukh12107@gmail.com |
+| 12 | [`GB6B6QEJ...FFTV`](https://stellar.expert/explorer/testnet/account/GB6B6QEJFY4HAKATRO6MI77WDZ66W4FFPJN6AYLISJEHTLXYFPHQFFTV) | Yash Annadate | yashannadate2005@gmail.com |
+| 13 | [`GBLUMAX4...JY5GI`](https://stellar.expert/explorer/testnet/account/GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI) | Janhavi Lipare | janhavilipare9948@gmail.com |
+| 14 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | N/A |
+| 15 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | poorvam2006@gmail.com |
+| 16 | [`GDHPNSQI...JKJ6`](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) | Thanchan Bhumij | thanchanb@gmail.com |
 
 > 📌 These are the **16 real verified participants** logged in the latest responder dashboard.
+> 📊 Full data with ratings: [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | Detailed analysis: [user_feedback.md](./user_feedback.md)
 
 ---
 
 ### Table 2: User Feedback Implementation Log
 
-| User Name | User Email | User Wallet Address | User Feedback | Commit ID |
-|-----------|------------|---------------------|---------------|-----------|
-| Madhura | madhuraworkspace@gmail.com | `GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS` | no suggestion , great ui | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Anand | jstech801@gmail.com | `GD3HNNEJR4YA7DP7KBTIYD2X7AWQOEDPXLJQJFF6HMS4JPTTTPFYS4TH` | no suggestion perfect integration of wallets | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Aditi Mhaske | aditidmhaske17@gmail.com | `GAWOCI3JKKRFYYUJGOR7I3LZM6BMFCLUBN3EXBNLRISO6XWW3YDSTHDU` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4NFYE4Y5FDHZTGMCZ2QVRPUSQUBNVWBOT2AKE5XAQGDNIZZPI` | Good ui | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Omkar nanaware | omkarnanavare1969@gmail.com | `GCWD2XRCJFP5AMT57MRYIVEK2QRWZUNUVROGYYRK2XGCZFOORXCXTRW3` | Everything looks great | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Om nanaware | omnanaware1969@gmail.com | `GDRWMWMZFE2FGJUV63RHCAG7ONVYYDJRRVVDTC5LM3ADNQRJFVQDTBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shreya dhaware | shreyasdhaware@gmail.com | `GCTRYJB6THCS3EDAY3NM7VTDKC4H572BY5MLZ343IWFSLOG6KAROSPD2` | Great application | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Aayusha Jagtap | jagtapaayusha17@gmail.com | `GC54MZUNEHS3WNZJ6QWQH5U3K5ACYI5VFF6VNOPMP6OXKGRKDAZ3FGT3` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Tanmay Tad | tanmaytad23@gmail.com | `GAYJALSDDA3QYIIQDFESHZCHNKGWV43C76Y2MSL6MZS6RCGO7YO3HTMQ` | no suggestion , good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Khushi Nagare | khushinagare8@gmail.com | `GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU63` | The ui is working properly and the application is also nice | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Gayatri Deshmukh | ggdeshmukh12107@gmail.com | `GBQQRG45YXIOLM7UR2W7DN2XP7SZVIDY4D5NWCUMRX7CEXJVVFGU26PB` | Fabulous | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Yash Annadate | yashannadate2005@gmail.com | `GB6B6QEJFY4HAKATRO6MI77WDZ66W4FFPJN6AYLISJEHTLXYFPHQFFTV` | Good application for savings with etc features | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| janhavi lipare | janhavilipare9948@gmail.com | `GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI` | app is working very well | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Poorva | N/A | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` | Liked the app, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Poorva | poorvam2006@gmail.com | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` | Liked the app | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-
-**Community Insight:**
-- **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
-- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
-- **[📊 Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)**
-- **[🧪 Full User Feedback Logs](./user_feedback.md)**
-
-*Testnet participants provided critical feedback on wallet options and UI transparency, leading to the version `1.0` production hardening.*
+| **User Name** | **User Email** | **User Wallet Address** | **User Feedback** | **Commit ID** |
+| :--- | :--- | :--- | :--- | :--- |
+| Madhura | madhuraworkspace@gmail.com | `GB2GLJVQ...MMVS` | No suggestion, great UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Anand | jstech801@gmail.com | `GD3HNNEJ...S4TH` | No suggestion, perfect integration of wallets | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Aditi Mhaske | aditidmhaske17@gmail.com | `GAWOCI3J...THDU` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4...ZZPI` | Good UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Omkar Nanavare | omkarnanavare1969@gmail.com | `GCWD2XRC...TRW3` | Everything looks great | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Om Nanavare | omnanaware1969@gmail.com | `GDRWMWMZ...TBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shreya Dhaware | shreyasdhaware@gmail.com | `GCTRYJB6...SPD2` | Great application | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Aayusha Jagtap | jagtapaayusha17@gmail.com | `GC54MZUN...FGT3` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Tanmay Tad | tanmaytad23@gmail.com | `GAYJALSD...HTMQ` | No suggestion, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Khushi Nagare | khushinagare8@gmail.com | `GAYUBQQS...ZU63` | The UI is working properly and the application is also nice | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Gayatri Deshmukh | ggdeshmukh12107@gmail.com | `GBQQRG45...U26PB` | Fabulous | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Yash Annadate | yashannadate2005@gmail.com | `GB6B6QEJ...FFTV` | Good application for savings with etc features | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Janhavi Lipare | janhavilipare9948@gmail.com | `GBLUMAX4...JY5GI` | App is working very well | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Poorva | N/A | `GAOQKOFH...OI3E` | Liked the app, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Poorva | poorvam2006@gmail.com | `GAOQKOFH...OI3E` | Liked the app | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQI...JKJ6` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
 
 ---
 
-### 1. Configure Example Environment
+### 🚀 Product Evolution & Feedback-Driven Improvements
+
+Based on the feedback collected from **16 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
+
+| **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
+| :--- | :--- | :--- | :--- |
+| "Skeptical about paying gas fees to join a group" | **Gasless Transactions**: Fee Bump sponsorship so users need zero XLM to transact. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: fee sponsorship gasless transactions using Stellar fee bump* |
+| "Make it more user friendly" | **UI/UX Improvements**: Simplified group creation flow, clearer contribution status indicators. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: improved onboarding UX and group dashboard clarity* |
+| "Need to see live data and trust signals" | **Metrics Dashboard**: DAU charts, volume tracking, and pool analytics for full transparency. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: metrics dashboard with DAU charts and pool volume tracking* |
+| "Need mobile accessibility" | **Mobile Responsive UI**: Fully responsive design for tablets and smartphones. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: mobile responsive layout with touch-friendly components* |
+| "Want more wallet options" | **Multi-Wallet Support**: Freighter Extension + Albedo Web/Mobile support added. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: multi-wallet context with Freighter & Albedo* |
+
+Detailed iteration analysis: [user_feedback.md](./user_feedback.md)
+
+---
+
+### Future Roadmap
+
+- **Phase 2 — Mobile App**: React Native app for WhatsApp-integrated ROSCA group invitations.
+- **Phase 3 — Expansion**: Stellar SEP-24 support for direct INR off-ramps (fiat withdrawal).
+- **Phase 4 — Loyalty**: Reputation-based fee discounts for consistent long-term participants.
+
+---
+
+## 💻 Local Setup & Testing
+
+### 1. Configure Environment
+
 Create a `.env.local` file in the `frontend` directory:
 
 ```env
@@ -234,23 +288,34 @@ SPONSOR_SECRET_KEY=S... (Your treasury secret key for gasless tx)
 ```
 
 ### 2. Install and Run Locally
-```bash
-# Clone the repository
-git clone https://github.com/MrunalGhorpade13/De-Bachat-Stellar.git
-cd De-Bachat-Stellar/frontend
 
-# Install dependencies and start server
-npm install
-npm run dev
+```bash
+# Clone and run
+git clone https://github.com/MrunalGhorpade13/De-Bachat-Stellar.git
+cd De-Bachat-Stellar/frontend && npm install && npm run dev
+
+# Run Contract Tests
+cd contracts && cargo test
 ```
 
 ### 3. View the Dashboard
+
 Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to see the Horizon Data Indexer in action.
 
 ---
 
+**Community Insight:**
+- **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
+- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
+- **[📊 Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)**
+- **[🧪 Full User Feedback Logs](./user_feedback.md)**
+
+*Testnet participants provided critical feedback on wallet options, UI clarity, and gasless UX — leading to the v1.0 production hardening of De-Bachat.*
+
+---
+
 <p align="center">
-  <b>Built by Mrunal Ghorpade</b> 👨💻 <br/>
+  <b>Built by Mrunal Ghorpade</b> 👩‍💻 <br/>
   <i>Admin Wallet: GAGKWDKAZYZ7GSK2K6YZGGEDEZXL2GEHDU2NMOAU4AVHSFAVZH336FFX</i><br/><br/>
   <img src="https://img.shields.io/badge/Level_6-Black_Belt-111111?style=for-the-badge" alt="Black Belt" /><br/><br/>
   <b>Stellar Journey to Mastery 2026</b><br/><br/>
@@ -260,4 +325,5 @@ Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to see t
 ---
 
 ## 📄 License
+
 MIT License - Developed by **Mrunal Ghorpade**
