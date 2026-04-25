@@ -313,29 +313,29 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ### Table 2: User Feedback Implementation Log
 
-| **User Name** | **User Email** | **User Wallet Address** | **User Feedback** | **Commit ID** |
-| :--- | :--- | :--- | :--- | :--- |
-| Madhura | madhuraworkspace@gmail.com | `GB2GLJVQ...MMVS` | No suggestion, great UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Anand | jstech801@gmail.com | `GD3HNNEJ...S4TH` | No suggestion, perfect integration of wallets | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Aditi Mhaske | aditidmhaske17@gmail.com | `GAWOCI3J...THDU` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shantanu Udhane | udhaneshantanu@gmail.com | `GBFMIBZ4...ZZPI` | Good UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Omkar Nanavare | omkarnanavare1969@gmail.com | `GCWD2XRC...TRW3` | Everything looks great | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Om Nanavare | omnanaware1969@gmail.com | `GDRWMWMZ...TBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shreya Dhaware | shreyasdhaware@gmail.com | `GCTRYJB6...SPD2` | Great application | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Aayusha Jagtap | jagtapaayusha17@gmail.com | `GC54MZUN...FGT3` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Tanmay Tad | tanmaytad23@gmail.com | `GAYJALSD...HTMQ` | No suggestion, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Khushi Nagare | khushinagare8@gmail.com | `GAYUBQQS...ZU63` | The UI is working properly and the application is also nice | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Gayatri Deshmukh | ggdeshmukh12107@gmail.com | `GBQQRG45...U26PB` | Fabulous | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Yash Annadate | yashannadate2005@gmail.com | `GB6B6QEJ...FFTV` | Good application for savings with etc features | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Janhavi Lipare | janhavilipare9948@gmail.com | `GBLUMAX4...JY5GI` | App is working very well | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Poorva | N/A | `GAOQKOFH...OI3E` | Liked the app, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Poorva | poorvam2006@gmail.com | `GAOQKOFH...OI3E` | Liked the app | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQI...JKJ6` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Jadhav Vaibhavi Ajay | vaibhavijadhav326@gmail.com | `GDBIJAOF...4OHA` | Nice idea !! | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Ayush Gaikwad | gaikwadayush20@gmail.com | `GBUDUGMH...5MG` | Everything works good | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Dhruv Khandale | wolfvexyt@gmail.com | `GDTH7H7Q...7Z3Q` | Very much useful application | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Ayush Pol | ayyush1326@gmail.com | `GBPSA7Q2...MCB` | Excellent UI and functionality | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Mrunal | mrunalghorpade1326@gmail.com | `GDC55QCA...ARL` | Excellent | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| **User Name** | **User Wallet Address** | **User Feedback** | **Commit ID** |
+| :--- | :--- | :--- | :--- |
+| Madhura | `GB2GLJVQ...MMVS` | No suggestion, great UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Anand | `GD3HNNEJ...S4TH` | No suggestion, perfect integration of wallets | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Aditi Mhaske | `GAWOCI3J...THDU` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shantanu Udhane | `GBFMIBZ4...ZZPI` | Good UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Omkar Nanavare | `GCWD2XRC...TRW3` | Everything looks great | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Om Nanavare | `GDRWMWMZ...TBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Shreya Dhaware | `GCTRYJB6...SPD2` | Great application | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Aayusha Jagtap | `GC54MZUN...FGT3` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Tanmay Tad | `GAYJALSD...HTMQ` | No suggestion, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Khushi Nagare | `GAYUBQQS...ZU63` | The UI is working properly and the application is also nice | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Gayatri Deshmukh | `GBQQRG45...U26PB` | Fabulous | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Yash Annadate | `GB6B6QEJ...FFTV` | Good application for savings with etc features | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Janhavi Lipare | `GBLUMAX4...JY5GI` | App is working very well | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Poorva | `GAOQKOFH...OI3E` | Liked the app, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Poorva | `GAOQKOFH...OI3E` | Liked the app | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Thanchan Bhumij | `GDHPNSQI...JKJ6` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Jadhav Vaibhavi Ajay | `GDBIJAOF...4OHA` | Nice idea !! | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Ayush Gaikwad | `GBUDUGMH...5MG` | Everything works good | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Dhruv Khandale | `GDTH7H7Q...7Z3Q` | Very much useful application | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Ayush Pol | `GBPSA7Q2...MCB` | Excellent UI and functionality | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Mrunal | `GDC55QCA...ARL` | Excellent | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
 
 ---
 
