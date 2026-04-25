@@ -32,8 +32,8 @@ Communities across India have long relied on **chit funds and ROSCAs** — infor
 - **Demo Video**: [Watch on Google Drive](https://drive.google.com/file/d/1FXNovrfNOnoiRfa0WCsm_O6AmPclMsM1/view?usp=sharing)
 - **Metrics Dashboard**: [https://de-bachat-stellar.vercel.app/dashboard](https://de-bachat-stellar.vercel.app/dashboard)
 - **Community Post**: [LinkedIn Announcement](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)
-- **Feedback Form**: [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
-- **Response Sheet**: [View Live Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
+- **📋 Feedback Form** *(submit your review here)*: [https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
+- **📊 Feedback Response Sheet** *(view all submitted responses here)*: [https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
 
 ---
 
@@ -209,8 +209,8 @@ sequenceDiagram
 | 🧪 Feedback Logs | User testing iterations and fixes applied | [Read →](./user_feedback.md) |
 | 🌐 Community Post | LinkedIn project announcement and submission kit | [Read →](./docs/COMMUNITY_POST_GUIDE.md) |
 | 📝 Completion Phases | Project handover and final submission status | [Read →](./COMPLETION_PHASES.md) |
-| 📋 Feedback Form | Official Google Form for project validation | [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
-| 📊 Feedback Response Sheet | Real-time spreadsheet log of all user ratings | [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) |
+| 📋 **Feedback Form** | 🖊️ **Google Form** — Use this to **submit** a new feedback response | [**Open Google Form →**](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) |
+| 📊 **Feedback Response Sheet** | 📈 **Google Sheet** — Use this to **view** all submitted responses | [**Open Google Sheet →**](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) |
 
 ---
 
@@ -272,9 +272,10 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 >
 > **Note for Reviewers:** All **21 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
 >
-> - 📊 **Full Feedback Data**: [**Feedback Response Sheet**](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
-> - 📖 **Detailed Analysis**: [**user_feedback.md**](./user_feedback.md)
-> - 🤝 **Join Beta**: [De-Bachat Testnet Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
+> | | Link | Purpose |
+> | :--- | :--- | :--- |
+> | 📋 **Google Form** | [https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) | **Submit** a new feedback response |
+> | 📊 **Google Sheet** | [https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | **View** all submitted responses |
 
 ---
 
@@ -395,8 +396,8 @@ Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) to see t
 
 **Community Insight:**
 - **[🔗 LinkedIn Project Post](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8)**
-- **[📋 Official Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
-- **[📊 Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)**
+- **[📋 Official Feedback Form (Google Form — Submit here)](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)**
+- **[📊 Feedback Response Sheet (Google Sheet — View responses here)](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)**
 - **[🧪 Full User Feedback Logs](./user_feedback.md)**
 
 *Testnet participants provided critical feedback on wallet options, UI clarity, and gasless UX — leading to the v1.0 production hardening of De-Bachat.*
