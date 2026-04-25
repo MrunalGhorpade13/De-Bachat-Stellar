@@ -66,40 +66,119 @@ Communities across India have long relied on **chit funds and ROSCAs** — infor
 
 ## 🏗️ Architecture
 
+De-Bachat is a **Pure dApp** — no centralized database, no custom backend storage. The **Soroban Ledger is the single source of truth.**
+
 ```text
-┌─────────────────────────────────────────────────────────────────┐
-│                     Next.js 14 Frontend                         │
-│  (React 19 • Tailwind CSS v4 • Multi-Wallet Context)            │
-└──────────────┬──────────────┬──────────────┬──────────────┬─────┘
-               │              │              │              │
-        Soroban RPC      Soroban RPC    Horizon REST   Horizon REST
-               │              │              │              │
-  ┌────────────▼──────────────▼───┐  ┌───────▼──────────────▼──────┐
-  │      De-Bachat Soroban        │  │        Stellar Testnet       │
-  │        Smart Contract         │  │       (Account Details)      │
-  │                               │  │                              │
-  │  initialize_group             │  │                              │
-  │  join_group      ─────────────┼──► XLM Contributed on-chain    │
-  │  contribute / disburse        │  │                              │
-  └───────────────────────────────┘  └──────────────────────────────┘
+                        ┌──────────────────────────────────────────────┐
+                        │            Next.js 14 Frontend               │
+                        │  React 19 • Tailwind CSS v4 • Wallet Context │
+                        └───────┬──────────┬──────────┬───────────┬────┘
+                                │          │          │           │
+                          Soroban RPC  Soroban RPC  Horizon   Horizon
+                           (write)      (read)       REST       REST
+                                │          │          │           │
+               ┌────────────────▼──────────▼──┐  ┌───▼───────────▼─────────┐
+               │     De-Bachat Soroban         │  │    Stellar Testnet       │
+               │       Smart Contract          │  │   (Account & Tx Data)    │
+               │                               │  │                          │
+               │  initialize_group()           │  │  DAU Tracking            │
+               │  join_group()   ──────────────┼──►  Tx Volume Analytics     │
+               │  contribute()                 │  │  Pool Balance History    │
+               │  disburse()                   │  │                          │
+               └───────────────────────────────┘  └──────────────────────────┘
+                         ▲                                    ▲
+                         │ Fee Bump Wrapping                  │ Horizon Queries
+               ┌─────────┴────────────────┐                  │
+               │  Fee Sponsor API          │                  │
+               │  /api/sponsor-fee         │──────────────────┘
+               │  (Treasury Account)       │
+               └───────────────────────────┘
 ```
 
-**Inter-Contract Data Flow:**
-1. **Initialize:** `Organizer` → `Frontend` → `Soroban RPC` → `initialize()` → Group config locked on-chain.
-2. **Join:** `Participant` → `Frontend` → `join_group()` → Appended to the trustless roster.
-3. **Contribute:** `Member` → `Frontend` → `contribute()` → XLM pulled into the contract's secure escrow.
-4. **Disburse:** `Caller` → `disburse()` → Contract verifies all contributions → Transfers full pool to the designated recipient.
+---
+
+## 🏗️ System Components
+
+### 1. Soroban Smart Contract (Rust)
+The core ROSCA logic lives entirely on-chain. The contract manages:
+- **Group Initialization**: Stores group config (name, amount, cycle, max participants) immutably.
+- **Participant Roster**: Maintains the trustless, append-only list of member wallet addresses.
+- **Contribution Accounting**: Tracks who has paid each cycle, preventing double-charging.
+- **Automated Payouts**: Distributes the full pooled XLM balance to the designated recipient when all contributions are verified.
+
+### 2. Frontend (Next.js 14)
+The user interface for interacting with the contract at [`de-bachat-stellar.vercel.app`](https://de-bachat-stellar.vercel.app):
+- **Multi-Wallet Integration**: Connect via Freighter (Extension) or Albedo (Web/Mobile).
+- **Transaction Signing**: Users sign contract invocations client-side — keys never leave the wallet.
+- **Real-time State**: Fetches live pool balance, cycle state, and member list via Soroban RPC.
+- **Metrics Dashboard**: Queries Horizon REST API for DAU, tx count, and retention analytics.
+
+### 3. Account Abstraction (Fee Sponsorship)
+- New users need **zero XLM** to participate — De-Bachat's treasury covers all network fees.
+- Every write transaction is wrapped in a **Stellar Fee Bump** signed by the sponsor account.
+- **Implementation**: [`/frontend/src/lib/contractClient.ts`](./frontend/src/lib/contractClient.ts) · API: `/api/sponsor-fee`
+
+---
+
+## 🔄 ROSCA Transaction Lifecycle
+
+```mermaid
+sequenceDiagram
+    participant Organizer
+    participant Frontend as De-Bachat Frontend
+    participant Sponsor as Fee Sponsor API
+    participant Contract as Soroban Contract
+    participant Member
+
+    Organizer->>Frontend: Create Group (name, amount, cycles)
+    Frontend->>Sponsor: Request Fee Bump
+    Sponsor-->>Frontend: Wrapped FeeBump Tx
+    Frontend->>Contract: initialize_group()
+    Contract-->>Frontend: Group ID Confirmed On-Chain
+
+    Member->>Frontend: Join Group (wallet connect)
+    Frontend->>Sponsor: Request Fee Bump
+    Sponsor-->>Frontend: Wrapped FeeBump Tx
+    Frontend->>Contract: join_group()
+    Contract-->>Member: Added to Trustless Roster
+
+    Member->>Frontend: Contribute XLM
+    Frontend->>Sponsor: Request Fee Bump
+    Sponsor-->>Frontend: Wrapped FeeBump Tx
+    Frontend->>Contract: contribute()
+    Contract-->>Contract: Lock XLM in Escrow, Mark Paid
+
+    Member->>Frontend: Trigger Payout
+    Frontend->>Contract: disburse()
+    Contract-->>Contract: Verify All Contributions
+    Contract->>Member: Transfer Full Pool to Recipient
+    Contract-->>Contract: Increment Cycle, Reset State
+```
+
+---
+
+## 🔒 Security Measures
+
+- **Checks-Effects-Interactions (CEI)**: All state updates (cycle counters, balance resets) happen *before* any external XLM transfer — preventing reentrancy attacks.
+- **Checked Arithmetic**: All pool operations use `.checked_add()` / `.checked_sub()` to guard against overflow and silent data corruption.
+- **API Guard**: The Fee Sponsor API decodes and validates every transaction to ensure only legitimate ROSCA operations are signed by the treasury.
+- **Non-Custodial**: The organizer cannot access pooled funds. Only the smart contract controls disbursement logic.
+- **On-Chain Single Source of Truth**: No centralized DB — all state (roster, balances, cycle index) lives immutably on Soroban ledger.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Smart Contracts**: Rust + Soroban (Stellar)
-- **Frontend**: Next.js 14 + Tailwind CSS v4
-- **Blockchain**: Stellar Testnet
-- **Currency**: XLM (native Stellar token)
-- **Wallet Support**: Freighter (Extension) + Albedo (Web/Mobile)
-- **Deployment**: Vercel + GitHub Actions CI/CD
+| Layer | Technology |
+| :--- | :--- |
+| **Smart Contract** | Rust + Soroban SDK (Stellar) |
+| **Frontend** | Next.js 14, React 19, Tailwind CSS v4 |
+| **Blockchain** | Stellar Testnet |
+| **Native Token** | XLM |
+| **Wallets** | Freighter (Extension) + Albedo (Web/Mobile) |
+| **Data Indexing** | Stellar Horizon REST API |
+| **Deployment** | Vercel + GitHub Actions CI/CD |
+| **Language** | Rust (contracts), TypeScript (frontend) |
 
 ---
 
@@ -115,7 +194,7 @@ Communities across India have long relied on **chit funds and ROSCAs** — infor
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 16 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 21 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
