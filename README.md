@@ -194,7 +194,7 @@ sequenceDiagram
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 21 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 22 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -270,7 +270,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 > [!IMPORTANT]
 > **🌟 We are community-driven!** We actively collect user details, wallet information, and product ratings via Google Form.
 >
-> **Note for Reviewers:** All **21 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
+> **Note for Reviewers:** All **22 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
 >
 > | | Link | Purpose |
 > | :--- | :--- | :--- |
@@ -306,8 +306,9 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 19 | [`GDTH7H7Q...7Z3Q`](https://stellar.expert/explorer/testnet/account/GDTH7H7QKFMKJ22VN6ZDNM6AYX54CHT5WS4MA46GJQ7ZPA4QVUSF7Z3Q) | Dhruv Khandale | wolfvexyt@gmail.com |
 | 20 | [`GBPSA7Q2...MCB`](https://stellar.expert/explorer/testnet/account/GBPSA7Q2J4G67SE4BIMKA2CJD5CQJPQAAI7URCC53REMHVR7BISJWMCB) | Ayush Pol | ayyush1326@gmail.com |
 | 21 | [`GDC55QCA...ARL`](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) | Mrunal | mrunalghorpade1326@gmail.com |
+| 22 | [`GAYMWU2V...W4H`](https://stellar.expert/explorer/testnet/account/GAYMWU2VTZC6646FV4M5753ZZUBIXZHSBLBOLTHBHCVFQIOBZH6D5W4H) | Vedang Bahirat | vbahirat24@gmail.com |
 
-> 📌 These are the **21 real verified participants** logged in the latest responder dashboard.
+> 📌 These are the **22 real verified participants** logged in the latest responder dashboard.
 > 📊 Full data with ratings: [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | Detailed analysis: [user_feedback.md](./user_feedback.md)
 
 ---
@@ -337,6 +338,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | Dhruv Khandale | `GDTH7H7Q...7Z3Q` | Very much useful application | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
 | Ayush Pol | `GBPSA7Q2...MCB` | Excellent UI and functionality | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
 | Mrunal | `GDC55QCA...ARL` | Excellent | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Vedang Bahirat | `GAYMWU2V...W4H` | Overall Good application | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
 
 ---
 
