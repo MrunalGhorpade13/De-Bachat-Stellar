@@ -66,149 +66,112 @@ Communities across India have long relied on **chit funds and ROSCAs** — infor
 
 ## 🏗️ Architecture
 
-De-Bachat is a **Pure dApp** — no centralized database, no custom backend storage. The **Soroban Ledger is the single source of truth.**
+```mermaid
+flowchart TD
+    TITLE["**De-Bachat**\nA Decentralized ROSCA platform on Stellar blockchain"]
 
+    subgraph USERS["Users"]
+        U1["🧑‍💼\nOrganizer"]
+        U2["👥\nMember"]
+    end
+
+    TITLE --> USERS
+    USERS --> FRONTEND
+
+    subgraph FRONTEND["Frontend (Next.js + Vercel)"]
+        F1["Freighter Wallet\nConnector"]
+        F2["Albedo Wallet\nConnector"]
+        F3["Metrics\nDashboard"]
+    end
+
+    FRONTEND --> BACKEND
+    FRONTEND --> STELLAR
+
+    subgraph BACKEND["Backend API Routes"]
+        B1["/api/sponsor-fee\n(Fee Bump)"]
+        B2["/api/metrics\n(Analytics)"]
+        B3["/api/dashboard\n(DAU & Volume)"]
+    end
+
+    subgraph STELLAR["Stellar Blockchain"]
+        S1["Soroban Smart Contracts"]
+        S2["XLM — Native Token"]
+        S3["Horizon REST API"]
+    end
+
+    BACKEND --> CONTRACTS
+    STELLAR --> CONTRACTS
+
+    subgraph CONTRACTS["Smart Contracts"]
+        C1["ROSCA\nCore"]
+        C2["Group\nManager"]
+        C3["Contribution\nTracker"]
+        C4["Payout\nEngine"]
+    end
+
+    style TITLE fill:#1e293b,color:#e2e8f0,stroke:#6366f1,stroke-width:2px
+    style USERS fill:#1e1b4b,color:#e2e8f0,stroke:#6366f1,stroke-width:1.5px
+    style U1 fill:#312e81,color:#c7d2fe,stroke:none
+    style U2 fill:#312e81,color:#c7d2fe,stroke:none
+    style FRONTEND fill:#1a2744,color:#e2e8f0,stroke:#3b82f6,stroke-width:1.5px
+    style F1 fill:#1d4ed8,color:#fff,stroke:none
+    style F2 fill:#1d4ed8,color:#fff,stroke:none
+    style F3 fill:#1d4ed8,color:#fff,stroke:none
+    style BACKEND fill:#1c1917,color:#e2e8f0,stroke:#a855f7,stroke-width:1.5px
+    style B1 fill:#581c87,color:#e9d5ff,stroke:none
+    style B2 fill:#581c87,color:#e9d5ff,stroke:none
+    style B3 fill:#581c87,color:#e9d5ff,stroke:none
+    style STELLAR fill:#172554,color:#e2e8f0,stroke:#06b6d4,stroke-width:1.5px
+    style S1 fill:#0e7490,color:#cffafe,stroke:none
+    style S2 fill:#0e7490,color:#cffafe,stroke:none
+    style S3 fill:#0e7490,color:#cffafe,stroke:none
+    style CONTRACTS fill:#1a2e05,color:#e2e8f0,stroke:#22c55e,stroke-width:1.5px
+    style C1 fill:#166534,color:#bbf7d0,stroke:none
+    style C2 fill:#dc2626,color:#fee2e2,stroke:none
+    style C3 fill:#d97706,color:#fef3c7,stroke:none
+    style C4 fill:#7c3aed,color:#ede9fe,stroke:none
 ```
-╔══════════════════════════════════════════════════════════════════════╗
-║                        👥  USER LAYER                               ║
-║         Organizer  ·  Members  ·  Wallet (Freighter / Albedo)       ║
-╚═══════════════════╦══════════════════════════════╦════════════════════╝
-                    ║                              ║
-                    ▼                              ▼
-╔═══════════════════════════════╗   ╔══════════════════════════════════╗
-║     📱  PRESENTATION LAYER    ║   ║      ⛽  SPONSORSHIP LAYER       ║
-║                               ║   ║                                  ║
-║  Next.js 14  ·  React 19      ║   ║  Fee Sponsor API                 ║
-║  Tailwind CSS v4              ║   ║  /api/sponsor-fee                ║
-║  Multi-Wallet Context         ║   ║  (Treasury Account)              ║
-╚═══════╦══════════╦════════════╝   ╚═══════════════╦══════════════════╝
-        ║          ║                                ║
-   Soroban RPC  Horizon REST            Fee Bump Wrapping
-   (write/read)  (analytics)                        ║
-        ║          ║                                ║
-        ▼          ▼                                ▼
-╔════════════════════════════╗   ╔═══════════════════════════════════╗
-║    ⛓️  CONTRACT LAYER       ║   ║      📊  INDEXING LAYER           ║
-║                             ║   ║                                   ║
-║  De-Bachat Soroban          ║   ║  Stellar Horizon REST API         ║
-║  Smart Contract             ║   ║                                   ║
-║  ┌───────────────────────┐  ║◄──║  ▸ DAU Tracking                  ║
-║  │  initialize_group()   │  ║   ║  ▸ Tx Volume Analytics           ║
-║  │  join_group()         │  ║   ║  ▸ Pool Balance History          ║
-║  │  contribute()         │  ║   ║  ▸ Retention Events              ║
-║  │  disburse()           │  ║   ║                                   ║
-║  └───────────────────────┘  ║   ╚═══════════════════════════════════╝
-╚════════════════════════════╝
-                    ║
-                    ▼
-╔══════════════════════════════════════════════════════════════════════╗
-║                     🔗  STELLAR TESTNET                             ║
-║        Immutable On-Chain State  ·  XLM Escrow  ·  CEI Pattern      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
----
-
-## 🧩 System Components
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-### ⛓️ Smart Contract
-**Language:** Rust + Soroban SDK
-
-- 🔒 Group config stored immutably
-- 📋 Append-only participant roster
-- 💰 XLM locked in contract escrow
-- ✅ CEI pattern + Checked Arithmetic
-- 🔄 Auto payout on cycle completion
-
-**Contract:** [`CBII5RAQTZXMD...`](https://stellar.expert/explorer/testnet/contract/CBII5RAQTZXMD2HOZCGSFGUENHHEFF62SFDUVKOT37MG3YVSJPIDAG2B)
-
-</td>
-<td width="33%" valign="top">
-
-### 🌐 Frontend
-**Stack:** Next.js 14 · React 19 · Tailwind v4
-
-- 🦊 Freighter wallet (extension)
-- 🌐 Albedo wallet (web/mobile)
-- 📡 Soroban RPC for live state reads
-- 📊 Horizon API for analytics
-- 🔑 Client-side signing only
-
-**Live:** [de-bachat-stellar.vercel.app](https://de-bachat-stellar.vercel.app)
-
-</td>
-<td width="33%" valign="top">
-
-### ⛽ Fee Sponsorship
-**Pattern:** Account Abstraction (Fee Bump)
-
-- 🆓 Zero XLM needed for new users
-- 🏦 Treasury wraps every write tx
-- 🛡️ API validates tx before signing
-- 📁 [`contractClient.ts`](./frontend/src/lib/contractClient.ts)
-- 🔗 Route: `/api/sponsor-fee`
-
-**Benefit:** Removes gas barrier entirely.
-
-</td>
-</tr>
-</table>
 
 ---
 
 ## 🔄 ROSCA Transaction Lifecycle
 
 ```mermaid
-flowchart TD
-    A([👤 Organizer]) -->|"Fill group details\nname · amount · cycles"| B
+sequenceDiagram
+    autonumber
+    actor Organizer
+    participant F as 🌐 De-Bachat Frontend
+    participant S as ⛽ Fee Sponsor API
+    participant C as ⛓️ Soroban Contract
+    actor Member
 
-    subgraph B ["🌐 De-Bachat Frontend"]
-        B1[Build Transaction]
-    end
+    Note over Organizer,C: 📋 Phase 1 — Group Creation
+    Organizer->>F: Create group (name · amount · cycles)
+    F->>S: Request Fee Bump tx
+    S-->>F: Return wrapped FeeBump tx
+    F->>C: initialize_group()
+    C-->>F: ✅ Group ID locked on-chain
 
-    B -->|Request Fee Bump| C[⛽ Fee Sponsor API]
-    C -->|Wrapped FeeBump Tx| B
-    B -->|initialize_group| D
+    Note over Member,C: 🚪 Phase 2 — Member Onboarding
+    Member->>F: Connect wallet (Freighter / Albedo)
+    F->>S: Request Fee Bump tx
+    S-->>F: Return wrapped FeeBump tx
+    F->>C: join_group()
+    C-->>Member: ✅ Added to trustless roster
 
-    subgraph D ["⛓️ Soroban Smart Contract"]
-        D1[Group Config Stored On-Chain]
-        D2[Participant Roster Updated]
-        D3[XLM Locked in Escrow]
-        D4[Payout Disbursed]
-    end
+    Note over Member,C: 💰 Phase 3 — Contribution
+    Member->>F: Click Contribute
+    F->>S: Request Fee Bump tx
+    S-->>F: Return wrapped FeeBump tx
+    F->>C: contribute()
+    C-->>C: 🔒 XLM locked in escrow, member marked paid
 
-    D1 -->|✅ Group ID confirmed| B
-
-    E([👥 Member]) -->|Connect Wallet| B
-    B -->|Request Fee Bump| C
-    C -->|Wrapped FeeBump Tx| B
-    B -->|join_group| D2
-    D2 -->|✅ Added to roster| E
-
-    E -->|Click Contribute| B
-    B -->|Request Fee Bump| C
-    C -->|Wrapped FeeBump Tx| B
-    B -->|contribute| D3
-    D3 -->|🔒 Marked as paid| D3
-
-    E -->|Trigger Payout| B
-    B -->|disburse| D4
-    D4 -->|Verify all paid| D4
-    D4 -->|💸 Transfer pool to recipient| E
-    D4 -->|🔄 Cycle++ Reset state| D1
-
-    style A fill:#6366f1,color:#fff,stroke:none
-    style E fill:#6366f1,color:#fff,stroke:none
-    style C fill:#7c3aed,color:#fff,stroke:none
-    style B1 fill:#1e293b,color:#e2e8f0,stroke:none
-    style D1 fill:#164e63,color:#a5f3fc,stroke:none
-    style D2 fill:#164e63,color:#a5f3fc,stroke:none
-    style D3 fill:#164e63,color:#a5f3fc,stroke:none
-    style D4 fill:#164e63,color:#a5f3fc,stroke:none
+    Note over Member,C: 💸 Phase 4 — Payout
+    Member->>F: Trigger Payout
+    F->>C: disburse()
+    C-->>C: Verify all contributions received
+    C->>Member: 💸 Transfer full pool to recipient
+    C-->>C: 🔄 Increment cycle, reset state
 ```
 
 ---
@@ -218,8 +181,8 @@ flowchart TD
 | | Pattern | What It Prevents |
 | :---: | :--- | :--- |
 | 🛡️ | **Checks-Effects-Interactions (CEI)** — State updates *before* any XLM transfer | Reentrancy attacks |
-| 🔢 | **Checked Arithmetic** — `.checked_add()` / `.checked_sub()` on all pool ops | Integer overflow / silent data corruption |
-| 🔑 | **API Guard** — Fee Sponsor decodes & validates every tx before signing | Unauthorized treasury usage |
+| 🔢 | **Checked Arithmetic** — `.checked_add()` / `.checked_sub()` on all pool ops | Integer overflow / silent corruption |
+| 🔑 | **API Guard** — Fee Sponsor validates every tx before signing | Unauthorized treasury usage |
 | 🏦 | **Non-Custodial** — Only the contract controls disbursement, never the organizer | Fund theft by organizer |
 | 📖 | **On-Chain Single Source of Truth** — All state lives on Soroban ledger | Centralized data tampering |
 
