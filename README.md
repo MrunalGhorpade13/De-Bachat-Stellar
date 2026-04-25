@@ -68,64 +68,49 @@ Communities across India have long relied on **chit funds and ROSCAs** — infor
 
 ```mermaid
 flowchart TD
-    TITLE["**De-Bachat**\nA Decentralized ROSCA platform on Stellar blockchain"]
+    T["**De-Bachat** — ROSCA on Stellar"]
 
-    subgraph USERS["Users"]
-        U1["🧑‍💼\nOrganizer"]
-        U2["👥\nMember"]
+    subgraph U["Users"]
+        U1["🧑‍💼 Organizer"] & U2["👥 Member"]
     end
 
-    TITLE --> USERS
-    USERS --> FRONTEND
+    T --> U --> FE
 
-    subgraph FRONTEND["Frontend (Next.js + Vercel)"]
-        F1["Freighter Wallet\nConnector"]
-        F2["Albedo Wallet\nConnector"]
-        F3["Metrics\nDashboard"]
+    subgraph FE["Frontend · Next.js + Vercel"]
+        F1["Freighter"] & F2["Albedo"] & F3["Dashboard"]
     end
 
-    FRONTEND --> BACKEND
-    FRONTEND --> STELLAR
+    FE --> BE & SB
 
-    subgraph BACKEND["Backend API Routes"]
-        B1["/api/sponsor-fee\n(Fee Bump)"]
-        B2["/api/metrics\n(Analytics)"]
-        B3["/api/dashboard\n(DAU & Volume)"]
+    subgraph BE["API Routes"]
+        B1["/api/sponsor-fee"] & B2["/api/metrics"]
     end
 
-    subgraph STELLAR["Stellar Blockchain"]
-        S1["Soroban Smart Contracts"]
-        S2["XLM — Native Token"]
-        S3["Horizon REST API"]
+    subgraph SB["Stellar Blockchain"]
+        S1["Soroban Contract"] & S2["Horizon API"]
     end
 
-    BACKEND --> CONTRACTS
-    STELLAR --> CONTRACTS
+    BE & SB --> SC
 
-    subgraph CONTRACTS["Smart Contracts"]
-        C1["ROSCA\nCore"]
-        C2["Group\nManager"]
-        C3["Contribution\nTracker"]
-        C4["Payout\nEngine"]
+    subgraph SC["Smart Contracts"]
+        C1["ROSCA Core"] & C2["Group Mgr"] & C3["Contribution"] & C4["Payout"]
     end
 
-    style TITLE fill:#1e293b,color:#e2e8f0,stroke:#6366f1,stroke-width:2px
-    style USERS fill:#1e1b4b,color:#e2e8f0,stroke:#6366f1,stroke-width:1.5px
+    style T fill:#1e293b,color:#e2e8f0,stroke:#6366f1,stroke-width:2px
+    style U fill:#1e1b4b,color:#e2e8f0,stroke:#6366f1
     style U1 fill:#312e81,color:#c7d2fe,stroke:none
     style U2 fill:#312e81,color:#c7d2fe,stroke:none
-    style FRONTEND fill:#1a2744,color:#e2e8f0,stroke:#3b82f6,stroke-width:1.5px
+    style FE fill:#1a2744,color:#e2e8f0,stroke:#3b82f6
     style F1 fill:#1d4ed8,color:#fff,stroke:none
     style F2 fill:#1d4ed8,color:#fff,stroke:none
     style F3 fill:#1d4ed8,color:#fff,stroke:none
-    style BACKEND fill:#1c1917,color:#e2e8f0,stroke:#a855f7,stroke-width:1.5px
+    style BE fill:#1c1917,color:#e2e8f0,stroke:#a855f7
     style B1 fill:#581c87,color:#e9d5ff,stroke:none
     style B2 fill:#581c87,color:#e9d5ff,stroke:none
-    style B3 fill:#581c87,color:#e9d5ff,stroke:none
-    style STELLAR fill:#172554,color:#e2e8f0,stroke:#06b6d4,stroke-width:1.5px
+    style SB fill:#172554,color:#e2e8f0,stroke:#06b6d4
     style S1 fill:#0e7490,color:#cffafe,stroke:none
     style S2 fill:#0e7490,color:#cffafe,stroke:none
-    style S3 fill:#0e7490,color:#cffafe,stroke:none
-    style CONTRACTS fill:#1a2e05,color:#e2e8f0,stroke:#22c55e,stroke-width:1.5px
+    style SC fill:#1a2e05,color:#e2e8f0,stroke:#22c55e
     style C1 fill:#166534,color:#bbf7d0,stroke:none
     style C2 fill:#dc2626,color:#fee2e2,stroke:none
     style C3 fill:#d97706,color:#fef3c7,stroke:none
@@ -138,53 +123,44 @@ flowchart TD
 
 ```mermaid
 sequenceDiagram
-    autonumber
-    actor Organizer
-    participant F as 🌐 De-Bachat Frontend
-    participant S as ⛽ Fee Sponsor API
-    participant C as ⛓️ Soroban Contract
-    actor Member
+    actor O as Organizer
+    participant F as Frontend
+    participant S as Sponsor API
+    participant C as Contract
+    actor M as Member
 
-    Note over Organizer,C: 📋 Phase 1 — Group Creation
-    Organizer->>F: Create group (name · amount · cycles)
-    F->>S: Request Fee Bump tx
-    S-->>F: Return wrapped FeeBump tx
+    Note over O,C: 1️⃣ Create Group
+    O->>F: Create group
+    F->>S: Fee Bump
+    S-->>F: FeeBump Tx
     F->>C: initialize_group()
-    C-->>F: ✅ Group ID locked on-chain
+    C-->>F: ✅ On-chain
 
-    Note over Member,C: 🚪 Phase 2 — Member Onboarding
-    Member->>F: Connect wallet (Freighter / Albedo)
-    F->>S: Request Fee Bump tx
-    S-->>F: Return wrapped FeeBump tx
-    F->>C: join_group()
-    C-->>Member: ✅ Added to trustless roster
+    Note over M,C: 2️⃣ Join & Contribute
+    M->>F: Join → contribute()
+    F->>S: Fee Bump
+    S-->>F: FeeBump Tx
+    F->>C: join_group() → contribute()
+    C-->>C: 🔒 XLM escrowed
 
-    Note over Member,C: 💰 Phase 3 — Contribution
-    Member->>F: Click Contribute
-    F->>S: Request Fee Bump tx
-    S-->>F: Return wrapped FeeBump tx
-    F->>C: contribute()
-    C-->>C: 🔒 XLM locked in escrow, member marked paid
-
-    Note over Member,C: 💸 Phase 4 — Payout
-    Member->>F: Trigger Payout
+    Note over M,C: 3️⃣ Payout
+    M->>F: Trigger disburse()
     F->>C: disburse()
-    C-->>C: Verify all contributions received
-    C->>Member: 💸 Transfer full pool to recipient
-    C-->>C: 🔄 Increment cycle, reset state
+    C->>M: 💸 Full pool transferred
+    C-->>C: 🔄 Cycle reset
 ```
 
 ---
 
 ## 🔒 Security Measures
 
-| | Pattern | What It Prevents |
+| | Pattern | Prevents |
 | :---: | :--- | :--- |
-| 🛡️ | **Checks-Effects-Interactions (CEI)** — State updates *before* any XLM transfer | Reentrancy attacks |
-| 🔢 | **Checked Arithmetic** — `.checked_add()` / `.checked_sub()` on all pool ops | Integer overflow / silent corruption |
-| 🔑 | **API Guard** — Fee Sponsor validates every tx before signing | Unauthorized treasury usage |
-| 🏦 | **Non-Custodial** — Only the contract controls disbursement, never the organizer | Fund theft by organizer |
-| 📖 | **On-Chain Single Source of Truth** — All state lives on Soroban ledger | Centralized data tampering |
+| 🛡️ | **CEI Pattern** — state updated before XLM transfer | Reentrancy |
+| 🔢 | **Checked Arithmetic** — `.checked_add()` / `.checked_sub()` | Overflow |
+| 🔑 | **API Guard** — validates every tx before sponsor signs | Treasury abuse |
+| 🏦 | **Non-Custodial** — only contract can disburse | Organizer theft |
+| 📖 | **On-Chain Truth** — all state on Soroban ledger | Tampering |
 
 ---
 
