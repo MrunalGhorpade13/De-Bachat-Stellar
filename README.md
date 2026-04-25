@@ -66,101 +66,47 @@ Communities across India have long relied on **chit funds and ROSCAs** — infor
 
 ## 🏗️ Architecture
 
+De-Bachat is a pure dApp — no backend database, no middleman. Everything lives on the Soroban ledger.
+
 ```mermaid
 flowchart TD
-    T["**De-Bachat** — ROSCA on Stellar"]
+    A["👤 Users — Organizer & Member"]
+    B["🌐 Frontend — Next.js on Vercel\nFreighter · Albedo · Metrics Dashboard"]
+    C["⛽ /api/sponsor-fee\nFee Bump — gasless txns"]
+    D["⛓️ Soroban Smart Contract\ninitialize · join · contribute · disburse"]
+    E["📊 Stellar Horizon API\nDAU · volume · analytics"]
 
-    subgraph U["Users"]
-        U1["🧑‍💼 Organizer"] & U2["👥 Member"]
-    end
+    A --> B
+    B --> C & D & E
+    C --> D
 
-    T --> U --> FE
-
-    subgraph FE["Frontend · Next.js + Vercel"]
-        F1["Freighter"] & F2["Albedo"] & F3["Dashboard"]
-    end
-
-    FE --> BE & SB
-
-    subgraph BE["API Routes"]
-        B1["/api/sponsor-fee"] & B2["/api/metrics"]
-    end
-
-    subgraph SB["Stellar Blockchain"]
-        S1["Soroban Contract"] & S2["Horizon API"]
-    end
-
-    BE & SB --> SC
-
-    subgraph SC["Smart Contracts"]
-        C1["ROSCA Core"] & C2["Group Mgr"] & C3["Contribution"] & C4["Payout"]
-    end
-
-    style T fill:#1e293b,color:#e2e8f0,stroke:#6366f1,stroke-width:2px
-    style U fill:#1e1b4b,color:#e2e8f0,stroke:#6366f1
-    style U1 fill:#312e81,color:#c7d2fe,stroke:none
-    style U2 fill:#312e81,color:#c7d2fe,stroke:none
-    style FE fill:#1a2744,color:#e2e8f0,stroke:#3b82f6
-    style F1 fill:#1d4ed8,color:#fff,stroke:none
-    style F2 fill:#1d4ed8,color:#fff,stroke:none
-    style F3 fill:#1d4ed8,color:#fff,stroke:none
-    style BE fill:#1c1917,color:#e2e8f0,stroke:#a855f7
-    style B1 fill:#581c87,color:#e9d5ff,stroke:none
-    style B2 fill:#581c87,color:#e9d5ff,stroke:none
-    style SB fill:#172554,color:#e2e8f0,stroke:#06b6d4
-    style S1 fill:#0e7490,color:#cffafe,stroke:none
-    style S2 fill:#0e7490,color:#cffafe,stroke:none
-    style SC fill:#1a2e05,color:#e2e8f0,stroke:#22c55e
-    style C1 fill:#166534,color:#bbf7d0,stroke:none
-    style C2 fill:#dc2626,color:#fee2e2,stroke:none
-    style C3 fill:#d97706,color:#fef3c7,stroke:none
-    style C4 fill:#7c3aed,color:#ede9fe,stroke:none
+    style A fill:#312e81,color:#c7d2fe,stroke:none
+    style B fill:#1d4ed8,color:#fff,stroke:none
+    style C fill:#581c87,color:#e9d5ff,stroke:none
+    style D fill:#0e7490,color:#cffafe,stroke:none
+    style E fill:#166534,color:#bbf7d0,stroke:none
 ```
 
 ---
 
 ## 🔄 ROSCA Transaction Lifecycle
 
-```mermaid
-sequenceDiagram
-    actor O as Organizer
-    participant F as Frontend
-    participant S as Sponsor API
-    participant C as Contract
-    actor M as Member
-
-    Note over O,C: 1️⃣ Create Group
-    O->>F: Create group
-    F->>S: Fee Bump
-    S-->>F: FeeBump Tx
-    F->>C: initialize_group()
-    C-->>F: ✅ On-chain
-
-    Note over M,C: 2️⃣ Join & Contribute
-    M->>F: Join → contribute()
-    F->>S: Fee Bump
-    S-->>F: FeeBump Tx
-    F->>C: join_group() → contribute()
-    C-->>C: 🔒 XLM escrowed
-
-    Note over M,C: 3️⃣ Payout
-    M->>F: Trigger disburse()
-    F->>C: disburse()
-    C->>M: 💸 Full pool transferred
-    C-->>C: 🔄 Cycle reset
-```
+| Step | Who | Action |
+| :---: | :--- | :--- |
+| 1️⃣ | **Organizer** | Creates a group — name, amount, cycles |
+| 2️⃣ | **Frontend** | Wraps tx with Fee Bump → calls `initialize_group()` |
+| 3️⃣ | **Member** | Connects wallet → `join_group()` → added to roster |
+| 4️⃣ | **Member** | Clicks Contribute → `contribute()` → XLM locked in escrow |
+| 5️⃣ | **Anyone** | Triggers `disburse()` → full pool sent to recipient → cycle resets |
 
 ---
 
-## 🔒 Security Measures
+## 🔒 Security
 
-| | Pattern | Prevents |
-| :---: | :--- | :--- |
-| 🛡️ | **CEI Pattern** — state updated before XLM transfer | Reentrancy |
-| 🔢 | **Checked Arithmetic** — `.checked_add()` / `.checked_sub()` | Overflow |
-| 🔑 | **API Guard** — validates every tx before sponsor signs | Treasury abuse |
-| 🏦 | **Non-Custodial** — only contract can disburse | Organizer theft |
-| 📖 | **On-Chain Truth** — all state on Soroban ledger | Tampering |
+- **CEI pattern** — state is updated before any XLM leaves the contract
+- **Checked arithmetic** — overflow-safe math on all pool operations
+- **Non-custodial** — the organizer can never touch the pooled funds
+- **API guard** — fee sponsor validates each transaction before signing
 
 ---
 
