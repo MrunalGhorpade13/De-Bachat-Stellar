@@ -191,7 +191,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 > [!IMPORTANT]
 > **🌟 We are community-driven!** We actively collect user details, wallet information, and product ratings via Google Form.
 >
-> **Note for Reviewers:** All **16 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
+> **Note for Reviewers:** All **21 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
 >
 > - 📊 **Full Feedback Data**: [**Feedback Response Sheet**](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
 > - 📖 **Detailed Analysis**: [**user_feedback.md**](./user_feedback.md)
@@ -221,8 +221,13 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 14 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | N/A |
 | 15 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | poorvam2006@gmail.com |
 | 16 | [`GDHPNSQI...JKJ6`](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) | Thanchan Bhumij | thanchanb@gmail.com |
+| 17 | [`GDBIJAOF...4OHA`](https://stellar.expert/explorer/testnet/account/GDBIJAOFPMGQWDUUQTJ3YFHI44MWHQHPALJQG7ZDA7D5WWEDKJYA4OHA) | Jadhav Vaibhavi Ajay | vaibhavijadhav326@gmail.com |
+| 18 | [`GBUDUGMH...5MG`](https://stellar.expert/explorer/testnet/account/GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG) | Ayush Gaikwad | gaikwadayush20@gmail.com |
+| 19 | [`GDTH7H7Q...7Z3Q`](https://stellar.expert/explorer/testnet/account/GDTH7H7QKFMKJ22VN6ZDNM6AYX54CHT5WS4MA46GJQ7ZPA4QVUSF7Z3Q) | Dhruv Khandale | wolfvexyt@gmail.com |
+| 20 | [`GBPSA7Q2...MCB`](https://stellar.expert/explorer/testnet/account/GBPSA7Q2J4G67SE4BIMKA2CJD5CQJPQAAI7URCC53REMHVR7BISJWMCB) | Ayush Pol | ayyush1326@gmail.com |
+| 21 | [`GDC55QCA...ARL`](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) | Mrunal | mrunalghorpade1326@gmail.com |
 
-> 📌 These are the **16 real verified participants** logged in the latest responder dashboard.
+> 📌 These are the **21 real verified participants** logged in the latest responder dashboard.
 > 📊 Full data with ratings: [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | Detailed analysis: [user_feedback.md](./user_feedback.md)
 
 ---
@@ -247,12 +252,17 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | Poorva | N/A | `GAOQKOFH...OI3E` | Liked the app, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
 | Poorva | poorvam2006@gmail.com | `GAOQKOFH...OI3E` | Liked the app | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
 | Thanchan Bhumij | thanchanb@gmail.com | `GDHPNSQI...JKJ6` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
+| Jadhav Vaibhavi Ajay | vaibhavijadhav326@gmail.com | `GDBIJAOF...4OHA` | Nice idea !! | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Ayush Gaikwad | gaikwadayush20@gmail.com | `GBUDUGMH...5MG` | Everything works good | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Dhruv Khandale | wolfvexyt@gmail.com | `GDTH7H7Q...7Z3Q` | Very much useful application | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Ayush Pol | ayyush1326@gmail.com | `GBPSA7Q2...MCB` | Excellent UI and functionality | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
+| Mrunal | mrunalghorpade1326@gmail.com | `GDC55QCA...ARL` | Excellent | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
 
 ---
 
 ### 🚀 Product Evolution & Feedback-Driven Improvements
 
-Based on the feedback collected from **16 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
+Based on the feedback collected from **21 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |
