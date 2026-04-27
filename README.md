@@ -137,7 +137,7 @@ flowchart TD
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 22 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 24 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -213,7 +213,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 > [!IMPORTANT]
 > **🌟 We are community-driven!** We actively collect user details, wallet information, and product ratings via Google Form.
 >
-> **Note for Reviewers:** All **22 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
+> **Note for Reviewers:** All **24 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
 >
 > | | Link | Purpose |
 > | :--- | :--- | :--- |
@@ -250,8 +250,10 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 20 | [`GBPSA7Q2...MCB`](https://stellar.expert/explorer/testnet/account/GBPSA7Q2J4G67SE4BIMKA2CJD5CQJPQAAI7URCC53REMHVR7BISJWMCB) | Ayush Pol | ayyush1326@gmail.com |
 | 21 | [`GDC55QCA...ARL`](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) | Mrunal | mrunalghorpade1326@gmail.com |
 | 22 | [`GAYMWU2V...W4H`](https://stellar.expert/explorer/testnet/account/GAYMWU2VTZC6646FV4M5753ZZUBIXZHSBLBOLTHBHCVFQIOBZH6D5W4H) | Vedang Bahirat | vbahirat24@gmail.com |
+| 23 | [`GBLSGNNN...7PVN`](https://stellar.expert/explorer/testnet/account/GBLSGNNNFFIHR2745JID5AW42TAKULJ7VJWCQBHGUWQKCMCQWLGZ7PVN) | Nishit Bhalerao | nishitbhalerao@gmail.com |
+| 24 | [`GA7IXJAO...MHKG`](https://stellar.expert/explorer/testnet/account/GA7IXJAO4NMPRXMQD4MTOZICZCSVK5KWWFGFR3GVQHGC4FNRLHHZMHKG) | Payal Babar | babarpayal953@gmail.com |
 
-> 📌 These are the **22 real verified participants** logged in the latest responder dashboard.
+> 📌 These are the **24 real verified participants** logged in the latest responder dashboard.
 > 📊 Full data with ratings: [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | Detailed analysis: [user_feedback.md](./user_feedback.md)
 
 ---
@@ -282,12 +284,14 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | Ayush Pol | `GBPSA7Q2...MCB` | Excellent UI and functionality | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
 | Mrunal | `GDC55QCA...ARL` | Excellent | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
 | Vedang Bahirat | `GAYMWU2V...W4H` | Overall Good application | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
+| Nishit Bhalerao | `GBLSGNNN...7PVN` | No, Excellent work done 👍 | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
+| Payal Babar | `GA7IXJAO...MHKG` | No | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
 
 ---
 
 ### 🚀 Product Evolution & Feedback-Driven Improvements
 
-Based on the feedback collected from **21 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
+Based on the feedback collected from **23 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |
