@@ -137,7 +137,7 @@ flowchart TD
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 25 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 26 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -213,7 +213,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 > [!IMPORTANT]
 > **🌟 We are community-driven!** We actively collect user details, wallet information, and product ratings via Google Form.
 >
-> **Note for Reviewers:** All **25 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
+> **Note for Reviewers:** All **26 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
 >
 > | | Link | Purpose |
 > | :--- | :--- | :--- |
@@ -253,8 +253,9 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 23 | [`GBLSGNNN...7PVN`](https://stellar.expert/explorer/testnet/account/GBLSGNNNFFIHR2745JID5AW42TAKULJ7VJWCQBHGUWQKCMCQWLGZ7PVN) | Nishit Bhalerao | nishitbhalerao@gmail.com |
 | 24 | [`GA7IXJAO...MHKG`](https://stellar.expert/explorer/testnet/account/GA7IXJAO4NMPRXMQD4MTOZICZCSVK5KWWFGFR3GVQHGC4FNRLHHZMHKG) | Payal Babar | babarpayal953@gmail.com |
 | 25 | [`GB2GLJVQ...MMVS`](https://stellar.expert/explorer/testnet/account/GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS) | Rani | ranighorpade76@gmail.com |
+| 26 | [`GAIOILWH...LOOI`](https://stellar.expert/explorer/testnet/account/GAIOILWH5IE7J5TKL2JR2EVSDSL6QDCNR3P4XFWUU7ZWFLFQYP3GLOOI) | Asha | ashakumbhar2006@gmail.com |
 
-> 📌 These are the **25 real verified participants** logged in the latest responder dashboard.
+> 📌 These are the **26 real verified participants** logged in the latest responder dashboard.
 > 📊 Full data with ratings: [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | Detailed analysis: [user_feedback.md](./user_feedback.md)
 
 ---
@@ -288,12 +289,13 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | Nishit Bhalerao | `GBLSGNNN...7PVN` | No, Excellent work done 👍 | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
 | Payal Babar | `GA7IXJAO...MHKG` | No | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
 | Rani | `GB2GLJVQ...MMVS` | No suggestions, amazing concept, related with Indian saving method | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
+| Asha | `GAIOILWH...LOOI` | Very stable website | [`f66fcd7`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/f66fcd7) |
 
 ---
 
 ### 🚀 Product Evolution & Feedback-Driven Improvements
 
-Based on the feedback collected from **24 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
+Based on the feedback collected from **26 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |

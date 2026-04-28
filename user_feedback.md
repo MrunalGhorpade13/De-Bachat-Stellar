@@ -22,6 +22,7 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | 14 | Poorva | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) |
 | 15 | Poorva | `GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) |
 | 16 | Thanchan Bhumij | `GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) |
+| 17 | Asha | `GAIOILWH5IE7J5TKL2JR2EVSDSL6QDCNR3P4XFWUU7ZWFLFQYP3GLOOI` | ✅ Joined | [Verify](https://stellar.expert/explorer/testnet/account/GAIOILWH5IE7J5TKL2JR2EVSDSL6QDCNR3P4XFWUU7ZWFLFQYP3GLOOI) |
 
 > 📋 **Official Feedback Form**: [Submit Feedback →](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog)
 > 📊 **Official Feedback Response Sheet**: [View Responses →](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)
@@ -46,6 +47,7 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 | Poorva | 5 ⭐ | Concept | Liked the app, good idea |
 | Poorva | 5 ⭐ | None | Liked the app |
 | Thanchan Bhumij | 5 ⭐ | None | No additional feedback |
+| Asha | 4 ⭐ | Stability | Very stable website |
 
 ## 🔄 Final Iteration Plan
 - **Selected Feedback**: "Make it more user friendly" (from Om nanaware).
