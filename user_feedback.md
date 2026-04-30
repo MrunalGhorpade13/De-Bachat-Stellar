@@ -32,24 +32,8 @@ This folder tracks the real-world validation of the De-Bachat MVP.
 
 | User | Rating | Issue Raised | Feedback |
 |------|--------|--------------|----------|
-| Madhura | 5 ⭐ | UI | no suggestion , great ui |
-| Anand | 5 ⭐ | Wallet Integration | no suggestion perfect integration of wallets |
-| Aditi Mhaske | 5 ⭐ | None | No additional feedback |
-| Shantanu Udhane | 5 ⭐ | UI | Good ui |
-| Omkar nanaware | 5 ⭐ | UI | Everything looks great |
 | Om nanaware | 5 ⭐ | User Experience | Make it more user friendly |
-| Shreya dhaware | 5 ⭐ | None | Great application |
-| Aayusha Jagtap | 5 ⭐ | None | No additional feedback |
-| Tanmay Tad | 5 ⭐ | Concept | no suggestion , good idea |
-| Khushi Nagare | 5 ⭐ | UI | The ui is working properly and the application is also nice |
-| Gayatri Deshmukh | 5 ⭐ | None | Fabulous |
-| Yash Annadate | 5 ⭐ | None | Good application for savings with etc features |
-| janhavi lipare | 5 ⭐ | None | app is working very well |
-| Poorva | 5 ⭐ | Concept | Liked the app, good idea |
-| Poorva | 5 ⭐ | None | Liked the app |
-| Thanchan Bhumij | 5 ⭐ | None | No additional feedback |
-| Asha | 4 ⭐ | Stability | Very stable website |
-| Durvesh Dongare | 5 ⭐ | None | None its perfect |
+
 
 ## 🔄 Final Iteration Plan
 - **Selected Feedback**: "Make it more user friendly" (from Om nanaware).

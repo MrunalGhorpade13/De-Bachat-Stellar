@@ -265,33 +265,8 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 | **User Name** | **User Wallet Address** | **User Feedback** | **Commit ID** |
 | :--- | :--- | :--- | :--- |
-| Madhura | `GB2GLJVQ...MMVS` | No suggestion, great UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Anand | `GD3HNNEJ...S4TH` | No suggestion, perfect integration of wallets | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Aditi Mhaske | `GAWOCI3J...THDU` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shantanu Udhane | `GBFMIBZ4...ZZPI` | Good UI | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Omkar Nanavare | `GCWD2XRC...TRW3` | Everything looks great | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Om Nanavare | `GDRWMWMZ...TBL3` | Make it more user friendly | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Shreya Dhaware | `GCTRYJB6...SPD2` | Great application | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Aayusha Jagtap | `GC54MZUN...FGT3` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Tanmay Tad | `GAYJALSD...HTMQ` | No suggestion, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Khushi Nagare | `GAYUBQQS...ZU63` | The UI is working properly and the application is also nice | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Gayatri Deshmukh | `GBQQRG45...U26PB` | Fabulous | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Yash Annadate | `GB6B6QEJ...FFTV` | Good application for savings with etc features | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Janhavi Lipare | `GBLUMAX4...JY5GI` | App is working very well | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Poorva | `GAOQKOFH...OI3E` | Liked the app, good idea | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Poorva | `GAOQKOFH...OI3E` | Liked the app | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Thanchan Bhumij | `GDHPNSQI...JKJ6` | No additional feedback | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) |
-| Jadhav Vaibhavi Ajay | `GDBIJAOF...4OHA` | Nice idea !! | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Ayush Gaikwad | `GBUDUGMH...5MG` | Everything works good | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Dhruv Khandale | `GDTH7H7Q...7Z3Q` | Very much useful application | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Ayush Pol | `GBPSA7Q2...MCB` | Excellent UI and functionality | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Mrunal | `GDC55QCA...ARL` | Excellent | [`73675cb`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/73675cb) |
-| Vedang Bahirat | `GAYMWU2V...W4H` | Overall Good application | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
-| Nishit Bhalerao | `GBLSGNNN...7PVN` | No, Excellent work done 👍 | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
-| Payal Babar | `GA7IXJAO...MHKG` | No | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
-| Rani | `GB2GLJVQ...MMVS` | No suggestions, amazing concept, related with Indian saving method | [`2f80e71`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/2f80e71) |
-| Asha | `GAIOILWH...LOOI` | Very stable website | [`f66fcd7`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/f66fcd7) |
-| Durvesh Dongare | `GD2CFOJ4...B3PJ` | None its perfect | [`docs`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commits/main) |
+| Om Nanavare | `GDRWMWMZ...TBL3` | Make it more user friendly | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) |
+
 
 ---
 
@@ -301,11 +276,11 @@ Based on the feedback collected from **27 beta testers** (documented via Google 
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |
-| "Skeptical about paying gas fees to join a group" | **Gasless Transactions**: Fee Bump sponsorship so users need zero XLM to transact. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: fee sponsorship gasless transactions using Stellar fee bump* |
-| "Make it more user friendly" | **UI/UX Improvements**: Simplified group creation flow, clearer contribution status indicators. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: improved onboarding UX and group dashboard clarity* |
-| "Need to see live data and trust signals" | **Metrics Dashboard**: DAU charts, volume tracking, and pool analytics for full transparency. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: metrics dashboard with DAU charts and pool volume tracking* |
-| "Need mobile accessibility" | **Mobile Responsive UI**: Fully responsive design for tablets and smartphones. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: mobile responsive layout with touch-friendly components* |
-| "Want more wallet options" | **Multi-Wallet Support**: Freighter Extension + Albedo Web/Mobile support added. | ✅ Done | [`6fc8d12`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/6fc8d12) — *feat: multi-wallet context with Freighter & Albedo* |
+| "Skeptical about paying gas fees to join a group" | **Gasless Transactions**: Fee Bump sponsorship so users need zero XLM to transact. | ✅ Done | [`a6ae2a9`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/a6ae2a9) — *feat: implement gasless fee sponsorship via Stellar Fee Bump* |
+| "Make it more user friendly" | **UI/UX Improvements**: Simplified group creation flow, clearer contribution status indicators. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: professionalize architecture and UI/UX* |
+| "Need to see live data and trust signals" | **Metrics Dashboard**: DAU charts, volume tracking, and pool analytics for full transparency. | ✅ Done | [`dd28bda`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/dd28bda) — *feat: implement live metrics dashboard and Horizon data indexer* |
+| "Need mobile accessibility" | **Mobile Responsive UI**: Fully responsive design for tablets and smartphones. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: mobile responsive layout and touch-friendly components* |
+| "Want more wallet options" | **Multi-Wallet Support**: Freighter Extension + Albedo Web/Mobile support added. | ✅ Done | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) — *feat: implement multi-wallet support (Freighter & Albedo)* |
 
 Detailed iteration analysis: [user_feedback.md](./user_feedback.md)
 
