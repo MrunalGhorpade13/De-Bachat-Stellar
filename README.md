@@ -271,11 +271,11 @@ Based on the feedback collected from **26 beta testers** (documented via Google 
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |
-| "no suggestion perfect integration of wallets" | **Gasless Transactions**: Fee Bump sponsorship so users need zero XLM to transact. | ✅ Done | [`a6ae2a9`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/a6ae2a9) — *feat: implement gasless fee sponsorship via Stellar Fee Bump* |
-| "Make it more user friendly" | **UI/UX Improvements**: Simplified group creation flow, clearer contribution status indicators. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: professionalize architecture and UI/UX* |
-| "Good application for savings with etc features" | **Metrics Dashboard**: DAU charts, volume tracking, and pool analytics for full transparency. | ✅ Done | [`dd28bda`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/dd28bda) — *feat: implement live metrics dashboard and Horizon data indexer* |
-| "The ui is working properly and the application is also nice" | **Mobile Responsive UI**: Fully responsive design for tablets and smartphones. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: mobile responsive layout and touch-friendly components* |
-| "no suggestion perfect integration of wallets" | **Multi-Wallet Support**: Freighter Extension + Albedo Web/Mobile support added. | ✅ Done | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) — *feat: implement multi-wallet support (Freighter & Albedo)* |
+| "no suggestion perfect integration of wallets" | **Gasless Experience**: Implemented fee sponsorship so users can join groups with zero XLM balance. | ✅ Done | [`a6ae2a9`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/a6ae2a9) — *Gasless joining: Users can now join groups without paying XLM fees* |
+| "Make it more user friendly" | **UX Polish**: Streamlined the group creation and contribution flow for better clarity. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *UI Polish: Redesigned the group dashboard for better clarity* |
+| "Good application for savings with etc features" | **Transparency Tools**: Added a live dashboard to track pool volume and active participants. | ✅ Done | [`dd28bda`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/dd28bda) — *Real-time stats: Added live tracking for pool activity and users* |
+| "The ui is working properly and the application is also nice" | **Mobile Optimization**: Fully responsive layouts optimized for a smooth smartphone experience. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *Mobile First: Optimized all layouts for a smooth smartphone experience* |
+| "no suggestion perfect integration of wallets" | **Flexible Wallets**: Added Multi-Wallet support including Freighter Extension and Albedo. | ✅ Done | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) — *Wallet choice: Added support for both Freighter and Albedo wallets* |
 
 Detailed iteration analysis: [user_feedback.md](./user_feedback.md)
 
