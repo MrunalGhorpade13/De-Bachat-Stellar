@@ -58,12 +58,12 @@ export async function GET() {
       activeUsers.add("fallback");
     }
 
-    const dau = activeUsers.size > 0 ? activeUsers.size : 12;
+    const dau = activeUsers.size;
 
     const data = {
       dau,
-      totalTransactions: totalTransactions > 0 ? totalTransactions : 42, // fallback
-      poolVolume: 500, // Derived from cycle contributions
+      totalTransactions,
+      poolVolume: 0, // In MVP, volume tracking requires full ledger scanning; defaulting to 0 for precision
       activeGroups,
       lastIndexedLedger: latestLedger.sequence
     };
@@ -72,8 +72,8 @@ export async function GET() {
   } catch (error: any) {
     console.error("Metrics Indexer Error:", error);
     return NextResponse.json(
-        { dau: 24, totalTransactions: 156, poolVolume: 1200, activeGroups: 1, _error: error.message },
-        { status: 200 } // Return degraded fallback data to keep dashboard alive
+        { dau: 0, totalTransactions: 0, poolVolume: 0, activeGroups: 1, _error: error.message },
+        { status: 200 } // Return zeroed state to avoid showing "fake" data during RPC downtime
     );
   }
 }

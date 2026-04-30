@@ -137,7 +137,7 @@ flowchart TD
 | 📐 Technical Docs | ✅ Done | See [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
 | 🌐 Community Post | ✅ Done | [LinkedIn Submission](https://www.linkedin.com/posts/mrunal-ghorpade-a94915323_stellar-soroban-web3-ugcPost-7444337297178898432-VxK8) |
 | 🏗️ Security Audit | ✅ Done | See [`docs/SECURITY_CHECKLIST.md`](./docs/SECURITY_CHECKLIST.md) |
-| 👥 Verified Users | ✅ Done | 27 verified testnet participants |
+| 👥 Verified Users | ✅ Done | 26 verified testnet participants |
 | 🧪 Final Checklist | ✅ Done | See [`FINAL_CHECKLIST.md`](./FINAL_CHECKLIST.md) |
 
 ---
@@ -213,18 +213,15 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 > [!IMPORTANT]
 > **🌟 We are community-driven!** We actively collect user details, wallet information, and product ratings via Google Form.
 >
-> Note for Reviewers: All **27 beta testers** listed below are **real, authentic users** who graciously donated their time to provide genuine feedback. They successfully completed our testnet onboarding by connecting their real Stellar wallets, testing group creation, joining, and contribution flows on the live frontend.
+> Note for Reviewers: Successfully onboarded **26 verified testnet users** during the closed beta phase. Each participant successfully connected their wallet, joined a ROSCA pool, and performed at least one contribution/disbursement cycle on the Stellar Testnet.
 >
 > | | Link | Purpose |
 > | :--- | :--- | :--- |
 > | 📋 **Google Form** | [https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSdi3LjEbq6ZZNadGqtagsP_fkGxpKekmqbhgWb3vEd4MUUz4A/viewform?usp=dialog) | **Submit** a new feedback response |
 > | 📊 **Google Sheet** | [https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | **View** all submitted responses |
 
----
-
-### Table 1: Verified Testnet Participants
-
-> All wallets are verifiable on [Stellar Testnet Explorer](https://stellar.expert/explorer/testnet).
+### 🛡️ Real-World Validation (Stellar Testnet)
+These are the **26 real verified participants** who tested the De-Bachat protocol. All transaction hashes and account states are verifiable on the Stellar Horizon RPC.
 
 | # | **Connected Wallet Address** | **Name** | **Email** |
 | :- | :--- | :--- | :--- |
@@ -241,22 +238,20 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 | 11 | [`GBQQRG45...U26PB`](https://stellar.expert/explorer/testnet/account/GBQQRG45YXIOLM7UR2W7DN2XP7SZVIDY4D5NWCUMRX7CEXJVVFGU26PB) | Gayatri Deshmukh | ggdeshmukh12107@gmail.com |
 | 12 | [`GB6B6QEJ...FFTV`](https://stellar.expert/explorer/testnet/account/GB6B6QEJFY4HAKATRO6MI77WDZ66W4FFPJN6AYLISJEHTLXYFPHQFFTV) | Yash Annadate | yashannadate2005@gmail.com |
 | 13 | [`GBLUMAX4...JY5GI`](https://stellar.expert/explorer/testnet/account/GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI) | Janhavi Lipare | janhavilipare9948@gmail.com |
-| 14 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | N/A |
-| 15 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | poorvam2006@gmail.com |
-| 16 | [`GDHPNSQI...JKJ6`](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) | Thanchan Bhumij | thanchanb@gmail.com |
-| 17 | [`GDBIJAOF...4OHA`](https://stellar.expert/explorer/testnet/account/GDBIJAOFPMGQWDUUQTJ3YFHI44MWHQHPALJQG7ZDA7D5WWEDKJYA4OHA) | Jadhav Vaibhavi Ajay | vaibhavijadhav326@gmail.com |
-| 18 | [`GBUDUGMH...5MG`](https://stellar.expert/explorer/testnet/account/GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG) | Ayush Gaikwad | gaikwadayush20@gmail.com |
-| 19 | [`GDTH7H7Q...7Z3Q`](https://stellar.expert/explorer/testnet/account/GDTH7H7QKFMKJ22VN6ZDNM6AYX54CHT5WS4MA46GJQ7ZPA4QVUSF7Z3Q) | Dhruv Khandale | wolfvexyt@gmail.com |
-| 20 | [`GBPSA7Q2...MCB`](https://stellar.expert/explorer/testnet/account/GBPSA7Q2J4G67SE4BIMKA2CJD5CQJPQAAI7URCC53REMHVR7BISJWMCB) | Ayush Pol | ayyush1326@gmail.com |
-| 21 | [`GDC55QCA...ARL`](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) | Mrunal | mrunalghorpade1326@gmail.com |
-| 22 | [`GAYMWU2V...W4H`](https://stellar.expert/explorer/testnet/account/GAYMWU2VTZC6646FV4M5753ZZUBIXZHSBLBOLTHBHCVFQIOBZH6D5W4H) | Vedang Bahirat | vbahirat24@gmail.com |
-| 23 | [`GBLSGNNN...7PVN`](https://stellar.expert/explorer/testnet/account/GBLSGNNNFFIHR2745JID5AW42TAKULJ7VJWCQBHGUWQKCMCQWLGZ7PVN) | Nishit Bhalerao | nishitbhalerao@gmail.com |
-| 24 | [`GA7IXJAO...MHKG`](https://stellar.expert/explorer/testnet/account/GA7IXJAO4NMPRXMQD4MTOZICZCSVK5KWWFGFR3GVQHGC4FNRLHHZMHKG) | Payal Babar | babarpayal953@gmail.com |
-| 25 | [`GB2GLJVQ...MMVS`](https://stellar.expert/explorer/testnet/account/GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS) | Rani | ranighorpade76@gmail.com |
-| 26 | [`GAIOILWH...LOOI`](https://stellar.expert/explorer/testnet/account/GAIOILWH5IE7J5TKL2JR2EVSDSL6QDCNR3P4XFWUU7ZWFLFQYP3GLOOI) | Asha | ashakumbhar2006@gmail.com |
-| 27 | [`GD2CFOJ4...B3PJ`](https://stellar.expert/explorer/testnet/account/GD2CFOJ4ZMWDE4WBUBP3Z6WRDPWMUAT5B2FK2BQSBCIWV3USTCXEA3PJ) | Durvesh Dongare | durveshdongare@gmail.com |
+| 14 | [`GAOQKOFH...OI3E`](https://stellar.expert/explorer/testnet/account/GAOQKOFH6R3FG5TS6SMJO2RHAJJG2F4MMBKFGT4Z3OKHZCO7UA2AOI3E) | Poorva | poorvam2006@gmail.com |
+| 15 | [`GDHPNSQI...JKJ6`](https://stellar.expert/explorer/testnet/account/GDHPNSQINMCUNO6DOWO7HSAW5NTNO2MDY6LDHGKPJMGLUSUMLVWBJKJ6) | Thanchan Bhumij | thanchanb@gmail.com |
+| 16 | [`GDBIJAOF...4OHA`](https://stellar.expert/explorer/testnet/account/GDBIJAOFPMGQWDUUQTJ3YFHI44MWHQHPALJQG7ZDA7D5WWEDKJYA4OHA) | Jadhav Vaibhavi Ajay | vaibhavijadhav326@gmail.com |
+| 17 | [`GBUDUGMH...5MG`](https://stellar.expert/explorer/testnet/account/GBUDUGMHCM7B54DIB5P5LP4PP6MG7MJ6VUBBYDB53BZNZCTH36LLG5MG) | Ayush Gaikwad | gaikwadayush20@gmail.com |
+| 18 | [`GDTH7H7Q...7Z3Q`](https://stellar.expert/explorer/testnet/account/GDTH7H7QKFMKJ22VN6ZDNM6AYX54CHT5WS4MA46GJQ7ZPA4QVUSF7Z3Q) | Dhruv Khandale | wolfvexyt@gmail.com |
+| 19 | [`GBPSA7Q2...MCB`](https://stellar.expert/explorer/testnet/account/GBPSA7Q2J4G67SE4BIMKA2CJD5CQJPQAAI7URCC53REMHVR7BISJWMCB) | Ayush Pol | ayyush1326@gmail.com |
+| 20 | [`GDC55QCA...ARL`](https://stellar.expert/explorer/testnet/account/GDC55QCAP36VCKEJ66YILV45LR6GRLJOE7AZYYMUM5MN4WAKPFAHBARL) | Mrunal | mrunalghorpade1326@gmail.com |
+| 21 | [`GAYMWU2V...W4H`](https://stellar.expert/explorer/testnet/account/GAYMWU2VTZC6646FV4M5753ZZUBIXZHSBLBOLTHBHCVFQIOBZH6D5W4H) | Vedang Bahirat | vbahirat24@gmail.com |
+| 22 | [`GBLSGNNN...7PVN`](https://stellar.expert/explorer/testnet/account/GBLSGNNNFFIHR2745JID5AW42TAKULJ7VJWCQBHGUWQKCMCQWLGZ7PVN) | Nishit Bhalerao | nishitbhalerao@gmail.com |
+| 23 | [`GA7IXJAO...MHKG`](https://stellar.expert/explorer/testnet/account/GA7IXJAO4NMPRXMQD4MTOZICZCSVK5KWWFGFR3GVQHGC4FNRLHHZMHKG) | Payal Babar | babarpayal953@gmail.com |
+| 24 | [`GB2GLJVQ...MMVS`](https://stellar.expert/explorer/testnet/account/GB2GLJVQ5CYJWOLWDQO5LXCM6WH76XQ253XT3WIL6RQWQAZUYNYLMMVS) | Rani | ranighorpade76@gmail.com |
+| 25 | [`GAIOILWH...LOOI`](https://stellar.expert/explorer/testnet/account/GAIOILWH5IE7J5TKL2JR2EVSDSL6QDCNR3P4XFWUU7ZWFLFQYP3GLOOI) | Asha | ashakumbhar2006@gmail.com |
+| 26 | [`GD2CFOJ4...B3PJ`](https://stellar.expert/explorer/testnet/account/GD2CFOJ4ZMWDE4WBUBP3Z6WRDPWMUAT5B2FK2BQSBCIWV3USTCXEA3PJ) | Durvesh Dongare | durveshdongare@gmail.com |
 
-> 📌 These are the **27 real verified participants** logged in the latest responder dashboard.
 > 📊 Full data with ratings: [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing) | Detailed analysis: [user_feedback.md](./user_feedback.md)
 
 ---
@@ -272,7 +267,7 @@ All core protocol logic and frontend elements have been rigorously tested to ens
 
 ### 🚀 Product Evolution & Feedback-Driven Improvements
 
-Based on the feedback collected from **27 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
+Based on the feedback collected from **26 beta testers** (documented via Google Form and exported to [Feedback Response Sheet](https://docs.google.com/spreadsheets/d/18ROR-yBrMAs82CaqzYXyj4ZGI50l0wTOq18PN4FXJA0/edit?usp=sharing)), we have iterated on the platform to better meet user needs.
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |
