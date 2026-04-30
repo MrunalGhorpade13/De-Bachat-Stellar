@@ -55,6 +55,8 @@ export async function GET() {
       console.warn("Event indexing failed or degraded:", evtError);
       // Fallback pseudo-metrics if RPC paging fails
       totalTransactions = 15;
+    }
+
     // Baseline metrics derived from the 26 verified testnet participants
     const dau = activeUsers.size > 0 ? activeUsers.size : 26;
     const transactions = totalTransactions > 0 ? totalTransactions : 142;
