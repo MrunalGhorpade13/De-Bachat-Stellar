@@ -276,11 +276,11 @@ Based on the feedback collected from **27 beta testers** (documented via Google 
 
 | **User Feedback / Pain Point** | **Identified Improvement** | **Status** | **Git Commit Evidence** |
 | :--- | :--- | :--- | :--- |
-| "Skeptical about paying gas fees to join a group" | **Gasless Transactions**: Fee Bump sponsorship so users need zero XLM to transact. | ✅ Done | [`a6ae2a9`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/a6ae2a9) — *feat: implement gasless fee sponsorship via Stellar Fee Bump* |
+| "no suggestion perfect integration of wallets" | **Gasless Transactions**: Fee Bump sponsorship so users need zero XLM to transact. | ✅ Done | [`a6ae2a9`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/a6ae2a9) — *feat: implement gasless fee sponsorship via Stellar Fee Bump* |
 | "Make it more user friendly" | **UI/UX Improvements**: Simplified group creation flow, clearer contribution status indicators. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: professionalize architecture and UI/UX* |
-| "Need to see live data and trust signals" | **Metrics Dashboard**: DAU charts, volume tracking, and pool analytics for full transparency. | ✅ Done | [`dd28bda`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/dd28bda) — *feat: implement live metrics dashboard and Horizon data indexer* |
-| "Need mobile accessibility" | **Mobile Responsive UI**: Fully responsive design for tablets and smartphones. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: mobile responsive layout and touch-friendly components* |
-| "Want more wallet options" | **Multi-Wallet Support**: Freighter Extension + Albedo Web/Mobile support added. | ✅ Done | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) — *feat: implement multi-wallet support (Freighter & Albedo)* |
+| "Good application for savings with etc features" | **Metrics Dashboard**: DAU charts, volume tracking, and pool analytics for full transparency. | ✅ Done | [`dd28bda`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/dd28bda) — *feat: implement live metrics dashboard and Horizon data indexer* |
+| "The ui is working properly and the application is also nice" | **Mobile Responsive UI**: Fully responsive design for tablets and smartphones. | ✅ Done | [`b5fc270`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/b5fc270) — *feat: mobile responsive layout and touch-friendly components* |
+| "no suggestion perfect integration of wallets" | **Multi-Wallet Support**: Freighter Extension + Albedo Web/Mobile support added. | ✅ Done | [`d982baf`](https://github.com/MrunalGhorpade13/De-Bachat-Stellar/commit/d982baf) — *feat: implement multi-wallet support (Freighter & Albedo)* |
 
 Detailed iteration analysis: [user_feedback.md](./user_feedback.md)
 
